@@ -29,21 +29,21 @@
 		#textarea  {
 			position:absolute;
 			top:110px;
-			bottom:200px;
+			bottom:120px;
 			left:20px;
 			right:20px;
 			width:760px;
-      height: calc(100% - 250px);
+      height: calc(100% - 220px);
 			display:inline-block;
 			margin-top:-0.2em;
       padding: 60px;
-      padding-bottom: 10px;
+      padding-bottom: 60px;
       margin: 0 auto;
       border: 1px solid #EEEEEE;
       -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.75);
       -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.75);
       box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.10);
-      font-family: Georgia, "Garamond", Oxygen, Source Sans Pro, "Helvetica Neue",Helvetica,"Century Schoolbook",Arial,sans-serif;
+      font-family: Georgia, "Garamond", Oxygen, Source Sans Pro, "Helvetica Neue", Helvetica, "Century Schoolbook", Arial, sans-serif;
       line-height: 160%;
       letter-spacing: .8px;
 		}
@@ -114,15 +114,15 @@
 
 		#pauseButton  {
 			position:relative;
-			display:inline-block;
 			vertical-align:middle;
+			display:inline-block;
 			display:none;
 		}
 
 		#resumeButton  {
 			position:relative;
-			display:inline-block;
 			vertical-align:middle;
+			display:inline-block;
 			display:none;
 		}
 
@@ -130,6 +130,13 @@
 			position:relative;
 			display:inline-block;
 			vertical-align:middle;
+		}
+
+		#clearRegionButton  {
+			position:relative;
+			vertical-align:middle;
+			display:inline-block;
+			display:none;
 		}
 
 		#settingsButton  {
@@ -256,6 +263,7 @@
 			<input id="pauseButton" type="button" value="Pause"/>
 			<input id="resumeButton" type="button" value="Resume"/>
 			<input id="stopButton" type="button" value="Stop"/>
+			<input id="clearRegionButton" type="button" value="Clear selected region"/>
 			<input id="reloadButton" type="button" value="Reload" title="Occasionally it's necessary to reload the page"/>
 
       <span id="settingsButton" class="fa fa-cog"></span>
@@ -270,10 +278,17 @@
 
 		<script>
 		var utterance = new SpeechSynthesisUtterance();
-		utterance.lang = 'en-UK';
-		utterance.rate = 1;
     var cursorOffset = 0;
     var application = {};
+    var playbackSpeed = 1;
+    var language = null;
+    var voice = null;
+    var voices = [];
+    var startPosition;
+    var endPosition;
+
+		utterance.lang = "";
+		utterance.rate = 1;
 
 		textarea = document.getElementById('textarea');
 		playButton = document.getElementById('playButton');
@@ -285,117 +300,155 @@
     playButton.onclick = playHandler;
     textarea.onmouseup = selectionHandler;
     textarea.onmousedown = selectionHandler;
-    cursorLabel.onclick = cursorHandler;
+    cursorLabel.onclick = cursorLocationChangeHandler;
     reloadButton.onclick = reloadHandler;
     settingsButton.onclick = settingsHandler;
 
     function settingsHandler() {
-        var display = settingsWindow.style.display;
-        var visible = display!="none" && display!="";
-        settingsWindow.style.display = visible ? "none" : "block";
+      var display = settingsWindow.style.display;
+      var visible = display!="none" && display!="";
+      settingsWindow.style.display = visible ? "none" : "block";
     }
 
     function reloadHandler() {
-        window.location.reload(false);
+      window.location.reload(false);
     }
 
-    function cursorHandler() {
-        var location = cursorLabel.innerHTML;
-        var position = Number(location) >>> 0;
+    function cursorLocationChangeHandler() {
+      var location = cursorLabel.innerHTML;
+      var position = Number(location) >>> 0;
 
-        if (!isNaN(position)) {
-          textarea.selectionStart = position;
-          textarea.selectionEnd = position;
-          textarea.focus();
-        }
+      if (!isNaN(position)) {
+        textarea.selectionStart = position;
+        textarea.selectionEnd = position;
+        textarea.focus();
+      }
     }
 
     function playHandler() {
-		    var text = textarea.value;
+      var text = textarea.value;
+      var hasStart = false;
+      var hasEnd = false;
+      var lastWord;
 
-        cursorOffset = 0;
+      cursorOffset = 0;
 
-		    // create the utterance on play in case user called stop
-		    // reference https://stackoverflow.com/a/47276578/441016
-		    utterance = new SpeechSynthesisUtterance();
-		    utterance.onboundary = onboundaryHandler;
-		    utterance.onend = onEndHandler;
+      if (startPosition!=null && !isNaN(startPosition)) {
+        startPosition = parseInt(startPosition);
+        hasStart = true;
+      }
 
-        if (text=="") {
-          text = "Please enter some text"
-        }
-        else {
-          if (document.selection) {
-            // this block not tested
-            var range = document.selection.createRange();
-          }
-          else if (textarea.selectionStart!=null) {
-            var startPos = textarea.selectionStart;
-            var endPos = textarea.selectionEnd;
-            var lastWord = isLastWord(text, startPos);
+      if (endPosition!=null && !isNaN(endPosition)) {
+        hasEnd = true;
+        endPosition = parseInt(endPosition);
+      }
 
-            // if at end start over
-            if (startPos==text.length) {
-              textarea.selectionStart = 0;
-              textarea.selectionEnd = 0;
+      if (text=="") {
+        text = "Please enter some text"
+      }
+      else if (hasStart || hasEnd) {
+
+          if ("selectionStart" in textarea) {
+
+            // has start and end
+            if (hasStart && hasEnd) {
+              text = text.substring(startPosition, endPosition);
+              cursorOffset = startPosition;
             }
-            else {
-              text = text.substring(startPos, text.length);
-              cursorOffset = startPos;
+            else if (hasStart) {
+              text = text.substring(startPosition, text.length);
+              cursorOffset = startPosition;
+            }
+            else if (hasEnd) {
+              text = text.substring(0, endPosition);
+              cursorOffset = 0;
             }
           }
+      }
+      else {
+        if (document.selection) {
+          // this block not tested
+          var range = document.selection.createRange();
         }
+        else if (textarea.selectionStart!=null) {
+          var selectionStart = textarea.selectionStart;
+          var selectionEnd = textarea.selectionEnd;
+          lastWord = isLastWord(text, selectionStart);
 
-		    utterance.text = text;
-		    speechSynthesis.speak(utterance);
+          // if at end start over
+          if (selectionStart==text.length) {
+            textarea.selectionStart = 0;
+            textarea.selectionEnd = 0;
+          }
+          else {
+            text = text.substring(selectionStart, text.length);
+            cursorOffset = selectionStart;
+          }
+        }
+      }
+
+      // create the utterance on play in case user called stop
+      // reference https://stackoverflow.com/a/47276578/441016
+      utterance = new SpeechSynthesisUtterance();
+      utterance.onboundary = onboundaryHandler;
+      utterance.onend = onEndHandler;
+      utterance.text = text;
+      utterance.rate = playbackSpeed;
+      utterance.voice = getVoice(voice);
+      utterance.lang = getLanguage(language);
+
+      speechSynthesis.speak(utterance);
 		};
 
-
     function selectionHandler(event) {
-        var text = textarea.value;
+      var text = textarea.value;
 
-        if (document.selection) {
-            // this block not tested
-            var range = document.selection.createRange();
-        }
-        else if (textarea.selectionStart) {
-            var startPos = textarea.selectionStart;
-            var endPos = textarea.selectionEnd;
+      if (document.selection) {
+          // this block not tested
+          var range = document.selection.createRange();
+      }
+      else if (textarea.selectionStart) {
+          var startPos = textarea.selectionStart;
+          var endPos = textarea.selectionEnd;
 
-            if (startPos==endPos) {
-                setCursorLabel(endPos);
-            }
-            else {
-                setCursorLabel(startPos + "-" + endPos);
-            }
-        }
+          if (startPos==endPos) {
+              setCursorLabel(endPos);
+          }
+          else {
+              setCursorLabel(startPos + "-" + endPos);
+          }
+      }
 
 		};
 
 		document.getElementById('pauseButton').onclick = function(){
-		    if (speechSynthesis) {
-		      speechSynthesis.pause();
-		    }
+      if (speechSynthesis) {
+        speechSynthesis.pause();
+      }
 		};
 
 		document.getElementById('rewindButton').onclick = function() {
-
-		    if (speechSynthesis) {
-          resetPosition();
-		    }
+      if (speechSynthesis) {
+        resetPosition();
+      }
 		};
 
 		document.getElementById('resumeButton').onclick = function() {
-		    if (speechSynthesis) {
-		      speechSynthesis.resume();
-		    }
+      if (speechSynthesis) {
+        speechSynthesis.resume();
+      }
 		};
 
 		document.getElementById('stopButton').onclick = function() {
-		    if (speechSynthesis) {
-		      speechSynthesis.cancel();
-          textarea.focus();
-		    }
+      if (speechSynthesis) {
+        speechSynthesis.cancel(); // triggers end event
+        textarea.focus();
+      }
+		};
+
+		document.getElementById('clearRegionButton').onclick = function() {
+      clearRegion();
+      document.getElementById('clearRegionButton').style.display = "none";
 		};
 
     function onEndHandler(event) {
@@ -413,104 +466,212 @@
     }
 
 		function onboundaryHandler(event) {
-		    var value = textarea.value;
-		    var index = event.charIndex + cursorOffset;
-		    var word = getWordAt(value, index);
-		    var anchorPosition = getWordStart(value, index);
-		    var activePosition = anchorPosition + word.length;
+      var value = textarea.value;
+      var index = event.charIndex + cursorOffset;
+      var word = getWordAt(value, index);
+      var anchorPosition = getWordStart(value, index);
+      var activePosition = anchorPosition + word.length;
 
-		    textarea.focus();
+      textarea.focus();
 
-		    if (textarea.setSelectionRange) {
-		       textarea.setSelectionRange(anchorPosition, activePosition);
-		    }
-		    else {
-           // block not tested
-		       var range = textarea.createTextRange();
-		       range.collapse(true);
-		       range.moveEnd('character', activePosition);
-		       range.moveStart('character', anchorPosition);
-		       range.select();
-		    }
+      if (textarea.setSelectionRange) {
+          textarea.setSelectionRange(anchorPosition, activePosition);
+      }
+      else {
+          // block not tested
+          var range = textarea.createTextRange();
+          range.collapse(true);
+          range.moveEnd('character', activePosition);
+          range.moveStart('character', anchorPosition);
+          range.select();
+      }
 
-        setCursorLabel(index);
+      setCursorLabel(index);
 		};
 
 		// Get the word of a string given the string and index
 		function getWordAt(str, pos) {
-		    // Perform type conversions.
-		    str = String(str);
-		    pos = Number(pos) >>> 0;
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
-		    // Search for the word's beginning and end.
-		    var left = str.slice(0, pos + 1).search(/\S+$/),
-		        right = str.slice(pos).search(/\s/);
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/),
+          right = str.slice(pos).search(/\s/);
 
-		    // The last word in the string is a special case.
-		    if (right < 0) {
-            str =  str.slice(left).match(/\w+/gi)[0];
-		        return str;
-		    }
+      // The last word in the string is a special case.
+      if (right < 0) {
+          str =  str.slice(left).match(/\w+/gi)[0];
+          return str;
+      }
 
-		    // Return the word, using the located bounds to extract it from the string.
-        str = str.slice(left, right + pos).match(/\w+/gi)[0];
-		    return str;
+      // Return the word, using the located bounds to extract it from the string.
+      str = str.slice(left, right + pos).match(/\w+/gi)[0];
+      return str;
 		}
 
 		// Get the position of the beginning of the word
 		function getWordStart(str, pos) {
-		    str = String(str);
-		    pos = Number(pos) >>> 0;
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
-		    // Search for the word's beginning
-		    var start = str.slice(0, pos + 1).search(/\S+$/);
-		    return start;
+      // Search for the word's beginning
+      var start = str.slice(0, pos + 1).search(/\S+$/);
+      return start;
 		}
 
 		// Get the last word of a string given the string and index
 		function isLastWord(str, pos) {
-		    // Perform type conversions.
-		    str = String(str);
-		    pos = Number(pos) >>> 0;
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
-		    // Search for the word's beginning and end.
-		    var left = str.slice(0, pos + 1).search(/\S+$/),
-		        right = str.slice(pos).search(/\s/);
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/),
+          right = str.slice(pos).search(/\s/);
 
-		    // The last word in the string is a special case.
-		    if (right < 0) {
-		        return str.slice(left);
-		    }
+      // The last word in the string is a special case.
+      if (right < 0) {
+          return str.slice(left);
+      }
 
-		    // Return the word, using the located bounds to extract it from the string.
-		    return str.slice(left, right + pos);
+      // Return the word, using the located bounds to extract it from the string.
+      return str.slice(left, right + pos);
 		}
 
     function resetPosition() {
-		    var textarea = document.getElementById('textarea');
+      var textarea = document.getElementById('textarea');
 
-        if (textarea.selectionStart) {
-            textarea.selectionStart = 0;
-            textarea.selectionEnd = 0;
-            setCursorLabel("0");
-            textarea.focus();
-        }
+      if (textarea.selectionStart) {
+          textarea.selectionStart = 0;
+          textarea.selectionEnd = 0;
+          setCursorLabel("0");
+          textarea.focus();
+      }
     }
 
     function setEndPosition() {
-        var value = textarea.value;
-        var endPosition = value.length;
+      var value = textarea.value;
+      var endPosition = value.length;
 
-        if (textarea.selectionStart!=null) {
-            textarea.selectionStart = endPosition;
-            textarea.selectionEnd = endPosition;
-            setCursorLabel(endPosition);
+      if (textarea.selectionStart!=null) {
+        textarea.selectionStart = endPosition;
+        textarea.selectionEnd = endPosition;
+        setCursorLabel(endPosition);
+      }
+    }
+
+    function getVoice(value) {
+      var voiceInstance = null;
+
+      if (value!=null) {
+        value = value.toLowerCase();
+        voices = speechSynthesis.getVoices();
+
+        for(var i=0;i<voices.length;i++) {
+          if (voices[i].name.toLowerCase()==value.toLowerCase()) {
+            voiceInstance = voices[i];
+            return voiceInstance;
+          }
         }
+
+        return null;
+      }
+    }
+
+    function getLanguage(value) {
+      return value==null ? "" : value;
     }
 
     function setCursorLabel(value) {
-        cursorLabel.innerHTML = value;
+      cursorLabel.innerHTML = value;
     }
+
+    function clearRegion() {
+
+      if ("selection" in document) {
+        startPosition = null;
+        endPosition = null;
+      }
+      else if ("selectionStart" in textarea) {
+
+        if (startPosition!=null) {
+          textarea.selectionStart = startPosition;
+          textarea.selectionEnd = startPosition;
+          setCursorLabel(startPosition);
+        }
+        else if (endPosition!=null) {
+          textarea.selectionStart = endPosition;
+          textarea.selectionEnd = endPosition;
+          setCursorLabel(endPosition);
+        }
+
+        startPosition = null;
+        endPosition = null;
+
+        textarea.focus();
+      }
+
+		};
+
+		document.body.onload = function() {
+      var reg = /[?|&]text=([^&]+)/;
+      var found = reg.exec(window.location.href);
+      
+      // if text parameter is found auto fill
+      if (found!=null) {
+        textarea.value = decodeURIComponent(found[1]);
+      }
+
+      // check for playback speed
+      reg = /[?|&]speed=([^&]+)/i;
+      found = reg.exec(window.location.href);
+
+      if (!isNaN(found[1])) {
+        playbackSpeed = Number(found[1]);
+      }
+
+      // check for language
+      reg = /[?|&]language=([^&]+)/i;
+      found = reg.exec(window.location.href);
+
+      if (found) {
+        language = found[1];
+      }
+
+      // check for voice
+      reg = /[?|&]voice=([^&]+)/i;
+      found = reg.exec(window.location.href);
+
+      if (found) {
+        voice = found[1];
+      }
+
+      // check for start position
+      reg = /[?|&]startPosition=([^&]+)/i;
+      found = reg.exec(window.location.href);
+
+      if (found) {
+        startPosition = parseInt(found[1]);
+      }
+
+      // check for end position
+      reg = /[?|&]endPosition=([^&]+)/i;
+      found = reg.exec(window.location.href);
+
+      if (found) {
+        endPosition = parseInt(found[1]);
+      }
+
+      // check for auto play. accepts true or 1 to autoplay
+      reg = /[?|&]autoplay=([^&]+)/i;
+      found = reg.exec(window.location.href);
+      var play = found && (found[1]=="1" || found[1]=="true");
+      
+      if (play) {
+        playHandler();
+      }
+		};
 		</script>
 		<!--body_end-->
     </body>
