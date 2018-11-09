@@ -357,6 +357,9 @@
       var display = settingsWindow.style.display;
       var visible = display!="none" && display!="";
       settingsWindow.style.display = visible ? "none" : "block";
+      if (voicesSelect.options.length==0) {
+        loadVoices();
+      }
     }
 
     function reloadHandler() {
@@ -570,6 +573,7 @@
       found = value.slice(leftPosition, rightPosition + position).match(WordBoundryExp);
       if (found==null) {
         value = value.slice(leftPosition, rightPosition + position);
+        return value;
       }
       return found[0];
 		}
@@ -676,9 +680,40 @@
         textarea.focus();
       }
 
-		};
+    }
+    
+    function loadVoices() {
+      // get available voices
+      voices = speechSynthesis.getVoices();
 
-		document.body.onload = function() {
+      if (voicesSelect.options.length) {
+        voicesSelect.options.length = 0;
+      }
+
+      for(i = 0; i < voices.length ; i++) {
+        var currentVoice = voices[i];
+        var currentVoiceName = currentVoice.name;
+        var option = document.createElement('option');
+        var isDefault = false;
+        if (currentVoice.default) {
+          isDefault = true;
+        }
+        if (voice!=null && voice.toLowerCase()==currentVoiceName.toLowerCase()) {
+          option.setAttribute("selected", "");
+        }
+        else if (currentVoice.default && voice==null) {
+          option.setAttribute("selected", "");
+        }
+        option.textContent = currentVoice.name + ' (' + currentVoice.lang + ')';
+        option.textContent += isDefault ? ' (default)' : "";
+        option.setAttribute('data-lang', currentVoice.lang);
+        option.setAttribute('data-name', currentVoice.name);
+        voicesSelect.appendChild(option);
+      }
+    }
+    
+    function onloadHandler() {
+      var v = speechSynthesis.getVoices();
       var reg = /[?|&]text=([^&]+)/;
       var found = reg.exec(window.location.href);
       
@@ -712,28 +747,7 @@
       }
 
       // get available voices
-      voices = speechSynthesis.getVoices();
-
-      for(i = 0; i < voices.length ; i++) {
-        var currentVoice = voices[i];
-        var currentVoiceName = currentVoice.name;
-        var option = document.createElement('option');
-        var isDefault = false;
-        if (currentVoice.default) {
-          isDefault = true;
-        }
-        if (voice!=null && voice.toLowerCase()==currentVoiceName.toLowerCase()) {
-          option.setAttribute("selected", "");
-        }
-        else if (currentVoice.default && voice==null) {
-          option.setAttribute("selected", "");
-        }
-        option.textContent = currentVoice.name + ' (' + currentVoice.lang + ')';
-        option.textContent += isDefault ? ' (default)' : "";
-        option.setAttribute('data-lang', currentVoice.lang);
-        option.setAttribute('data-name', currentVoice.name);
-        voicesSelect.appendChild(option);
-      }
+      loadVoices();
 
       // check for start position
       reg = /[?|&]startPosition=([^&]+)/i;
@@ -759,7 +773,10 @@
       if (autoPlay) {
         playHandler();
       }
-		};
+    };
+    
+    document.addEventListener("DOMContentLoaded", onloadHandler);
+    
 		</script>
 		<!--body_end-->
     </body>
