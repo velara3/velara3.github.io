@@ -145,11 +145,12 @@
 			vertical-align:middle;
       float: right;
       font-size: 120%;
-      color: #CFCFCF;
+      color: #8F8F8F;
       cursor:pointer;
 		}
+
     #settingsButton:active {
-      color: #AFAFAF;
+      color: #CFCFCF;
 		}
 
 		#cursorLabel  {
@@ -258,14 +259,16 @@
 		</div>
 		<textarea id="textarea" placeholder="Enter text to be spoken"></textarea>
 		<div id="HGroup2925">
-			<input id="playButton" type="button" value="Play" title="Occassionally it's necessary to reload the page. Click reload and pres play again"/>
+			<input id="playButton" type="button" value="Play" title="Occassionally it's necessary to reload the page. Click reload and press play again"/>
 			<input id="rewindButton" type="button" value="Rewind"/>
 			<input id="pauseButton" type="button" value="Pause"/>
 			<input id="resumeButton" type="button" value="Resume"/>
 			<input id="stopButton" type="button" value="Stop"/>
 			<input id="clearRegionButton" type="button" value="Clear selected region"/>
 			<input id="reloadButton" type="button" value="Reload" title="Occasionally it's necessary to reload the page"/>
-
+      <noscript>
+        <span >You must enable JavaScript for this page to work</span>
+      </noscript>
       <span id="settingsButton" class="fa fa-cog"></span>
       <span id="cursorLabel"></span>
 			<span style='display:inline-block;height:100%;width:0;vertical-align:middle;'></span>
@@ -274,18 +277,49 @@
     <div id="settingsWindow">
       <span>Settings are under construction. <br><br>They will be added if you send me a nice email or note.</span>
       <span><br><br>Email is "flexcapacitor" at gmail.</span>
+      <br>
+      <br>
+      <select id="voicesSelect"></select>
     </div>
 
 		<script>
-		var utterance = new SpeechSynthesisUtterance();
+    class MainForm {
+
+      constructor() {
+        this.utterance = new SpeechSynthesisUtterance();
+        this.cursorOffset = 0;
+        this.application = {};
+        this.playbackSpeed = 1;
+        this.language = null;
+        this.voice = null;
+        this.voices = [];
+        this.startPosition = null;
+        this.endPosition = null;
+
+        // form
+        this.textarea = null;
+        this.playButton = null;
+        this.reloadButton = null;
+        this.cursorLabel = null;
+        this.settingsButton = null;
+        this.settingsWindow = null;
+        this.voicesSelect = null;
+      }
+    }
+
+    var mainForm = new MainForm();
+    var utterance = new SpeechSynthesisUtterance();
     var cursorOffset = 0;
     var application = {};
     var playbackSpeed = 1;
     var language = null;
     var voice = null;
+    var voiceObject = null;
     var voices = [];
-    var startPosition;
-    var endPosition;
+    var startPosition = null;
+    var endPosition = null;
+
+    log = console.log;
 
 		utterance.lang = "";
 		utterance.rate = 1;
@@ -296,6 +330,7 @@
 		cursorLabel = document.getElementById('cursorLabel');
 		settingsButton = document.getElementById('settingsButton');
 		settingsWindow = document.getElementById('settingsWindow');
+		voicesSelect = document.getElementById('voicesSelect');
 
     playButton.onclick = playHandler;
     textarea.onmouseup = selectionHandler;
@@ -303,6 +338,20 @@
     cursorLabel.onclick = cursorLocationChangeHandler;
     reloadButton.onclick = reloadHandler;
     settingsButton.onclick = settingsHandler;
+    voicesSelect.onchange = voicesHandler;
+
+    function voicesHandler(event) {
+      var voiceName = voicesSelect.selectedOptions[0].getAttribute('data-name');
+      voices = speechSynthesis.getVoices();
+
+      for(var i = 0; i < voices.length; i++) {
+
+        if(voices[i].name === voiceName) {
+          voice = voiceName;
+          voiceObject = voices[i];
+        }
+      }
+    }
 
     function settingsHandler() {
       var display = settingsWindow.style.display;
@@ -325,6 +374,9 @@
       }
     }
 
+    /**
+     * Plays the text to speech. The text area will not show highlighting if a text input in web developer tools have focus
+     * */
     function playHandler() {
       var text = textarea.value;
       var hasStart = false;
@@ -396,7 +448,8 @@
       utterance.rate = playbackSpeed;
       utterance.voice = getVoice(voice);
       utterance.lang = getLanguage(language);
-
+      
+      // speechSynthesis is an object on the window
       speechSynthesis.speak(utterance);
 		};
 
@@ -490,53 +543,64 @@
 		};
 
 		// Get the word of a string given the string and index
-		function getWordAt(str, pos) {
-      // Perform type conversions.
-      str = String(str);
-      pos = Number(pos) >>> 0;
+		function getWordAt(value, position) {
+      var WordBoundryExp = /[A-Za-zÀ-ÖØ-öø-ÿ0-9_]+/gi;
+      var found = null;
 
-      // Search for the word's beginning and end.
-      var left = str.slice(0, pos + 1).search(/\S+$/),
-          right = str.slice(pos).search(/\s/);
+      // Perform type conversions
+      value = String(value);
+      position = Number(position) >>> 0;
 
-      // The last word in the string is a special case.
-      if (right < 0) {
-          str =  str.slice(left).match(/\w+/gi)[0];
-          return str;
+      // Search for the word's beginning and end
+      var leftPosition = value.slice(0, position + 1).search(/\S+$/); // any character that is not whitespace
+      var rightPosition = value.slice(position).search(/\s/); // any whitespace character
+      
+      // The last word in the string is a special case
+      if (rightPosition < 0) {
+        found = value.slice(leftPosition).match(WordBoundryExp);
+        if (found==null) {
+          return value.slice(leftPosition);
+        }
+        return found[0];
       }
-
-      // Return the word, using the located bounds to extract it from the string.
-      str = str.slice(left, right + pos).match(/\w+/gi)[0];
-      return str;
+      
+      // Return the word, using the located bounds to extract it from the string
+      //value = value.slice(leftPosition, rightPosition + position).match(/\w+/gi)[0]; // works but misses accents
+      //value = value.slice(leftPosition, rightPosition + position); // works but includes punctuation
+      found = value.slice(leftPosition, rightPosition + position).match(WordBoundryExp);
+      if (found==null) {
+        value = value.slice(leftPosition, rightPosition + position);
+      }
+      return found[0];
 		}
 
 		// Get the position of the beginning of the word
-		function getWordStart(str, pos) {
-      str = String(str);
-      pos = Number(pos) >>> 0;
+		function getWordStart(value, position) {
+      value = String(value);
+      position = Number(position) >>> 0;
 
       // Search for the word's beginning
-      var start = str.slice(0, pos + 1).search(/\S+$/);
+      var start = value.slice(0, position + 1).search(/\S+$/);
       return start;
 		}
 
 		// Get the last word of a string given the string and index
-		function isLastWord(str, pos) {
-      // Perform type conversions.
-      str = String(str);
-      pos = Number(pos) >>> 0;
+		function isLastWord(value, position) {
+      // Perform type conversions
+      value = String(value);
+      position = Number(position) >>> 0;
 
-      // Search for the word's beginning and end.
-      var left = str.slice(0, pos + 1).search(/\S+$/),
-          right = str.slice(pos).search(/\s/);
+      // Search for the word's beginning and end
+      var left = value.slice(0, position + 1).search(/\S+$/),
+          right = value.slice(position).search(/\s/);
 
-      // The last word in the string is a special case.
+      // The last word in the string is a special case
       if (right < 0) {
-          return str.slice(left);
+          return value.slice(left);
       }
 
-      // Return the word, using the located bounds to extract it from the string.
-      return str.slice(left, right + pos);
+      // Return the word, using the located bounds to extract it from the string
+      return value.slice(left, right + position);
 		}
 
     function resetPosition() {
@@ -627,7 +691,7 @@
       reg = /[?|&]speed=([^&]+)/i;
       found = reg.exec(window.location.href);
 
-      if (!isNaN(found[1])) {
+      if (found!=null && !isNaN(found[1])) {
         playbackSpeed = Number(found[1]);
       }
 
@@ -645,6 +709,30 @@
 
       if (found) {
         voice = found[1];
+      }
+
+      // get available voices
+      voices = speechSynthesis.getVoices();
+
+      for(i = 0; i < voices.length ; i++) {
+        var currentVoice = voices[i];
+        var currentVoiceName = currentVoice.name;
+        var option = document.createElement('option');
+        var isDefault = false;
+        if (currentVoice.default) {
+          isDefault = true;
+        }
+        if (voice!=null && voice.toLowerCase()==currentVoiceName.toLowerCase()) {
+          option.setAttribute("selected", "");
+        }
+        else if (currentVoice.default && voice==null) {
+          option.setAttribute("selected", "");
+        }
+        option.textContent = currentVoice.name + ' (' + currentVoice.lang + ')';
+        option.textContent += isDefault ? ' (default)' : "";
+        option.setAttribute('data-lang', currentVoice.lang);
+        option.setAttribute('data-name', currentVoice.name);
+        voicesSelect.appendChild(option);
       }
 
       // check for start position
@@ -666,9 +754,9 @@
       // check for auto play. accepts true or 1 to autoplay
       reg = /[?|&]autoplay=([^&]+)/i;
       found = reg.exec(window.location.href);
-      var play = found && (found[1]=="1" || found[1]=="true");
+      var autoPlay = found && (found[1]=="1" || found[1]=="true");
       
-      if (play) {
+      if (autoPlay) {
         playHandler();
       }
 		};
