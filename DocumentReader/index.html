@@ -194,7 +194,7 @@
 		</div>
 		<textarea id="textarea" placeholder="Enter text to be spoken"></textarea>
 		<div id="HGroup2925">
-			<input id="playButton" type="button" value="Play" title="Occassionally it's necessary to reload the page. Click reload and press play again"/>
+			<input id="playButton" type="button" value="Play" title="Play the text in the text area. Note: Occassionally it's necessary to reload the page."/>
 			<input id="rewindButton" type="button" value="Rewind"/>
 			<input id="pauseButton" type="button" value="Pause"/>
 			<input id="resumeButton" type="button" value="Resume"/>
@@ -230,6 +230,7 @@
         this.voices = [];
         this.startPosition = null;
         this.endPosition = null;
+        this.isInitialized = false;
 
         // form
         this.textarea = null;
@@ -253,6 +254,7 @@
     var voices = [];
     var startPosition = null;
     var endPosition = null;
+    var isInitialized = false;
 
     log = console.log;
 
@@ -647,10 +649,14 @@
       }
     }
     
-    function onloadHandler() {
+    function onloadHandler(event = null) {
       var v = speechSynthesis.getVoices();
       var reg = /[?|&]text=([^&]+)/;
       var found = reg.exec(window.location.href);
+      
+      if (isInitialized) {
+        return;
+      }
       
       // if text parameter is found auto fill
       if (found!=null) {
@@ -699,17 +705,22 @@
       if (found) {
         endPosition = parseInt(found[1]);
       }
+      
 
       // check for auto play. accepts true or 1 to autoplay
       reg = /[?|&]autoplay=([^&]+)/i;
       found = reg.exec(window.location.href);
       var autoPlay = found && (found[1]=="1" || found[1]=="true");
       
+      isInitialized = true;
+
       if (autoPlay) {
         playHandler();
       }
     };
     
+    window.addEventListener("load", onloadHandler);
+    //document.body.addEventListener("load", onloadHandler);
     document.addEventListener("DOMContentLoaded", onloadHandler);
     
 		</script>
