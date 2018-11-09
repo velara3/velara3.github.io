@@ -211,7 +211,7 @@
 
     <div id="settingsWindow">
       <span>Settings are under construction. <br><br>They will be added if you send me a nice email or note.</span>
-      <span><br><br>Email is "flexcapacitor" at gmail.</span>
+      <span><br><br>Email is "contact" at velara3 dot com.</span>
       <br>
       <br>
       <select id="voicesSelect"></select>
@@ -222,7 +222,7 @@
 
       constructor() {
         this.utterance = new SpeechSynthesisUtterance();
-        this.cursorOffset = 0;
+        this.pauseIndex = 0;
         this.application = {};
         this.playbackSpeed = 1;
         this.language = null;
@@ -245,7 +245,7 @@
 
     var mainForm = new MainForm();
     var utterance = new SpeechSynthesisUtterance();
-    var cursorOffset = 0;
+    var pauseIndex = 0;
     var application = {};
     var playbackSpeed = 1;
     var language = null;
@@ -323,11 +323,11 @@
       var hasEnd = false;
       var lastWord;
 
-      cursorOffset = 0;
+      pauseIndex = 0;
 
       if (startPosition!=null && !isNaN(startPosition)) {
-        startPosition = parseInt(startPosition);
         hasStart = true;
+        startPosition = parseInt(startPosition);
       }
 
       if (endPosition!=null && !isNaN(endPosition)) {
@@ -345,15 +345,15 @@
             // has start and end
             if (hasStart && hasEnd) {
               text = text.substring(startPosition, endPosition);
-              cursorOffset = startPosition;
+              pauseIndex = startPosition;
             }
             else if (hasStart) {
               text = text.substring(startPosition, text.length);
-              cursorOffset = startPosition;
+              pauseIndex = startPosition;
             }
             else if (hasEnd) {
               text = text.substring(0, endPosition);
-              cursorOffset = 0;
+              pauseIndex = 0;
             }
           }
       }
@@ -374,7 +374,7 @@
           }
           else {
             text = text.substring(selectionStart, text.length);
-            cursorOffset = selectionStart;
+            pauseIndex = selectionStart;
           }
         }
       }
@@ -445,7 +445,7 @@
 		};
 
     function onEndHandler(event) {
-      var currentPosition = event.charIndex + cursorOffset;
+      var currentPosition = event.charIndex + pauseIndex;
       var text = textarea.value;
       var textLength = text.length;
       var lastWord = isLastWord(text, currentPosition);
@@ -459,11 +459,17 @@
     }
 
 		function onboundaryHandler(event) {
+      //log ("Event:" + event.type + " index:" + event.charIndex + " length:" + event.charLength)
       var value = textarea.value;
-      var index = event.charIndex + cursorOffset;
-      var word = getWordAt(value, index);
+      var index = event.charIndex + pauseIndex;
       var anchorPosition = getWordStart(value, index);
+      var word = getWordAt(value, index, event.charLength);
       var activePosition = anchorPosition + word.length;
+
+      if (anchorPosition< index) {
+        //log("Punctuation:" + value.slice(index,index+event.charLength));
+        return;
+      }
 
       textarea.focus();
 
@@ -483,66 +489,66 @@
 		};
 
 		// Get the word of a string given the string and index
-		function getWordAt(value, position) {
-      var WordBoundryExp = /[A-Za-zÀ-ÖØ-öø-ÿ0-9_]+/gi;
-      var found = null;
+		function getWordAt(str, pos, charCount = null) {
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
-      // Perform type conversions
-      value = String(value);
-      position = Number(position) >>> 0;
-
-      // Search for the word's beginning and end
-      var leftPosition = value.slice(0, position + 1).search(/\S+$/); // any character that is not whitespace
-      var rightPosition = value.slice(position).search(/\s/); // any whitespace character
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/);
+      var right = str.slice(pos).search(/\s/);
+      var possibleWord = "";
+      //log ("start: " + left + " pause index:" + pauseIndex)
       
-      // The last word in the string is a special case
-      if (rightPosition < 0) {
-        found = value.slice(leftPosition).match(WordBoundryExp);
-        if (found==null) {
-          return value.slice(leftPosition);
-        }
-        return found[0];
+      // The last word in the string is a special case.
+      if (right < 0) {
+        str = str.slice(left).match(/\w+/gi)[0];
+        return str;
       }
       
-      // Return the word, using the located bounds to extract it from the string
-      //value = value.slice(leftPosition, rightPosition + position).match(/\w+/gi)[0]; // works but misses accents
-      //value = value.slice(leftPosition, rightPosition + position); // works but includes punctuation
-      found = value.slice(leftPosition, rightPosition + position).match(WordBoundryExp);
-      if (found==null) {
-        value = value.slice(leftPosition, rightPosition + position);
-        return value;
+      // Return the word, using the located bounds to extract it from the string.
+      var guess = str.slice(left, left + charCount);
+      var results = str.slice(left, right + pos).match(/\w+/gi)[0];
+
+      if (charCount!=null) {
+        //log("left:" + left + " right:" + right + " word:" + results + " guess:" + guess);
+        return guess;
       }
-      return found[0];
+      else {
+        //log("left:" + left + " right:" + right + " word:" + results)
+        return results;
+      }
+      return results;
 		}
 
 		// Get the position of the beginning of the word
-		function getWordStart(value, position) {
-      value = String(value);
-      position = Number(position) >>> 0;
+		function getWordStart(str, pos) {
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
       // Search for the word's beginning
-      var start = value.slice(0, position + 1).search(/\S+$/);
+      var start = str.slice(0, pos + 1).search(/\S+$/);
       return start;
 		}
 
 		// Get the last word of a string given the string and index
-		function isLastWord(value, position) {
-      // Perform type conversions
-      value = String(value);
-      position = Number(position) >>> 0;
+		function isLastWord(str, pos) {
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
 
-      // Search for the word's beginning and end
-      var left = value.slice(0, position + 1).search(/\S+$/),
-          right = value.slice(position).search(/\s/);
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/),
+          right = str.slice(pos).search(/\s/);
 
-      // The last word in the string is a special case
+      // The last word in the string is a special case.
       if (right < 0) {
-          return value.slice(left);
+          return str.slice(left);
       }
 
-      // Return the word, using the located bounds to extract it from the string
-      return value.slice(left, right + position);
-		}
+      // Return the word, using the located bounds to extract it from the string.
+      return str.slice(left, right + pos);
+    }
 
     function resetPosition() {
       var textarea = document.getElementById('textarea');
