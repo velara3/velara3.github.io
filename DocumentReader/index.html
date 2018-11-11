@@ -13,7 +13,7 @@
 		<!--styles_start-->
 		<style type="text/css">
 
-		#RichText1786  {
+		#RichText1786 {
 			position:absolute;
 			top:20px;
 			left:20px;
@@ -26,7 +26,7 @@
 			margin-top:0px;
 		}
 
-		#textarea  {
+		#textarea {
 			position:absolute;
 			top:110px;
 			bottom:120px;
@@ -48,7 +48,7 @@
       letter-spacing: .8px;
 		}
 
-    #textarea:focus  {
+    #textarea:focus {
       outline: none;
       border:1px solid #EEEEEE;
     }
@@ -57,7 +57,7 @@
 			margin-top:0px;
 		}
 
-		#HGroup2925  {
+		#HGroup2925 {
 			position:absolute;
 			bottom:0px;
 			left:0px;
@@ -68,11 +68,16 @@
       background-color: white;
       padding: 10px;
       padding-left: 20px;
+      padding-bottom: 12px;
       width: calc(100%);
       border-top: 1px solid #dedede;
 		}
 
-  	#settingsWindow  {
+		#URLGroup {
+      width: 100%;
+		}
+
+  	#settingsWindow {
 			position:absolute;
       display: none;
 			bottom:42px;
@@ -93,10 +98,10 @@
       letter-spacing: .3px;
   	}
 
-  	#shareWindow  {
+  	#shareWindow {
 			position:absolute;
-      display: block;
-			top:2px;
+      display: none;
+			top:4px;
 			left:50%;
 			min-width:20px;
 			min-height:10px;
@@ -104,7 +109,7 @@
 			text-align:left;
       background-color: white;
       padding: 20px;
-      width: calc(450px);
+      width: calc(420px);
       border-top: 1px solid #dedede;
       border-left: 1px solid #dedede;
       border-right: 1px solid #dedede;
@@ -113,6 +118,7 @@
       font-size: 80%;
       letter-spacing: .3px;
       transform: translateX(-50%);
+      filter: drop-shadow(4px 4px 2px #00000040);
   	}
 
     input[type="button"] {
@@ -121,6 +127,10 @@
       cursor: pointer;
       margin-right:8px;
       background-color: #F6F6F6;
+      color: #585858;
+      font-weight: bold;
+      font-size: 9.5px;
+      text-transform: uppercase;
     }
 
     input[type="button"]:active {
@@ -128,40 +138,54 @@
       font-weight: "bold";
     }
 
-		#playButton  {
+		#playButton {
 			position:relative;
 			display:inline-block;
 			vertical-align:middle;
 		}
 
-		#pauseButton  {
-			position:relative;
-			vertical-align:middle;
-			display:inline-block;
-			display:none;
-		}
-
-		#resumeButton  {
+		#pauseButton {
 			position:relative;
 			vertical-align:middle;
 			display:inline-block;
 			display:none;
 		}
 
-		#stopButton  {
-			position:relative;
-			display:inline-block;
-			vertical-align:middle;
-		}
-
-		#clearRegionButton  {
+		#resumeButton {
 			position:relative;
 			vertical-align:middle;
 			display:inline-block;
 			display:none;
 		}
 
-		#settingsButton  {
+		#stopButton {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+		}
+
+		#shareURLInput {
+      position: relative;
+      width: 100%;
+      margin-left: 6px;
+		}
+    
+		#copyToClipboardButton {
+			position:relative;
+			display:inline-block;
+			vertical-align:top;
+      height:20px;
+      margin-left: 6px;
+		}
+
+		#clearRegionButton {
+			position:relative;
+			vertical-align:middle;
+			display:inline-block;
+			display:none;
+		}
+
+		#settingsButton {
 			position:relative;
 			display:inline-block;
 			vertical-align:middle;
@@ -171,7 +195,7 @@
       cursor:pointer;
 		}
 
-		#shareButton  {
+		#shareButton {
 			position:relative;
 			display:inline-block;
 			vertical-align:middle;
@@ -182,7 +206,7 @@
       color: #CFCFCF;
 		}
 
-		#cursorLabel  {
+		#cursorLabel {
 			position:relative;
 			display:inline-block;
 			vertical-align:middle;
@@ -192,7 +216,6 @@
       cursor:pointer;
       padding-right: 20px;
 		}
-
 
 		*, *:before, *:after {
 			-moz-box-sizing:border-box;
@@ -249,11 +272,12 @@
     </div>
 
     <div id="shareWindow">
-      <div><span>Share the message!</span><span id="closeShareWindowButton" style="float:right;font-weight:bold;cursor: pointer" onclick="closeShareWindow()">X</span></div>
+      <div><span>Share the message!</span><span id="closeShareWindowButton" style="float:right;font-weight:bold;cursor:pointer" onclick="closeShareWindow()">X</span></div>
       <br>
-      <div>URL:
-        <input id="shareURLInput" type="text" style="width:80%" />
+      <div id="URLGroup">URL:
+        <input id="shareURLInput" type="text" style="width:75%" />
         <input id="copyToClipboardButton" type="button" value="Copy" title="Copy URL to clipboard" onclick="copyURLHandler(event)"/></div>
+        <span style='display:inline-block;height:100%;width:0;vertical-align:middle;'></span>
       <br>
       <div>Autoplay: <input id="autoplayCheckbox" type="checkbox" checked="false" />
         <span id="clipboardMessageLabel" style="float:right;"></span></div>
@@ -376,7 +400,7 @@
       var url = shareURLInput.value;
       
       try {
-        log(event);
+        
         if (event.shiftKey) {
           window.open(url);
           clipboardMessageLabel.textContent = "URL opened in a new window";
@@ -386,10 +410,40 @@
         clipboardMessageLabel.textContent = "URL copied to the Clipboard";
       }
       catch (error) {
+        try {
+          copyToClipboard(url);
+        }
+        catch (error2) {
+
+        }
+
         clipboardMessageLabel.textContent = "Error: URL not copied to the Clipboard.\n";
-        clipboardMessageLabel.textContent += error;
+
+        if (error2) {
+          clipboardMessageLabel.textContent += error2;
+        }
+        else {
+          clipboardMessageLabel.textContent += error;
+        }
       }
     }
+
+    function copyToClipboard(text) {
+      if (window.clipboardData && window.clipboardData.setData) {
+        return clipboardData.setData("Text", text); 
+      }
+      else if (document.queryCommandSupported && document.queryCommandSupported("copy")) {
+        shareURLInput.select();
+
+        try {
+          return document.execCommand("copy");  // Security exception may be thrown by some browsers.
+        }
+        catch (error) {
+          //console.warn("Copy to clipboard failed.", error);
+          return false;
+        }
+      }
+  }
 
     function getShareURL() {
       var url = "";
