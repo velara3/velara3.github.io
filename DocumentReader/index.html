@@ -93,6 +93,28 @@
       letter-spacing: .3px;
   	}
 
+  	#shareWindow  {
+			position:absolute;
+      display: block;
+			top:2px;
+			left:50%;
+			min-width:20px;
+			min-height:10px;
+			overflow:visible;
+			text-align:left;
+      background-color: white;
+      padding: 20px;
+      width: calc(450px);
+      border-top: 1px solid #dedede;
+      border-left: 1px solid #dedede;
+      border-right: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      font-family: Source Sans Pro, Oxygen, sans-serif;
+      font-size: 80%;
+      letter-spacing: .3px;
+      transform: translateX(-50%);
+  	}
+
     input[type="button"] {
       border: .1px solid #DFDFDF;
       padding: 2px 6px;
@@ -146,6 +168,13 @@
       float: right;
       font-size: 120%;
       color: #8F8F8F;
+      cursor:pointer;
+		}
+
+		#shareButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
       cursor:pointer;
 		}
 
@@ -204,6 +233,8 @@
       <noscript>
         <span >You must enable JavaScript for this page to work</span>
       </noscript>
+      <span style="padding-left:10px;padding-right:18px;color:#CFCFCF;">|</span>
+			<input id="shareButton" type="button" value="Share" title="Creates a URL that you can send to someone or yourself."/>
       <img id="settingsButton" src="assets/cog.png"/>
       <span id="cursorLabel"></span>
 			<span style='display:inline-block;height:100%;width:0;vertical-align:middle;'></span>
@@ -215,6 +246,19 @@
       <br>
       <br>
       <select id="voicesSelect"></select>
+    </div>
+
+    <div id="shareWindow">
+      <div><span>Share the message!</span><span id="closeShareWindowButton" style="float:right;font-weight:bold;cursor: pointer" onclick="closeShareWindow()">X</span></div>
+      <br>
+      <div>URL:
+        <input id="shareURLInput" type="text" style="width:80%" />
+        <input id="copyToClipboardButton" type="button" value="Copy" title="Copy URL to clipboard" onclick="copyURLHandler(event)"/></div>
+      <br>
+      <div>Autoplay: <input id="autoplayCheckbox" type="checkbox" checked="false" />
+        <span id="clipboardMessageLabel" style="float:right;"></span></div>
+      <!--<br>
+      <div>Play at current location: <input id="playAtCurrentLocation" type="checkbox" /></div>-->
     </div>
 
 		<script>
@@ -231,6 +275,7 @@
         this.startPosition = null;
         this.endPosition = null;
         this.isInitialized = false;
+        this.autoPlay = false;
 
         // form
         this.textarea = null;
@@ -238,7 +283,10 @@
         this.reloadButton = null;
         this.cursorLabel = null;
         this.settingsButton = null;
+        this.shareButton = null;
         this.settingsWindow = null;
+        this.shareWindow = null;
+        this.autoplayCheckbox = null;
         this.voicesSelect = null;
       }
     }
@@ -255,6 +303,7 @@
     var startPosition = null;
     var endPosition = null;
     var isInitialized = false;
+    var autoPlay = false;
 
     log = console.log;
 
@@ -266,6 +315,8 @@
 		reloadButton = document.getElementById('reloadButton');
 		cursorLabel = document.getElementById('cursorLabel');
 		settingsButton = document.getElementById('settingsButton');
+		shareButton = document.getElementById('shareButton');
+		autoplayCheckbox = document.getElementById('autoplayCheckbox');
 		settingsWindow = document.getElementById('settingsWindow');
 		voicesSelect = document.getElementById('voicesSelect');
 
@@ -275,7 +326,9 @@
     cursorLabel.onclick = cursorLocationChangeHandler;
     reloadButton.onclick = reloadHandler;
     settingsButton.onclick = settingsHandler;
+    shareButton.onclick = shareHandler;
     voicesSelect.onchange = voicesHandler;
+    autoplayCheckbox.onchange = autoplayHandler;
 
     function voicesHandler(event) {
       var voiceName = voicesSelect.selectedOptions[0].getAttribute('data-name');
@@ -294,9 +347,86 @@
       var display = settingsWindow.style.display;
       var visible = display!="none" && display!="";
       settingsWindow.style.display = visible ? "none" : "block";
+
       if (voicesSelect.options.length==0) {
         loadVoices();
       }
+    }
+
+    function shareHandler() {
+      var display = shareWindow.style.display;
+      var isVisible = display!="none" && display!="";
+
+      shareWindow.style.display = isVisible ? "none" : "block";
+      
+      shareURLInput.value = getShareURL();
+    }
+    
+    function autoplayHandler() {
+      autoPlay = autoplayCheckbox.checked;
+      shareURLInput.value = getShareURL();
+    }
+
+    function closeShareWindow() {
+      shareWindow.style.display = "none";
+      clipboardMessageLabel.textContent = "";
+    }
+    
+    async function copyURLHandler(event = null) {
+      var url = shareURLInput.value;
+      
+      try {
+        log(event);
+        if (event.shiftKey) {
+          window.open(url);
+          clipboardMessageLabel.textContent = "URL opened in a new window";
+          return;
+        }
+        await navigator.clipboard.writeText(url);
+        clipboardMessageLabel.textContent = "URL copied to the Clipboard";
+      }
+      catch (error) {
+        clipboardMessageLabel.textContent = "Error: URL not copied to the Clipboard.\n";
+        clipboardMessageLabel.textContent += error;
+      }
+    }
+
+    function getShareURL() {
+      var url = "";
+      var text = textarea.value;
+      var parameters = [];
+      var autoPlay = autoplayCheckbox.checked;
+      
+      url = window.location.href.split(/[?#]/)[0];
+      log("URL:" + url)
+      log("text:" + text)
+
+      if (voice!=null) {
+        parameters.push("voice=" + encodeURIComponent(voice));
+      }
+      
+      if (playbackSpeed!=1) {
+        parameters.push("speed=" + Number(playbackSpeed) >>> 1);
+      }
+
+      if (autoPlay) {
+        parameters.push("autoplay=1");
+      }
+
+      if (language!=null) {
+        parameters.push("lang=" + encodeURIComponent(language));
+      }
+      
+      if (text!=null && text!="") {
+        parameters.push("text=" + encodeURIComponent(text));
+      }
+      
+      if (parameters.length) {
+        url += "?" + parameters.join("&");
+      }
+      log("URL:" + url)
+
+      return url;
     }
 
     function reloadHandler() {
@@ -716,7 +846,7 @@
       // check for auto play. accepts true or 1 to autoplay
       reg = /[?|&]autoplay=([^&]+)/i;
       found = reg.exec(window.location.href);
-      var autoPlay = found && (found[1]=="1" || found[1]=="true");
+      autoPlay = found && (found[1]=="1" || found[1]=="true");
       
       isInitialized = true;
 

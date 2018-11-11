@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <!-- Generator: Radiate 4.7.8, HTML Exporter, http://www.velara3.com -->
+        <title>Speech Software 2000</title>
+		<!--header_start-->
+		<!--header_end-->
+		<!--scripts_start-->
+		<!--scripts_end-->
+		<!--stylesheets_start-->
+		<!--stylesheets_end-->
+		<!--styles_start-->
+		<style type="text/css">
+
+		#RichText1786  {
+			position:absolute;
+			top:20px;
+			left:20px;
+			margin-top:-0.2em;
+      font-size: 32px;
+      font-family: Trattatello, Georgia, "Garamond", Oxygen, Source Sans Pro, "Helvetica Neue",Helvetica,"Century Schoolbook",Arial,sans-serif;
+		}
+
+		#RichText1786 > :first-child {
+			margin-top:0px;
+		}
+
+		#textarea  {
+			position:absolute;
+			top:110px;
+			bottom:200px;
+			left:20px;
+			right:20px;
+			width:760px;
+      height: calc(100% - 250px);
+			display:inline-block;
+			margin-top:-0.2em;
+      padding: 60px;
+      padding-bottom: 10px;
+      margin: 0 auto;
+      border: 1px solid #EEEEEE;
+      -webkit-box-shadow: 1px 1px 1px 0px rgba(50, 50, 50, 0.75);
+      -moz-box-shadow:    1px 1px 1px 0px rgba(50, 50, 50, 0.75);
+      box-shadow:         1px 1px 1px 0px rgba(50, 50, 50, 0.10);
+      font-family: Georgia, "Garamond", Oxygen, Source Sans Pro, "Helvetica Neue",Helvetica,"Century Schoolbook",Arial,sans-serif;
+      line-height: 160%;
+      letter-spacing: .8px;
+		}
+
+    #textarea:focus  {
+      outline: none;
+      border:1px solid #EEEEEE;
+    }
+
+		#textarea > :first-child {
+			margin-top:0px;
+		}
+
+		#HGroup2925  {
+			position:absolute;
+			bottom:0px;
+			left:0px;
+			min-width:20px;
+			min-height:10px;
+			overflow:visible;
+			text-align:left;
+      background-color: white;
+      padding: 10px;
+      padding-left: 20px;
+      width: calc(100%);
+      border-top: 1px solid #dedede;
+		}
+
+  	#settingsWindow  {
+			position:absolute;
+      display: none;
+			bottom:42px;
+			right:0px;
+			min-width:20px;
+			min-height:10px;
+			overflow:visible;
+			text-align:left;
+      background-color: white;
+      padding: 20px;
+      width: calc(250px);
+      border-top: 1px solid #dedede;
+      border-left: 1px solid #dedede;
+      border-right: 1px solid #dedede;
+      border-bottom: 1px solid #dedede;
+      font-family: Source Sans Pro, Oxygen, sans-serif;
+      font-size: 80%;
+      letter-spacing: .3px;
+  	}
+
+    input[type="button"] {
+      border: .1px solid #DFDFDF;
+      padding: 2px 6px;
+      cursor: pointer;
+      margin-right:8px;
+      background-color: #F6F6F6;
+    }
+
+    input[type="button"]:active {
+      background-color:#DEDEDE;
+      font-weight: "bold";
+    }
+
+		#playButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+		}
+
+		#pauseButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+			display:none;
+		}
+
+		#resumeButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+			display:none;
+		}
+
+		#stopButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+		}
+
+		#settingsButton  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+      float: right;
+      font-size: 120%;
+      color: #CFCFCF;
+      cursor:pointer;
+		}
+    #settingsButton:active {
+      color: #AFAFAF;
+		}
+
+		#cursorLabel  {
+			position:relative;
+			display:inline-block;
+			vertical-align:middle;
+      float: right;
+      font-size: 90%;
+      color: #BDBDBD;
+      cursor:pointer;
+      padding-right: 20px;
+		}
+
+    /* latin-ext */
+    @font-face {
+      font-family: 'Oxygen';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Oxygen'), local('Oxygen-Regular'), url(https://fonts.gstatic.com/s/oxygen/v5/LC4u_jU27qpsdszDEgeU_3-_kf6ByYO6CLYdB4HQE-Y.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Oxygen';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Oxygen'), local('Oxygen-Regular'), url(https://fonts.gstatic.com/s/oxygen/v5/qBSyz106i5ud7wkBU-FrPevvDin1pK8aKteLpeZ5c0A.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Oxygen';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Oxygen Bold'), local('Oxygen-Bold'), url(https://fonts.gstatic.com/s/oxygen/v5/fSUtikcZd7PHZK0t2hzTeYX0hVgzZQUfRDuZrPvH3D8.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Oxygen';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Oxygen Bold'), local('Oxygen-Bold'), url(https://fonts.gstatic.com/s/oxygen/v5/yVHpdQrmTj9Kax1tmFSx2pBw1xU1rKptJj_0jans920.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlIa1YDtoarzwSXxTHggEXMw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 400;
+      src: local('Source Sans Pro'), local('SourceSansPro-Regular'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/ODelI1aHBYDBqgeIAH2zlJbPFduIYtoLzwST68uhz_Y.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+    /* latin-ext */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGO4s1Ux4PuImWPk5fSr6HPL3rGVtsTkPsbDajuO5ueQw.woff2) format('woff2');
+      unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+    }
+    /* latin */
+    @font-face {
+      font-family: 'Source Sans Pro';
+      font-style: normal;
+      font-weight: 700;
+      src: local('Source Sans Pro Bold'), local('SourceSansPro-Bold'), url(https://fonts.gstatic.com/s/sourcesanspro/v9/toadOcfmlt9b38dHJxOBGJkF8H8ye47wsfpWywda8og.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+    }
+
+
+		*, *:before, *:after {
+			-moz-box-sizing:border-box;
+			-webkit-box-sizing:border-box;
+			box-sizing:border-box;
+			margin:0;
+			padding:0;
+		}
+
+		html, body {
+			width:100%;
+			height:100%;
+			margin:0;
+			padding:0;
+      font-family: Georgia, Helvetica Neue, Helvetica, Verdana;
+      background-color: #F6F6F6;
+		}
+
+
+		</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<!--styles_end-->
+    </head>
+    <body>
+		<!--body_start-->
+		<div id="RichText1786">
+      <img src="assets/logo.png"/>
+		</div>
+		<textarea id="textarea" placeholder="Enter text to be spoken"></textarea>
+		<div id="HGroup2925">
+			<input id="playButton" type="button" value="Play" title="Occassionally it's necessary to reload the page. Click reload and pres play again"/>
+			<input id="rewindButton" type="button" value="Rewind"/>
+			<input id="pauseButton" type="button" value="Pause"/>
+			<input id="resumeButton" type="button" value="Resume"/>
+			<input id="stopButton" type="button" value="Stop"/>
+			<input id="reloadButton" type="button" value="Reload" title="Occasionally it's necessary to reload the page"/>
+
+      <span id="settingsButton" class="fa fa-cog"></span>
+      <span id="cursorLabel"></span>
+			<span style='display:inline-block;height:100%;width:0;vertical-align:middle;'></span>
+		</div>
+
+    <div id="settingsWindow">
+      <span>Settings are under construction. <br><br>They will be added if you send me a nice email or note.</span>
+      <span><br><br>Email is "flexcapacitor" at gmail.</span>
+    </div>
+
+		<script>
+		var utterance = new SpeechSynthesisUtterance();
+		utterance.lang = 'en-UK';
+		utterance.rate = 1;
+    var cursorOffset = 0;
+    var application = {};
+
+		textarea = document.getElementById('textarea');
+		playButton = document.getElementById('playButton');
+		reloadButton = document.getElementById('reloadButton');
+		cursorLabel = document.getElementById('cursorLabel');
+		settingsButton = document.getElementById('settingsButton');
+		settingsWindow = document.getElementById('settingsWindow');
+
+    playButton.onclick = playHandler;
+    textarea.onmouseup = selectionHandler;
+    textarea.onmousedown = selectionHandler;
+    cursorLabel.onclick = cursorHandler;
+    reloadButton.onclick = reloadHandler;
+    settingsButton.onclick = settingsHandler;
+
+    function settingsHandler() {
+        var display = settingsWindow.style.display;
+        var visible = display!="none" && display!="";
+        settingsWindow.style.display = visible ? "none" : "block";
+    }
+
+    function reloadHandler() {
+        window.location.reload(false);
+    }
+
+    function cursorHandler() {
+        var location = cursorLabel.innerHTML;
+        var position = Number(location) >>> 0;
+
+        if (!isNaN(position)) {
+          textarea.selectionStart = position;
+          textarea.selectionEnd = position;
+          textarea.focus();
+        }
+    }
+
+    function playHandler() {
+		    var text = textarea.value;
+
+        cursorOffset = 0;
+
+		    // create the utterance on play in case user called stop
+		    // reference https://stackoverflow.com/a/47276578/441016
+		    utterance = new SpeechSynthesisUtterance();
+		    utterance.onboundary = onboundaryHandler;
+		    utterance.onend = onEndHandler;
+
+        if (text=="") {
+          text = "Please enter some text"
+        }
+        else {
+          if (document.selection) {
+            // this block not tested
+            var range = document.selection.createRange();
+          }
+          else if (textarea.selectionStart!=null) {
+            var startPos = textarea.selectionStart;
+            var endPos = textarea.selectionEnd;
+            var lastWord = isLastWord(text, startPos);
+
+            // if at end start over
+            if (startPos==text.length) {
+              textarea.selectionStart = 0;
+              textarea.selectionEnd = 0;
+            }
+            else {
+              text = text.substring(startPos, text.length);
+              cursorOffset = startPos;
+            }
+          }
+        }
+
+		    utterance.text = text;
+		    speechSynthesis.speak(utterance);
+		};
+
+
+    function selectionHandler(event) {
+        var text = textarea.value;
+
+        if (document.selection) {
+            // this block not tested
+            var range = document.selection.createRange();
+        }
+        else if (textarea.selectionStart) {
+            var startPos = textarea.selectionStart;
+            var endPos = textarea.selectionEnd;
+
+            if (startPos==endPos) {
+                setCursorLabel(endPos);
+            }
+            else {
+                setCursorLabel(startPos + "-" + endPos);
+            }
+        }
+
+		};
+
+		document.getElementById('pauseButton').onclick = function(){
+		    if (speechSynthesis) {
+		      speechSynthesis.pause();
+		    }
+		};
+
+		document.getElementById('rewindButton').onclick = function() {
+
+		    if (speechSynthesis) {
+          resetPosition();
+		    }
+		};
+
+		document.getElementById('resumeButton').onclick = function() {
+		    if (speechSynthesis) {
+		      speechSynthesis.resume();
+		    }
+		};
+
+		document.getElementById('stopButton').onclick = function() {
+		    if (speechSynthesis) {
+		      speechSynthesis.cancel();
+          textarea.focus();
+		    }
+		};
+
+    function onEndHandler(event) {
+      var currentPosition = event.charIndex + cursorOffset;
+      var text = textarea.value;
+      var textLength = text.length;
+      var lastWord = isLastWord(text, currentPosition);
+      var minTextPosition = textLength - lastWord.length-1;
+
+      // calling speechSynthesis.stop() triggers an end event
+      // set end position only at playback end
+      if (currentPosition>=minTextPosition) {
+          setEndPosition();
+      }
+    }
+
+		function onboundaryHandler(event) {
+      var value = textarea.value;
+      var index = event.charIndex + cursorOffset;
+      var word = getWordAt(value, index);
+      var anchorPosition = getWordStart(value, index);
+      var activePosition = anchorPosition + word.length;
+
+      textarea.focus();
+
+      if (textarea.setSelectionRange) {
+          textarea.setSelectionRange(anchorPosition, activePosition);
+      }
+      else {
+          // block not tested
+          var range = textarea.createTextRange();
+          range.collapse(true);
+          range.moveEnd('character', activePosition);
+          range.moveStart('character', anchorPosition);
+          range.select();
+      }
+
+      setCursorLabel(index);
+		};
+
+		// Get the word of a string given the string and index
+		function getWordAt(str, pos) {
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
+
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/),
+          right = str.slice(pos).search(/\s/);
+
+      // The last word in the string is a special case.
+      if (right < 0) {
+          str =  str.slice(left).match(/\w+/gi)[0];
+          return str;
+      }
+
+      // Return the word, using the located bounds to extract it from the string.
+      str = str.slice(left, right + pos).match(/\w+/gi)[0];
+      return str;
+		}
+
+		// Get the position of the beginning of the word
+		function getWordStart(str, pos) {
+      str = String(str);
+      pos = Number(pos) >>> 0;
+
+      // Search for the word's beginning
+      var start = str.slice(0, pos + 1).search(/\S+$/);
+      return start;
+		}
+
+		// Get the last word of a string given the string and index
+		function isLastWord(str, pos) {
+      // Perform type conversions.
+      str = String(str);
+      pos = Number(pos) >>> 0;
+
+      // Search for the word's beginning and end.
+      var left = str.slice(0, pos + 1).search(/\S+$/),
+          right = str.slice(pos).search(/\s/);
+
+      // The last word in the string is a special case.
+      if (right < 0) {
+          return str.slice(left);
+      }
+
+      // Return the word, using the located bounds to extract it from the string.
+      return str.slice(left, right + pos);
+		}
+
+    function resetPosition() {
+		    var textarea = document.getElementById('textarea');
+
+        if (textarea.selectionStart) {
+            textarea.selectionStart = 0;
+            textarea.selectionEnd = 0;
+            setCursorLabel("0");
+            textarea.focus();
+        }
+    }
+
+    function setEndPosition() {
+        var value = textarea.value;
+        var endPosition = value.length;
+
+        if (textarea.selectionStart!=null) {
+            textarea.selectionStart = endPosition;
+            textarea.selectionEnd = endPosition;
+            setCursorLabel(endPosition);
+        }
+    }
+
+    function setCursorLabel(value) {
+        cursorLabel.innerHTML = value;
+    }
+		</script>
+		<!--body_end-->
+    </body>
+</html>
