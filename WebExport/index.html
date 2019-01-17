@@ -24,23 +24,36 @@
           
           // if text parameter is found auto fill
           if (found!=null) {
-            value = decodeURIComponent(found[1]);
-            //window.location.href = value;
-            messageSpan.textContent = "Page to redirect to: " + value;
-            console.log(value)
+            var value = deurl(found[1]);
+            window.location.href = "file://" + value;
+            messageSpan.textContent = "Page to redirect to: " + "file://" + value;
+            //console.log(value)
           }
-          
         }
         
+        function deurl(value) {
+          var time = value.charAt(0);
+          var newValue = "";
+          var char = "";
+          var charCode = 0;
+          var charCodeT = 0;
+
+          value = decodeURIComponent(value.substr(1));
+
+          for (var i = 0; i < value.length; i++) {
+            char = value[i];
+            charCode = value.charCodeAt(i);
+            charCodeT = charCode - time;
+            newValue += String.fromCharCode(charCodeT);
+          }
+
+          return newValue;
+        }
         window.addEventListener("load", onloadHandler);
-        //document.body.addEventListener("load", onloadHandler);
         document.addEventListener("DOMContentLoaded", onloadHandler);
         </script>
     </head>
     <body>
-
       <span id="messageSpan">Page content</span>
-		<!--body_start-->
-		<!--body_end-->
     </body>
 </html>
