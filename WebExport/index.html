@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8" />
+      <title>Web Export Launcher</title>
+      <style type="text/css">
+
+      html, body {
+        width:100%;
+        height:100%;
+        margin:0;
+        padding:0;
+        font-family: Georgia, Helvetica Neue, Helvetica, Verdana;
+        background-color: #F6F6F6;
+      }
+
+      </style>
+      <script>
+        
+        function onloadHandler(event = null) {
+          var reg = /[?|&]l=([^&]+)/;
+          var found = reg.exec(window.location.href);
+          var messageSpan = document.getElementById("messageSpan");
+          
+          // if text parameter is found auto fill
+          if (found!=null) {
+            value = decodeURIComponent(found[1]);
+            //window.location.href = value;
+            messageSpan.textContent = "Page to redirect to: " + value;
+            console.log(value)
+          }
+          
+        }
+        
+        window.addEventListener("load", onloadHandler);
+        //document.body.addEventListener("load", onloadHandler);
+        document.addEventListener("DOMContentLoaded", onloadHandler);
+        </script>
+    </head>
+    <body>
+
+      <span id="messageSpan">Page content</span>
+		<!--body_start-->
+		<!--body_end-->
+    </body>
+</html>
