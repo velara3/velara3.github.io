@@ -33,10 +33,10 @@
             //  window.location.href = protocol + value;
             //})
 
-            urlLink.addEventListener("click", function() {
+            clipboardLink.addEventListener("click", function() {
 
               if (navigator.clipboard) {
-                navigator.clipboard.writeText(rlLink.getAttribute("href"))
+                navigator.clipboard.writeText(urlLink.getAttribute("href"))
               }
             })
 
