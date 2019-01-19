@@ -25,9 +25,22 @@
           // if text parameter is found auto fill
           if (found!=null) {
             var value = deurl(found[1]);
-            window.location.href = "file://" + value;
-            messageSpan.textContent = "Page to redirect to: " + "file://" + value;
-            //console.log(value)
+            var isMac = navigator.platform.toLowerCase().indexOf("mac")!=-1;
+            var protocol = "";
+
+            if (isMac==false && value.indexOf("/")==0) {
+              value = value.substr(1);
+            }
+
+            var resolver = function() {
+              messageSpan.textContent = "Page to redirect to: " + protocol + value + " in " + time;
+              if (time <1) {
+                clearInterval(resolver.interval);
+                window.location.href = protocol + value;
+              }
+            }
+
+            resolver.interval = setInterval(resolver, 1000);
           }
         }
         
@@ -49,8 +62,10 @@
 
           return newValue;
         }
+
         window.addEventListener("load", onloadHandler);
         document.addEventListener("DOMContentLoaded", onloadHandler);
+        var time = 5;
         </script>
     </head>
     <body>
