@@ -10,6 +10,7 @@
           var found = reg.exec(window.location.href);
           var messageSpan = document.getElementById("url");
           var urlLink = document.getElementById("urlLink");
+          var clipboardLink = document.getElementById("clipboardLink");
           
           // if text parameter is found auto fill
           if (found!=null) {
@@ -26,11 +27,18 @@
               value = value.substr(1);
             }
 
-            urlLink.href = protocol + value;
+            urlLink.setAttribute("href", protocol + value);
 
             //messageSpan.addEventListener("click", function() {
             //  window.location.href = protocol + value;
             //})
+
+            urlLink.addEventListener("click", function() {
+
+              if (navigator.clipboard) {
+                navigator.clipboard.writeText(rlLink.getAttribute("href"))
+              }
+            })
 
             var resolver = function() {
               currentTime = new Date().getTime();
@@ -257,6 +265,7 @@
         font-weight: normal;
         font-size: 13px;
         color: rgba(77,79,92,1);
+        cursor: pointer;
       }
       #Clipboard {
         opacity: 1;
