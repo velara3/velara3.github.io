@@ -17,6 +17,10 @@
             var protocol = "";
             var folder = "";
 
+            if (isMac) {
+              protocol = "file://";
+            }
+
             if (isMac==false && value.indexOf("/")==0) {
               value = value.substr(1);
             }
