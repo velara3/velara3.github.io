@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <meta charset="utf-8" />
-      <title>Web Export Launcher</title>
-      <style type="text/css">
-
-      html, body {
-        width:100%;
-        height:100%;
-        margin:0;
-        padding:0;
-        font-family: Georgia, Helvetica Neue, Helvetica, Verdana;
-        background-color: #F6F6F6;
-      }
-
-      </style>
+  <head>
+    <meta charset="utf-8" />
+    <title>Web Export Launcher</title>
       <script>
         
         function onloadHandler(event = null) {
           var reg = /[?|&]l=([^&]+)/;
           var found = reg.exec(window.location.href);
-          var messageSpan = document.getElementById("messageSpan");
+          var messageSpan = document.getElementById("url");
           
           // if text parameter is found auto fill
           if (found!=null) {
             var value = deurl(found[1]);
             var isMac = navigator.platform.toLowerCase().indexOf("mac")!=-1;
             var protocol = "";
+            var folder = "";
 
             if (isMac==false && value.indexOf("/")==0) {
               value = value.substr(1);
             }
 
+            messageSpan.addEventListener("click", function() {
+              window.location.href = protocol + value;
+            })
+
             var resolver = function() {
-              messageSpan.textContent = "Page to redirect to: " + protocol + value + " in " + time;
-              if (time <1) {
+              currentTime = new Date().getTime();
+              var elapsedTime = currentTime-startTime;
+              var timeLeft = parseInt(duration - elapsedTime/1000);
+              messageSpan.innerText = protocol + value + " in " + timeLeft;
+              messageSpan.style.setProperty("title", protocol + value );
+
+              if (timeLeft<1) {
                 clearInterval(resolver.interval);
-                window.location.href = protocol + value;
+                try {
+                  window.location.href = protocol + value;
+                }
+                catch(error) {
+                  
+                }
               }
             }
 
-            resolver.interval = setInterval(resolver, 1000);
+            resolver.interval = setInterval(resolver, 100);
           }
         }
         
@@ -65,10 +68,288 @@
 
         window.addEventListener("load", onloadHandler);
         document.addEventListener("DOMContentLoaded", onloadHandler);
-        var time = 5;
-        </script>
-    </head>
-    <body>
-      <span id="messageSpan">Page content</span>
+        var duration = 10;
+        var startTime = new Date().getTime();
+    </script>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #MainContainer {
+        position: absolute;
+        box-sizing: border-box;
+        border: 1px solid #A1A1A1;
+        background: #E5E5E5;
+        width: 100%;
+        height: 100%;
+        font-family: sans-serif;
+        background-color: rgba(245,245,245,1);
+        overflow: hidden;
+        opacity: 1;
+        --web-refresh-for-changes: true;
+        --web-artboard-name: "Web 1920 – 1";
+      }
+      #MainPanel {
+        opacity: 1;
+        position: absolute;
+        width: 450.511px;
+        height: 170.612px;
+        left: 50%;
+        transform: translateX(-50%) translateY(-50%);
+        top: 50%;
+        overflow: visible;
+      }
+      #BG {
+        opacity: 1;
+        filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+        fill: rgba(255,255,255,1);
+      }
+      .BG {
+        position: absolute;
+        overflow: visible;
+        width: 468.51116943359375px;
+        height: 188.61203002929688px;
+        left: 0px;
+        top: 0px;
+      }
+      #content {
+        opacity: 1;
+        position: absolute;
+        width: 410.51px;
+        height: 78.673px;
+        left: 20px;
+        top: 66.16px;
+        overflow: visible;
+      }
+      #group {
+        opacity: 1;
+        position: absolute;
+        width: 410.51px;
+        height: 15px;
+        left: 0px;
+        top: 0px;
+        overflow: visible;
+      }
+      #url {
+        opacity: 0.5;
+        position: absolute;
+        right: 0px;
+        top: 1px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: -3.5px;
+        text-align: right;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        color: rgba(77,79,92,1);
+        text-overflow: ellipsis;
+        width: 70%;
+        cursor: pointer;
+      }
+      #URL {
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 31px;
+        white-space: nowrap;
+        line-height: 25px;
+        margin-top: -5px;
+        text-align: left;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        color: rgba(67,66,93,1);
+      }
+      #group2 {
+        opacity: 1;
+        position: absolute;
+        width: 410.51px;
+        height: 15px;
+        left: 0px;
+        top: 31.003px;
+        overflow: visible;
+      }
+      #folder {
+        opacity: 0.5;
+        position: absolute;
+        left: 377.51px;
+        top: 1px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 34px;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: -3.5px;
+        text-align: right;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        color: rgba(77,79,92,1);
+      }
+      #Folder {
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 44px;
+        white-space: nowrap;
+        line-height: 25px;
+        margin-top: -5px;
+        text-align: left;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        color: rgba(67,66,93,1);
+      }
+      #group1 {
+        opacity: 1;
+        position: absolute;
+        width: 410.51px;
+        height: 15px;
+        left: 0px;
+        top: 63.673px;
+        overflow: visible;
+      }
+      #clipboard {
+        opacity: 0.5;
+        position: absolute;
+        left: 357.51px;
+        top: 1px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 54px;
+        white-space: nowrap;
+        line-height: 20px;
+        margin-top: -3.5px;
+        text-align: right;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 13px;
+        color: rgba(77,79,92,1);
+      }
+      #Clipboard {
+        opacity: 1;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 65px;
+        white-space: nowrap;
+        line-height: 25px;
+        margin-top: -5px;
+        text-align: left;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 15px;
+        color: rgba(67,66,93,1);
+      }
+      #URL_Resolver {
+        opacity: 1;
+        position: absolute;
+        left: 20px;
+        top: 19px;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+        width: 112px;
+        white-space: nowrap;
+        text-align: left;
+        font-family: Source Sans Pro, sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        color: rgba(102,104,120,1);
+      }
+      #Line_1 {
+        opacity: 1;
+        fill: transparent;
+        stroke: rgb(214, 214, 214);
+        stroke-width: 1px;
+        stroke-linejoin: miter;
+        stroke-linecap: butt;
+        stroke-miterlimit: 4;
+        shape-rendering: auto;
+      }
+      .Line_1 {
+        overflow: visible;
+        position: absolute;
+        top: 45.5px;
+        left: 20.5px;
+        width: 410px;
+        height: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="MainContainer">
+      <div id="MainPanel">
+        <svg class="BG">
+          <rect id="BG" rx="0" ry="0" x="0" y="0" width="450.51116943359375" height="170.61203002929688">
+          </rect>
+        </svg>
+        <div id="content">
+          <div id="group">
+            <div id="url">
+              <span>url</span>
+            </div>
+            <div id="URL">
+              <span>URL</span>
+            </div>
+          </div>
+          <div id="group2">
+            <div id="folder">
+              <span>folder</span>
+            </div>
+            <div id="Folder">
+              <span>Folder</span>
+            </div>
+          </div>
+          <div id="group1">
+            <div id="clipboard">
+              <span>clipboard</span>
+            </div>
+            <div id="Clipboard">
+              <span>Clipboard</span>
+            </div>
+          </div>
+        </div>
+        <div id="URL_Resolver">
+          <span>URL Resolver</span>
+        </div>
+        <svg class="Line_1">
+          <path id="Line_1" d="M 0 0 L 410 0">
+          </path>
+        </svg>
+      </div>
+    </div>
     </body>
 </html>
