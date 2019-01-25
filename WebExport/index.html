@@ -28,6 +28,7 @@
             }
 
             urlLink.setAttribute("href", protocol + value);
+            urlLink.setAttribute("title", protocol + value);
 
             //messageSpan.addEventListener("click", function() {
             //  window.location.href = protocol + value;
@@ -36,7 +37,12 @@
             clipboardLink.addEventListener("click", function() {
 
               if (navigator.clipboard) {
-                navigator.clipboard.writeText(urlLink.getAttribute("href"))
+                try {
+                  navigator.clipboard.writeText(urlLink.getAttribute("href"))
+                }
+                catch(error) {
+
+                }
               }
             })
 
