@@ -1,0 +1,268 @@
+<html><head><meta charset="utf-8"/>
+    <style>
+    * {font-size:10px;font-family: monospace; white-space:pre-wrap; -moz-tab-size:3; -o-tab-size:3; tab-size:3; letter-spacing: .1rem; line-height:1.2rem}
+    ins {background:#e6ffe6;text-decoration:none;}
+    del {background:#ffe6e6;}
+    .style {font-style:italic;outline:.5px dotted rgba(0,0,0,.35)}
+    .style:before {content:'\25BA';display:block;position:absolute;margin-top:-1.2rem; margin-left:-1rem;}
+    .style:after {content:'\25C4';display:block;position:absolute;margin-top:-1.2rem;margin-left:-1rem;right:1rem;}
+    .title {background: rgba(0,0,0,.1); display: block; padding: 1rem; margin-bottom: 2em; margin-top: 2em}
+    body {margin:2rem;margin-top:2rem;outline:1px solid rgba(0,0,0,.1)}
+    </style>
+    <script>
+    var current = -1;
+    var nodes = null;
+    var lastElement = null;
+
+    function scrollIntoView(element, index) {
+      element.scrollIntoView({behavior:'smooth', block:'center'});
+      if (lastElement) {
+        lastElement.classList.remove("style");
+      }
+      lastElement = element;
+      if (index!=0) {
+        lastElement.classList.add("style");
+      }
+    }
+    
+    window.addEventListener("keyup", function (e) {
+      if (nodes==null) {
+        var editor = document.getElementById("editor");
+        nodes = [];
+        editor.childNodes.forEach((item,i) => {
+          var name = item.nodeName.toLowerCase();
+          if (name=="ins" || name=="del" || i==0) {
+            nodes.push(item);
+          }
+        })
+      }
+
+      var insCount = nodes.length;
+
+      if (e.keyCode==13 && insCount) {
+        if (e.shiftKey) {
+          if (current-1<0) {
+            current = insCount-1;
+          }
+          else {
+            current = current-1;
+          }
+        }
+        else {
+          current = current+1>=insCount ? 0 : current+1;
+        }
+        element = nodes[current];
+        scrollIntoView(element, current);
+      }
+    });
+    </script>
+    <body><div id="editor"><span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/&gt;
+&lt;</span><del>title&gt;Id and a style declaration&lt;/title&gt;
+&lt;style id="applicationStylesheet" type="text/css"&gt;
+/* ID selector for </del><span>m</span><del>yR</del><span>e</span><del>c</del><span>ta</span><del>ngle</del><span> </span><del>cha</del><span>n</span><del>ging the fill color */
+
+#myRect</del><span>a</span><del>ngle {
+    fill: lightblue;
+}
+
+/* Changing the fill color on hover event */
+
+#</del><span>m</span><del>yR</del><span>e</span><del>ctangle:ho</del><ins>="</ins><span>v</span><del>er {
+    f</del><span>i</span><del>ll: lightgr</del><span>e</span><del>en;
+}
+
+/* Token to include the styles for the rest of </del><ins>w</ins><span>p</span><del>age */
+	b</del><span>o</span><del>dy {
+		ma</del><span>r</span><del>gin: 0;
+		padding: 0;
+	}
+	:roo</del><span>t</span><del> {
+		--web-view-ids:</del><ins>"</ins><span> </span><del>Id_and_a_style_de</del><span>c</span><del>larati</del><span>on</span><del>;
+	}
+	[id=Id_and_a_s</del><span>t</span><del>yle_d</del><span>e</span><del>claratio</del><span>n</span><del>] * {
+		margin: 0;
+		padding: 0;
+	}
+	#Id_and_a_s</del><span>t</span><del>yle_declaration {
+		position: absolute;
+		box-sizing: border-box;
+		background: #E5E5E5;
+		</del><ins>="</ins><span>width</span><del>: 782px;
+		height: 268px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		margin: 0;
+		pad</del><ins>=</ins><span>d</span><del>ing: 0;
+		--w</del><span>e</span><del>b-</del><span>vi</span><del>ew-name: Id and a style de</del><span>c</span><del>laration;
+		--w</del><span>e</span><del>b</del><span>-</span><del>view-id: Id_and_a_style_declaration;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	.myRectangle {
+		position: absolute;
+		overflow: visible;
+		</del><span>width</span><del>:</del><ins>,</ins><span> </span><del>56px;
+		he</del><span>i</span><del>ght: 56px;
+		left: 20px;
+		top: 91px;
+	}
+	#Id_a</del><span>n</span><del>d_a_style_declarat</del><span>i</span><del>on_A1_Tex</del><span>t</span><del>_1 {
+		pos</del><span>i</span><del>tion: </del><span>a</span><del>bso</del><span>l</span><del>ute;
+		left: 58px;
+		top: 22px;
+		overflow: visible;
+		width: 238px;
+		white</del><span>-s</span><del>pa</del><span>c</span><del>e: nowr</del><span>a</span><del>p;
+		</del><span>l</span><del>in</del><span>e</span><del>-height: 56px;
+		margin-top: -</del><ins>=</ins><span>1</span><del>8px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0</del><span>.0</span><del>3px;
+	}
+	#Line_85 {
+		fill: transparent;
+	}
+	.Line_85 {
+		overflow: visible;</del><ins>"&gt;</ins><span>
+</span><del>		posi</del><ins>&lt;</ins><span>ti</span><del>on: absolu</del><span>t</span><del>e;
+		top: 53.74px;
+		</del><span>le</span><del>ft: 22.231px;
+		wi</del><ins>&gt;I</ins><span>d</span><del>th:</del><span> </span><del>722.269px;
+		height: 1px;
+	}
+	#The_element_below_h</del><span>a</span><del>s_a_id_sel {
+		positio</del><span>n</span><del>: absolute;
+		left: 575px;
+		top: 34px;
+		overflow: visible;
+		wi</del><span>d</span><del>th:</del><span> </span><del>170px;
+		white-sp</del><span>a</span><del>ce:</del><span> </span><del>nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-</del><span>style</span><del>:</del><span> </span><del>normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#A_style_</del><span>declaration</span><del>_has_been_d {
+		position: absolute;
+		left: 20px;
+		</del><ins>&lt;/</ins><span>t</span><del>op: 184px;
+		overflow: v</del><span>i</span><del>sible;
+		wid</del><span>t</span><del>h: 507px;
+		white-space: nowrap;
+		text-align: </del><span>le</span><del>ft;</del><ins>&gt;</ins><span>
+</span><del>		font-family: Helvetica Neue, sans-serif;
+		font-</del><ins>&lt;</ins><span>style</span><del>:</del><span> </span><del>normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	.icon2 {
+		position: absolute;
+		overflow: visible;
+		w</del><span>id</span><del>th: 24.222px;
+		height: 24.222px;
+		left: 22.526px;
+		top: 21.344px;
+	}
+	#https___developer_mozill</del><ins>="</ins><span>a</span><del>_org_ {
+		</del><span>p</span><del>osition: absolute;
+		left: 20.383</del><span>p</span><del>x;
+		top: 212.853px;
+		overf</del><span>l</span><del>ow: v</del><span>i</span><del>sible;
+		width: 330px;
+		white-spa</del><span>c</span><del>e: nowr</del><span>a</span><del>p;
+		</del><span>t</span><del>ext-al</del><span>i</span><del>gn: left;
+		f</del><span>on</span><ins>S</ins><span>t</span><del>-famil</del><span>y</span><del>: He</del><span>l</span><del>v</del><span>e</span><del>tica Neue, </del><span>s</span><del>ans-serif;
+		font-style: normal;
+		font-weig</del><span>h</span><del>t: normal;
+		font-siz</del><span>e</span><del>: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#https___d</del><span>e</span><del>veloper_mozilla_org__A1_Tex</del><span>t</span><del>_5 {
+		position:</del><ins>"</ins><span> </span><del>absolu</del><span>t</span><del>e;
+		left: 20</del><ins>y</ins><span>p</span><del>x;
+		top: 239px;
+		ov</del><span>e</span><del>rflow: visible;
+		width: 285px;
+		white-space: nowrap;
+		</del><ins>="</ins><span>text</span><del>-align: left;
+		font-family: Helveti</del><ins>/</ins><span>c</span><del>a Neue, </del><span>s</span><del>an</del><span>s</span><del>-serif;
+		font-style: normal;</del><ins>"&gt;</ins><span>
+</span><del>		font-weight: norma</del><span>l</span><del>;
+		font-size: 10px;
+		co</del><ins>kj</ins><span>l</span><del>or: rgba(112,112,112,1);
+	}</del><ins>kj</ins><span>
+&lt;/style&gt;
+&lt;script id="applicationScript" type="text/javascript" src="Id_and_a_style_declaration.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="Id_and_a_style_declaration"&gt;
+	&lt;</span><del>svg class="myRectangle"&gt;
+		&lt;rect fill="rgba(247,247,247,1)" stroke="rgba(112,112,112,1)" stroke-wi</del><span>d</span><del>th="1px" stroke-l</del><span>i</span><del>nejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto"</del><ins>v</ins><span> id="myRectangle"</span><del> rx="0" ry="0" x="0" y="0" width="56" height="56"</del><span>&gt;
+</span><del>	</del><span>	&lt;/</span><del>rect&gt;
+	&lt;/s</del><ins>di</ins><span>v</span><del>g</del><span>&gt;
+	&lt;div id="Id_and_a_style_declaration_</span><del>A1_Text_1</del><ins>k</ins><span>"&gt;
+		&lt;span&gt;Id and a style declaration&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;svg class="Line_85"</span><ins> viewBox="0 0 722.269 1"</ins><span>&gt;
+		&lt;path </span><ins>fill="transparent" </ins><span>stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 722.2686767578125 0"&gt;
+		&lt;/path&gt;
+	&lt;/svg&gt;
+	&lt;div id="The_element_below_has_a_id_sel"&gt;
+		&lt;span&gt;The element below has a id selector&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="A_style_declaration_has_been_d"&gt;
+		&lt;span&gt;A style declaration has been declared in the stylesheet that uses an id selector to change the color of the element</span><ins> to blue</ins><span>&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;</span><del>s</del><ins>di</ins><span>v</span><del>g</del><span> </span><del>class</del><ins>id</ins><span>="</span><del>icon2</del><ins>STYLES_BLOCK</ins><span>"&gt;
+		&lt;</span><del>pat</del><ins>s</ins><span>t</span><ins>yl</ins><span>e</span><del>rn</del><ins>&gt;
+/* ID</ins><span> </span><ins>s</ins><span>ele</span><del>men</del><ins>c</ins><span>t</span><del>Id="ic</del><span>o</span><del>n2_A1_</del><ins>r for my</ins><span>Rectangle</span><del>_3"</del><span> </span><del>id="i</del><span>c</span><del>on2_A1_Rect</del><ins>h</ins><span>ang</span><del>le_3_patter</del><ins>i</ins><span>n</span><del>"</del><ins>g</ins><span> </span><del>x="0" y="0" wid</del><span>th</span><del>="100%" h</del><span>e</span><del>ight="100%"&gt;
+			&lt;im</del><ins> b</ins><span>a</span><ins>ck</ins><span>g</span><del>e x="0" y="0" wi</del><ins>roun</ins><span>d</span><del>th="100%"</del><span> </span><del>height="100%" href="i</del><span>co</span><del>n2_A1_</del><ins>lor */
+
+#my</ins><span>Rectangle</span><del>_3_p</del><ins> {
+    b</ins><span>a</span><del>tte</del><ins>ckg</ins><span>r</span><del>n.p</del><ins>ou</ins><span>n</span><del>g"</del><ins>d:</ins><span> </span><del>x</del><span>li</span><del>nk:</del><ins>g</ins><span>h</span><del>ref="icon2_A1_Rec</del><span>t</span><del>ang</del><ins>b</ins><span>l</span><ins>u</ins><span>e</span><del>_3_p</del><ins>;
+}
+
+/* Ch</ins><span>a</span><del>ttern.p</del><span>ng</span><del>"&gt;&lt;/</del><span>i</span><del>ma</del><ins>n</ins><span>g</span><del>e&gt;
+		&lt;/pa</del><ins> </ins><span>t</span><del>tern&gt;
+		&lt;r</del><ins>h</ins><span>e</span><del>ct</del><span> fill</span><del>="u</del><ins> colo</ins><span>r</span><del>l(#ic</del><ins> </ins><span>on</span><del>2_A1_</del><ins> hover event */
+
+#my</ins><span>Rectangle</span><del>_3_patt</del><ins>:hov</ins><span>er</span><del>n)"</del><span> </span><del>id="icon2"</del><ins>{
+</ins><span> </span><del>rx="0"</del><span> </span><del>ry="0"</del><span> </span><del>x="0"</del><span> </span><del>y="0" wi</del><ins>backgroun</ins><span>d</span><del>th="24.222"</del><ins>:</ins><span> </span><del>he</del><ins>l</ins><span>ight</span><del>="24.222"&gt;</del><ins>green;
+}
+</ins><span>
+</span><del>		</del><span>&lt;/</span><del>rec</del><ins>s</ins><span>t</span><ins>yle</ins><span>&gt;</span><ins>
+</ins><span>
+	&lt;/</span><del>s</del><ins>di</ins><span>v</span><del>g</del><span>&gt;
+	&lt;a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id"&gt;
+	&lt;div id="https___developer_mozilla_org_"&gt;
+		&lt;span&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;/a&gt;
+	&lt;a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id"&gt;
+	&lt;div id="https___developer_mozilla_org__</span><del>A1_Text_5</del><ins>q</ins><span>"&gt;
+		&lt;span&gt;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;/a</span><ins>&gt;
+	&lt;div id="Icon"&gt;
+		&lt;div id="Rectangle_177_t"&gt;
+		&lt;/div&gt;
+		&lt;div id="W"&gt;
+			&lt;span&gt;W&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div</ins><span>&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></div></body>
+    </html>

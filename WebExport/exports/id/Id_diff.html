@@ -1,0 +1,277 @@
+<html><head><meta charset="utf-8"/>
+    <style>
+    * {font-size:10px;font-family: monospace; white-space:pre-wrap; -moz-tab-size:3; -o-tab-size:3; tab-size:3; letter-spacing: .1rem; line-height:1.2rem}
+    ins {background:#e6ffe6;text-decoration:none;}
+    del {background:#ffe6e6;}
+    .style {font-style:italic;outline:.5px dotted rgba(0,0,0,.35)}
+    .style:before {content:'\25BA';display:block;position:absolute;margin-top:-1.2rem; margin-left:-1rem;}
+    .style:after {content:'\25C4';display:block;position:absolute;margin-top:-1.2rem;margin-left:-1rem;right:1rem;}
+    .title {background: rgba(0,0,0,.1); display: block; padding: 1rem; margin-bottom: 2em; margin-top: 2em}
+    body {margin:2rem;margin-top:2rem;outline:1px solid rgba(0,0,0,.1)}
+    </style>
+    <script>
+    var current = -1;
+    var nodes = null;
+    var lastElement = null;
+
+    function scrollIntoView(element, index) {
+      element.scrollIntoView({behavior:'smooth', block:'center'});
+      if (lastElement) {
+        lastElement.classList.remove("style");
+      }
+      lastElement = element;
+      if (index!=0) {
+        lastElement.classList.add("style");
+      }
+    }
+    
+    window.addEventListener("keyup", function (e) {
+      if (nodes==null) {
+        var editor = document.getElementById("editor");
+        nodes = [];
+        editor.childNodes.forEach((item,i) => {
+          var name = item.nodeName.toLowerCase();
+          if (name=="ins" || name=="del" || i==0) {
+            nodes.push(item);
+          }
+        })
+      }
+
+      var insCount = nodes.length;
+
+      if (e.keyCode==13 && insCount) {
+        if (e.shiftKey) {
+          if (current-1<0) {
+            current = insCount-1;
+          }
+          else {
+            current = current-1;
+          }
+        }
+        else {
+          current = current+1>=insCount ? 0 : current+1;
+        }
+        element = nodes[current];
+        scrollIntoView(element, current);
+      }
+    });
+    </script>
+    <body><div id="editor"><span>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset="utf-8"/&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"/&gt;
+&lt;</span><ins>meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+&lt;</ins><span>title&gt;Id&lt;/title&gt;
+&lt;style id="applicationStylesheet" type="text/css"&gt;
+	</span><del>b</del><ins>.mediaViewInf</ins><span>o</span><del>dy</del><span> {
+		</span><del>marg</del><ins>--web-v</ins><span>i</span><ins>ew-</ins><span>n</span><ins>ame</ins><span>: </span><del>0</del><ins>Id</ins><span>;
+		</span><del>pa</del><ins>--web-view-i</ins><span>d</span><ins>: I</ins><span>d</span><ins>;
+		--web-enable-deep-link</ins><span>ing: </span><del>0</del><ins>true;
+		--web-page-font: sans-serif</ins><span>;
+	}
+	:root {
+		--web-view-ids: Id;
+	}
+	</span><del>[id=Id] </del><span>* {
+		margin: 0;
+		padding: 0;
+	</span><ins>	box-sizing: border-box;
+		border: none;
+	</ins><span>}
+	#Id {
+		position: absolute;
+		b</span><del>ox-sizing: border-box;
+		b</del><span>ackground: #E5E5E5;
+		width: 782px;
+		height: 268px;
+		font-family: sans-serif;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		</span><del>margin: 0;
+		padding: 0;
+		</del><span>--web-view-name: Id;
+		--web-view-id: Id;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	</span><del>.</del><ins>#</ins><span>myRectangle {
+		position: absolute;
+		</span><del>overflow: visible;
+		</del><span>width: 56px;
+		height: 56px;
+		left: 20px;
+		top: 91px;
+	</span><ins>	background-color: rgba(247,247,247,1);
+		border:  1px solid rgba(112,112,112,1);
+		overflow: visible;
+	</ins><span>}
+	#Id_</span><del>A0_Text_</del><span>1 {
+		position: absolute;
+		left: 5</span><del>8</del><ins>0</ins><span>px;
+		top: 22px;
+		overflow: visible;
+		width: 19px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px</span><del>;
+	}
+	#Line_85 {
+		fill: transparent</del><span>;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		</span><ins>wid</ins><span>t</span><del>o</del><ins>h: 722.269</ins><span>p</span><ins>x;
+		height</ins><span>: </span><del>53.74</del><ins>1</ins><span>px;
+		left: 22.231px;
+		</span><del>wid</del><span>t</span><del>h</del><ins>op</ins><span>: </span><del>722</del><ins>53</ins><span>.</span><del>269</del><ins>74</ins><span>px;
+		</span><del>heigh</del><span>t</span><ins>ransform</ins><span>: </span><ins>matrix(</ins><span>1</span><del>px</del><ins>,0,0,1,0,0)</ins><span>;
+	}
+	#The_elements_below_have_an_add {
+		position: absolute;
+		left: 481px;
+		top: 34px;
+		overflow: visible;
+		width: 264px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#If_you_look_in_the_code_you_wi {
+		position: absolute;
+		left: 20px;
+		top: 184px;
+		overflow: visible;
+		width: 418px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	</span><del>.</del><ins>#https___developer_moz</ins><span>i</span><del>c</del><ins>lla_</ins><span>o</span><del>n2</del><ins>rg_</ins><span> {
+		position: absolute;
+		</span><ins>left: 20px;
+		top: 212.853px;
+		</ins><span>overflow: visible;
+		width: </span><del>24.222</del><ins>330</ins><span>px;
+		</span><ins>w</ins><span>h</span><ins>it</ins><span>e</span><ins>-space: nowrap;
+		text-al</ins><span>ig</span><del>h</del><ins>n: left;
+		fon</ins><span>t</span><ins>-family</ins><span>: </span><del>24.222px</del><ins>Helvetica Neue, sans-serif</ins><span>;
+		</span><ins>font-sty</ins><span>le</span><ins>: normal;
+		</ins><span>f</span><ins>ont-weigh</ins><span>t: </span><del>22.526</del><ins>normal;
+		font-size: 10</ins><span>px;
+		</span><del>t</del><ins>c</ins><span>o</span><del>p</del><ins>lor</ins><span>: </span><ins>rgba(11</ins><span>2</span><ins>,</ins><span>1</span><del>.344px</del><ins>12,112,1)</ins><span>;
+	}
+	#https___developer_mozilla_org_</span><ins>_1</ins><span> {
+		position: absolute;
+		left: 20px;
+		top: 2</span><del>12.85</del><span>3</span><ins>9</ins><span>px;
+		overflow: visible;
+		width: </span><del>330</del><ins>285</ins><span>px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10px;
+		color: rgba(112,112,112,1);
+	}
+	#</span><ins>Icon {
+		position: absolute;
+		width: 24px;
+		heig</ins><span>ht</span><ins>: 24px;
+		lef</ins><span>t</span><ins>: 20</ins><span>p</span><ins>x;
+		top: 20px;
+		overflow: vi</ins><span>s</span><ins>ible;
+	}
+	#Rectangle</ins><span>_</span><ins>177</ins><span>_</span><del>_</del><ins>1 {
+		position: absolute;
+		wi</ins><span>d</span><ins>th: 24px;
+		h</ins><span>e</span><del>v</del><ins>ight: 24px;
+		l</ins><span>e</span><del>l</del><ins>ft: 0px;
+		t</ins><span>op</span><ins>: 0px;
+		background: lin</ins><span>e</span><ins>a</ins><span>r</span><del>_moz</del><ins>-grad</ins><span>i</span><del>ll</del><ins>ent(135.2deg, rgb</ins><span>a</span><del>_o</del><ins>(112,112,112,1) 0%, </ins><span>rg</span><del>__A</del><ins>ba(62,62,62,1) 1</ins><span>0</span><del>_T</del><ins>0%);
+		bord</ins><span>e</span><ins>r-radius: 3p</ins><span>x</span><del>t_5</del><ins> 3px 3px 3px;
+		border: 0;
+		overflow: hidden;
+	}
+	#W</ins><span> {
+		position: absolute;
+		left: </span><del>2</del><ins>50%;
+		transform: translateX(-5</ins><span>0</span><del>px</del><ins>%)</ins><span>;
+		top: </span><del>239</del><ins>7.5</ins><span>px;
+		overflow: visible;
+		width: </span><del>285</del><ins>10</ins><span>px;
+		white-space: nowrap;
+		text-align: </span><del>lef</del><ins>righ</ins><span>t;
+		font-family: Helvetica</span><del> Neue</del><span>, sans-serif;
+		font-style: normal;
+		font-weight: </span><del>n</del><ins>b</ins><span>o</span><del>rma</del><span>l</span><ins>d</ins><span>;
+		font-size: 10px;
+		color: rgba(</span><del>11</del><span>2</span><ins>55</ins><span>,</span><del>11</del><span>2</span><ins>55</ins><span>,</span><del>11</del><span>2</span><ins>55</ins><span>,1);
+	}
+&lt;/style&gt;
+&lt;script id="applicationScript" type="text/javascript" src="Id.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="Id"&gt;
+	&lt;</span><del>svg class="myRectangle"&gt;
+		&lt;rect fill="rgba(247,247,247,1)" stroke="rgba(112,112,112,1)" stroke-wi</del><span>d</span><del>th="1px" stroke-l</del><span>i</span><del>nejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto"</del><ins>v</ins><span> id="myRectangle"</span><del> rx="0" ry="0" x="0" y="0" width="56" height="56"</del><span>&gt;
+	</span><del>	</del><span>&lt;/</span><del>rect&gt;
+	&lt;/s</del><ins>di</ins><span>v</span><del>g</del><span>&gt;
+	&lt;div id="Id</span><del>_A0_Text</del><span>_1"&gt;
+		&lt;span&gt;Id&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;svg class="Line_85"</span><ins> viewBox="0 0 722.269 1"</ins><span>&gt;
+		&lt;path </span><ins>fill="transparent" </ins><span>stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_85" d="M 0 0 L 722.2686767578125 0"&gt;
+		&lt;/path&gt;
+	&lt;/svg&gt;
+	&lt;div id="The_elements_below_have_an_add"&gt;
+		&lt;span&gt;The elements below have an additional attribute defined&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;div id="If_you_look_in_the_code_you_wi"&gt;
+		&lt;span&gt;If you look in the code you will see that the rectangle above has the id that is set in the id field&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;</span><del>svg class="icon2"&gt;
+		&lt;pattern elementId="icon2_A0_Rectangle_3" id="icon2_A0_Rectangle_3_pattern" x="0" y="0" width="100%" height="100%"&gt;
+			&lt;image x="0" y="0" width="100%" height="100%" href="icon2_A0_Rectangle_3_pattern.png" xlink:href="icon2_A0_Rectangle_3_pattern.png"&gt;&lt;/image&gt;
+		&lt;/pattern&gt;
+		&lt;rect fill="url(#icon2_A0_Rectangle_3_pattern)" id="icon2" rx="0" ry="0" x="0" y="0" width="24.222" height="24.222"&gt;
+		&lt;/rect&gt;
+	&lt;/svg&gt;
+	&lt;</del><span>a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id"&gt;
+	&lt;div id="https___developer_mozilla_org_"&gt;
+		&lt;span&gt;https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/id&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;/a&gt;
+	&lt;a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id"&gt;
+	&lt;div id="https___developer_mozilla_org__</span><del>A0_Text_5</del><ins>1</ins><span>"&gt;
+		&lt;span&gt;https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id&lt;/span&gt;
+	&lt;/div&gt;
+	&lt;/a</span><ins>&gt;
+	&lt;div id="Icon"&gt;
+		&lt;div id="Rectangle_177_1"&gt;
+		&lt;/div&gt;
+		&lt;div id="W"&gt;
+			&lt;span&gt;W&lt;/span&gt;
+		&lt;/div&gt;
+	&lt;/div</ins><span>&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</span></div></body>
+    </html>
