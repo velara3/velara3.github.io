@@ -11,7 +11,7 @@ Visit https://velara3.github.io/WebExport/exports to see the exported pages from
 Examples
 
 - https://velara3.github.io/WebExport/exports/additional-attributes/Additional_attributes.html
-- https://velara3.github.io/WebExport/exports/additional-attributes/Classes_defined_in_a_Code_Block.html
+- https://velara3.github.io/WebExport/exports/additional-attributes/Event_Attributes.html
 - https://velara3.github.io/WebExport/exports/additional-classes/Additional_Classes.html
 - https://velara3.github.io/WebExport/exports/additional-classes/Classes_defined_in_a_Code_Block.html
 - https://velara3.github.io/WebExport/exports/additional-styles/Adding_and_removing_default_styles.html
