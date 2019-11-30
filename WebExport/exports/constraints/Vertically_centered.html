@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vertically centered</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -47,7 +48,7 @@
 		top: 53.74px;
 		transform: matrix(1,0,0,1,0,0);
 	}
-	#Vertically_centered_p {
+	#Vertically_centered_bw {
 		position: absolute;
 		left: 50px;
 		top: 22px;
@@ -74,21 +75,19 @@
 		overflow: visible;
 		animation:  resize92to50 2500ms linear 0s infinite;
 	}
-	#Rectangle_445 {
+	.Rectangle_445 {
 		position: absolute;
+		overflow: visible;
 		width: 355px;
 		height: 100%;
 		left: 0px;
 		top: 0px;
-		background-color: rgba(234,234,234,1);
-		border:  1px solid rgba(183,183,183,1);
-		overflow: visible;
 	}
 	#This_text_is_vertically_center {
 		position: absolute;
-		left: 64.5px;
+		left: 50%;
+		transform: translateX(-50%) translateY(-50%);
 		top: 50%;
-		transform: translateY(-50%);
 		overflow: visible;
 		width: 227px;
 		white-space: nowrap;
@@ -102,15 +101,15 @@
 	#View_the_page_source_to_see_th {
 		position: absolute;
 		left: 20px;
-		bottom: 22px;
+		bottom: 21px;
 		overflow: visible;
-		width: 308px;
+		width: 336px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 11px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#Resize_the_page_to_see_the_eff {
@@ -118,13 +117,13 @@
 		left: 23px;
 		top: 91px;
 		overflow: visible;
-		width: 166px;
+		width: 181px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 11px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#RESIZE_HEIGHT_92__to_50__TRANS {
@@ -163,16 +162,13 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_z {
+	.Rectangle_177_b {
 		position: absolute;
+		overflow: visible;
 		width: 24px;
 		height: 24px;
 		left: 0px;
 		top: 0px;
-		background: linear-gradient(135.2deg, rgba(112,112,112,1) 0%, rgba(62,62,62,1) 100%);
-		border-radius: 3px 3px 3px 3px;
-		border: 0;
-		overflow: hidden;
 	}
 	#W {
 		position: absolute;
@@ -204,12 +200,6 @@
 		font-size: 12px;
 		color: rgba(84,117,253,1);
 	}
-
-/* change the fill of the MyRectangle element on hover */
-
-#MyRectangle:hover {
-    fill: lightblue;
-}
 </style>
 <script id="applicationScript">
 ///////////////////////////////////////
@@ -2285,12 +2275,14 @@ window.application = new Application();
 		<path fill="transparent" stroke="rgba(177,177,177,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Line_83" d="M 0 0 L 560 0">
 		</path>
 	</svg>
-	<div id="Vertically_centered_p">
+	<div id="Vertically_centered_bw">
 		<span>Vertically centered</span>
 	</div>
 	<div id="Group_82" class="resize92to50">
-		<div id="Rectangle_445">
-		</div>
+		<svg class="Rectangle_445">
+			<rect fill="rgba(234,234,234,1)" stroke="rgba(183,183,183,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="355" height="100%">
+			</rect>
+		</svg>
 		<div id="This_text_is_vertically_center">
 			<span>This text is vertically centered in the group</span>
 		</div>
@@ -2327,8 +2319,14 @@ window.application = new Application();
 		<span>The text below is vertically centered in the page and may be positioned different than in the artboard</span>
 	</div>
 	<div id="Icon">
-		<div id="Rectangle_177_z">
-		</div>
+		<svg class="Rectangle_177_b">
+			<linearGradient id="Rectangle_177_b" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_b)" id="Rectangle_177_b" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>

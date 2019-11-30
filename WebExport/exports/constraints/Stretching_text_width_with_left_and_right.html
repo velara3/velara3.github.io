@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Stretching text width with left and right</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -87,15 +88,13 @@
 		overflow: visible;
 		animation:  resize92to50 2500ms linear 0s infinite;
 	}
-	#Rectangle_445 {
+	.Rectangle_445 {
 		position: absolute;
+		overflow: visible;
 		width: 100%;
 		height: 66px;
 		left: 0px;
 		top: 0px;
-		background-color: rgba(234,234,234,1);
-		border:  1px solid rgba(183,183,183,1);
-		overflow: visible;
 	}
 	#The_text_is_anchored_to_the_le {
 		position: absolute;
@@ -114,21 +113,21 @@
 	#View_the_page_source_to_see_th {
 		position: absolute;
 		left: 20px;
-		top: 297px;
+		top: 321px;
 		overflow: visible;
-		width: 307px;
+		width: 335px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 11px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#RESIZE_TRANSITION {
 		position: absolute;
-		left: 20px;
-		top: 326px;
+		left: 465px;
+		top: 321px;
 		overflow: visible;
 		width: 116px;
 		white-space: nowrap;
@@ -161,16 +160,13 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_cl {
+	.Rectangle_177_cm {
 		position: absolute;
+		overflow: visible;
 		width: 24px;
 		height: 24px;
 		left: 0px;
 		top: 0px;
-		background: linear-gradient(135.2deg, rgba(112,112,112,1) 0%, rgba(62,62,62,1) 100%);
-		border-radius: 3px 3px 3px 3px;
-		border: 0;
-		overflow: hidden;
 	}
 	#W {
 		position: absolute;
@@ -187,12 +183,6 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-
-/* change the fill of the MyRectangle element on hover */
-
-#MyRectangle:hover {
-    fill: lightblue;
-}
 </style>
 <script id="applicationScript">
 ///////////////////////////////////////
@@ -2275,8 +2265,10 @@ window.application = new Application();
 		<span>The text is as wide as it’s anchor points</span>
 	</div>
 	<div id="Group_82" class="resize92to50">
-		<div id="Rectangle_445">
-		</div>
+		<svg class="Rectangle_445">
+			<rect fill="rgba(234,234,234,1)" stroke="rgba(183,183,183,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_445" rx="0" ry="0" x="0" y="0" width="100%" height="66">
+			</rect>
+		</svg>
 		<div id="The_text_is_anchored_to_the_le">
 			<span>The text is anchored to the left and right edge of the group</span>
 		</div>
@@ -2310,8 +2302,14 @@ window.application = new Application();
 		<span>Using left and right anchors the text dynamically fills in the container it is in. The width and height have been removed to allow it to grow or shrink in the additional styles field in the element options</span>
 	</div>
 	<div id="Icon">
-		<div id="Rectangle_177_cl">
-		</div>
+		<svg class="Rectangle_177_cm">
+			<linearGradient id="Rectangle_177_cm" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_cm)" id="Rectangle_177_cm" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>

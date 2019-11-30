@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Top left positioned</title>
 <style id="applicationStylesheet" type="text/css">
 	.mediaViewInfo {
@@ -109,15 +110,15 @@
 	#View_the_page_source_to_see_th {
 		position: absolute;
 		left: 20px;
-		top: 241px;
+		top: 240px;
 		overflow: visible;
-		width: 274px;
+		width: 329px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#The_top_and_left_positioning_i {
@@ -142,16 +143,13 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_y {
+	.Rectangle_177_y {
 		position: absolute;
+		overflow: visible;
 		width: 24px;
 		height: 24px;
 		left: 0px;
 		top: 0px;
-		background: linear-gradient(135.2deg, rgba(112,112,112,1) 0%, rgba(62,62,62,1) 100%);
-		border-radius: 3px 3px 3px 3px;
-		border: 0;
-		overflow: hidden;
 	}
 	#W {
 		position: absolute;
@@ -168,12 +166,6 @@
 		font-size: 10px;
 		color: rgba(255,255,255,1);
 	}
-
-/* change the fill of the MyRectangle element on hover */
-
-#MyRectangle:hover {
-    fill: lightblue;
-}
 </style>
 <script id="applicationScript">
 ///////////////////////////////////////
@@ -2271,8 +2263,14 @@ window.application = new Application();
 		<span>The top and left positioning is the default position used when exporting</span>
 	</div>
 	<div id="Icon">
-		<div id="Rectangle_177_y">
-		</div>
+		<svg class="Rectangle_177_y">
+			<linearGradient id="Rectangle_177_y" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_y)" id="Rectangle_177_y" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>

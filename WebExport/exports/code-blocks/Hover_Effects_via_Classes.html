@@ -27,7 +27,7 @@
 		position: absolute;
 		background: #E5E5E5;
 		width: 700px;
-		height: 393px;
+		height: 455px;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
 		--web-view-name: Hover Effects via Classes;
@@ -41,15 +41,15 @@
 	#View_page_source_to_see_how_st {
 		position: absolute;
 		left: 20px;
-		top: 244px;
+		top: 243px;
 		overflow: visible;
-		width: 212px;
+		width: 254px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	.Line_83 {
@@ -95,39 +95,37 @@
 	#Move_the_mouse_over_the_elemen {
 		position: absolute;
 		left: 20px;
-		top: 183px;
+		top: 182px;
 		overflow: visible;
-		width: 157px;
+		width: 189px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: italic;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#MyRectangle {
+	.MyRectangle {
 		position: absolute;
+		overflow: visible;
 		width: 56px;
 		height: 56px;
 		left: 20px;
 		top: 113px;
-		background-color: rgba(0,255,49,1);
-		border: 0;
-		overflow: visible;
 	}
 	#Elements_with_myHoverEffect_ap {
 		position: absolute;
 		left: 22px;
-		top: 84px;
+		top: 83px;
 		overflow: visible;
-		width: 168px;
+		width: 202px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	.Ellipse_2 {
@@ -141,71 +139,71 @@
 	#https___developer_mozilla_org_ {
 		position: absolute;
 		left: 20px;
-		top: 339px;
+		top: 398px;
 		overflow: visible;
-		width: 258px;
+		width: 310px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#https___developer_mozilla_org__r {
 		position: absolute;
 		left: 20px;
-		top: 320px;
+		top: 379px;
 		overflow: visible;
-		width: 345px;
+		width: 414px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#https___developer_mozilla_org__s {
 		position: absolute;
 		left: 20px;
-		top: 357px;
+		top: 416px;
 		overflow: visible;
-		width: 263px;
+		width: 315px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#https___developer_mozilla_org__t {
 		position: absolute;
 		left: 20px;
-		top: 300px;
+		top: 359px;
 		overflow: visible;
-		width: 281px;
+		width: 338px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#You_may_need_to_use_the_import {
 		position: absolute;
 		left: 20px;
-		top: 270px;
+		top: 268px;
 		overflow: visible;
-		width: 372px;
+		width: 446px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -216,16 +214,13 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_x {
+	.Rectangle_177_x {
 		position: absolute;
+		overflow: visible;
 		width: 24px;
 		height: 24px;
 		left: 0px;
 		top: 0px;
-		background: linear-gradient(135.2deg, rgba(112,112,112,1) 0%, rgba(62,62,62,1) 100%);
-		border-radius: 3px 3px 3px 3px;
-		border: 0;
-		overflow: hidden;
 	}
 	#W {
 		position: absolute;
@@ -2341,8 +2336,10 @@ window.application = new Application();
 	<div id="Move_the_mouse_over_the_elemen">
 		<span>Move the mouse over the elements</span>
 	</div>
-	<div id="MyRectangle" class="myHoverStyle2">
-	</div>
+	<svg class="MyRectangle myHoverStyle2">
+		<rect fill="rgba(0,255,49,1)" id="MyRectangle" class="myHoverStyle2" rx="0" ry="0" x="0" y="0" width="56" height="56">
+		</rect>
+	</svg>
 	<div id="Elements_with_myHoverEffect_ap">
 		<span>Elements with myHoverEffect applied</span>
 	</div>
@@ -2374,8 +2371,14 @@ window.application = new Application();
 		<span>You may need to use the </span><span style="font-style:normal;font-weight:bold;">important</span><span> flag to prioritize your styles over existing styles</span>
 	</div>
 	<div id="Icon">
-		<div id="Rectangle_177_x">
-		</div>
+		<svg class="Rectangle_177_x">
+			<linearGradient id="Rectangle_177_x" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_x)" id="Rectangle_177_x" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>
