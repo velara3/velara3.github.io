@@ -4,9 +4,7 @@ The github home page for Velara 3 software.
 
 Visit https://velara3.github.io to see the home page of this repository.
 
-Web Export github examples page: 
-
-Visit https://velara3.github.io/WebExport/exports to see the exported pages from the example projects.
+#Web Export github examples page
 
 Examples
 
@@ -102,4 +100,7 @@ Examples
 - [Text Tokens removed](https://velara3.github.io/WebExport/exports/text-tokens/Text_Tokens_removed.html)
 - [Twitter timeline](https://velara3.github.io/WebExport/exports/twitter/Twitter_timeline.html)
 - [Twitter](https://velara3.github.io/WebExport/exports/twitter/Twitter.html)
+- [UIKit Dashboard as multiple individual pages](https://velara3.github.io/WebExport/exports/uikits/dashboard-multiple-pages/Sign_in_page.html)
+- [UIKit Dashboard as Single Page Application](https://velara3.github.io/WebExport/exports/uikits/dashboard-single-page/Dashboard_Interface_3.html)
+- [UIKit Dashboard as Slideshow](https://velara3.github.io/WebExport/exports/uikits/dashboard-slideshow/Dashboard_Interface_3.html)
 - [YouTube](https://velara3.github.io/WebExport/exports/youtube/YouTube.html)
