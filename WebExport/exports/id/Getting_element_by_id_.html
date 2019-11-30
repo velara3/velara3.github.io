@@ -25,7 +25,7 @@
 		position: absolute;
 		background: #E5E5E5;
 		width: 782px;
-		height: 268px;
+		height: 344px;
 		font-family: sans-serif;
 		background-color: rgba(255,255,255,1);
 		overflow: hidden;
@@ -34,15 +34,13 @@
 		--web-enable-deep-linking: true;
 		--web-page-font: sans-serif;
 	}
-	#myRectangle {
+	.myRectangle {
 		position: absolute;
+		overflow: visible;
 		width: 56px;
 		height: 56px;
 		left: 20px;
 		top: 81px;
-		background-color: rgba(185,185,185,1);
-		border: 0;
-		overflow: visible;
 	}
 	#Getting_element_by_Id_ {
 		position: absolute;
@@ -87,57 +85,57 @@
 	#The_JavaScript_is_added_in_the {
 		position: absolute;
 		left: 20px;
-		top: 184px;
+		top: 183px;
 		overflow: visible;
-		width: 707px;
+		width: 848px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#https___developer_mozilla_org_ {
 		position: absolute;
 		left: 20px;
-		top: 212.853px;
+		top: 281.853px;
 		overflow: visible;
-		width: 330px;
+		width: 396px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
-	#https___developer_mozilla_org__bf {
+	#https___developer_mozilla_org__bg {
 		position: absolute;
 		left: 20px;
-		top: 239px;
+		top: 308px;
 		overflow: visible;
-		width: 285px;
+		width: 342px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#The_element_above_has_an_id_of {
 		position: absolute;
 		left: 20px;
-		top: 158px;
+		top: 157px;
 		overflow: visible;
-		width: 610px;
+		width: 732px;
 		white-space: nowrap;
 		text-align: left;
 		font-family: Helvetica Neue, sans-serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 10px;
+		font-size: 12px;
 		color: rgba(112,112,112,1);
 	}
 	#Icon {
@@ -148,16 +146,13 @@
 		top: 20px;
 		overflow: visible;
 	}
-	#Rectangle_177_bj {
+	.Rectangle_177_bk {
 		position: absolute;
+		overflow: visible;
 		width: 24px;
 		height: 24px;
 		left: 0px;
 		top: 0px;
-		background: linear-gradient(135.2deg, rgba(112,112,112,1) 0%, rgba(62,62,62,1) 100%);
-		border-radius: 3px 3px 3px 3px;
-		border: 0;
-		overflow: hidden;
 	}
 	#W {
 		position: absolute;
@@ -179,9 +174,11 @@
 </head>
 <body>
 <div id="Getting_element_by_id_">
-	<div id="myRectangle">
-	</div>
-	<script>
+	<svg class="myRectangle">
+		<rect fill="rgba(185,185,185,1)" id="myRectangle" rx="0" ry="0" x="0" y="0" width="56" height="56">
+		</rect>
+	</svg>
+<script>
 var element = document.getElementById("myRectangle");
 element.style.outline = "2px dashed green";
 console.log(element);
@@ -205,7 +202,7 @@ console.log(element);
 	</div>
 	</a>
 	<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id">
-	<div id="https___developer_mozilla_org__bf">
+	<div id="https___developer_mozilla_org__bg">
 		<span>https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/id</span>
 	</div>
 	</a>
@@ -213,8 +210,14 @@ console.log(element);
 		<span>The element above has an id of “myRectangle”. We use JavaScript to find and add an outline to the element and writing it to the console</span>
 	</div>
 	<div id="Icon">
-		<div id="Rectangle_177_bj">
-		</div>
+		<svg class="Rectangle_177_bk">
+			<linearGradient id="Rectangle_177_bk" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect fill="url(#Rectangle_177_bk)" id="Rectangle_177_bk" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
 		<div id="W">
 			<span>W</span>
 		</div>
