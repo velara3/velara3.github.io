@@ -1,3 +1,7 @@
+body {
+    background: black;
+}
+
 :root {
 	--web-view-ids: Dashboard_Interface_3,Dashboard_Interface_2,Dashboard_Interface__Look___Feel____2,Dashboard_Interface__Look___Feel_,Product_1,Calendar_3,Calendar_2,Calendar_1,Invoices,Inbox_2,Inbox_1,Forgot_your_password,Sign_up_page,Sign_in_page,Dashboard_Interface_4,Customers,ChatRoom_1,Inbox_3;
 	--web-view-name: Dashboard Interface 3;
@@ -40,6 +44,10 @@
 	display: none;
 }
 @media (min-width: 0px) {
+body {
+    background: black;
+}
+
 	.mediaViewInfo {
 		--web-view-name: Dashboard Interface 3;
 		--web-view-id: Dashboard_Interface_3;

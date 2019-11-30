@@ -1,3 +1,7 @@
+body {
+    background: black;
+}
+
 .mediaViewInfo {
 	--web-view-name: Dashboard Interface 3;
 	--web-view-id: Dashboard_Interface_3;

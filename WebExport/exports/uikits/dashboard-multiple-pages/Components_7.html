@@ -1,0 +1,4876 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Components-7</title>
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Components-7;
+		--web-view-id: Components_7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Components_7;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Components_7 {
+		position: absolute;
+		background: #E5E5E5;
+		width: 1600px;
+		height: 3108px;
+		background-color: rgba(240,240,247,1);
+		overflow: hidden;
+		--web-view-name: Components-7;
+		--web-view-id: Components_7;
+		--web-scale-on-resize: true;
+		--web-enable-deep-linking: true;
+	}
+	#Product {
+		position: absolute;
+		width: 370px;
+		height: 462px;
+		left: 215px;
+		top: 100px;
+		overflow: visible;
+	}
+	.BG {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 480px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail {
+		position: absolute;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 350px;
+		overflow: visible;
+	}
+	.Rectangle_740 {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_599 {
+		position: absolute;
+		left: 300px;
+		top: 40px;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 25px;
+		color: rgba(59,134,255,1);
+	}
+	#Product_description {
+		opacity: 0.5;
+		position: absolute;
+		left: 20px;
+		top: 51px;
+		overflow: visible;
+		width: 108px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	.image {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 350px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label {
+		position: absolute;
+		width: 65px;
+		height: 24px;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+	}
+	.Label_BG {
+		position: absolute;
+		overflow: visible;
+		width: 65px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label_Content {
+		position: absolute;
+		left: 20px;
+		top: 4px;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Product_co {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 215px;
+		top: 1653px;
+		overflow: visible;
+	}
+	.BG_cp {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_cq {
+		position: absolute;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 408px;
+		overflow: visible;
+	}
+	.Rectangle_740_cr {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 0px;
+	}
+	#Event_name {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_200 {
+		position: absolute;
+		left: 312px;
+		top: 24px;
+		overflow: visible;
+		width: 39px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(255,101,101,1);
+	}
+	#Location {
+		opacity: 0.5;
+		position: absolute;
+		left: 39px;
+		top: 55px;
+		overflow: visible;
+		width: 48px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	.Path_344 {
+		overflow: visible;
+		position: absolute;
+		width: 12px;
+		height: 15px;
+		left: 20px;
+		top: 56.092px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.image_cw {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 408px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_cx {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 615px;
+		top: 1653px;
+		overflow: visible;
+	}
+	.BG_cy {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_cz {
+		position: absolute;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 408px;
+		overflow: visible;
+	}
+	.Rectangle_740_c {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 0px;
+	}
+	#Event_name_c {
+		position: absolute;
+		left: 24px;
+		top: 24px;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_549_79 {
+		position: absolute;
+		left: 285px;
+		top: 24px;
+		overflow: visible;
+		width: 58px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(255,101,101,1);
+	}
+	#ID2_Nights___3_Days {
+		opacity: 0.5;
+		position: absolute;
+		left: 253px;
+		top: 55px;
+		overflow: visible;
+		width: 90px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	#Group_253 {
+		position: absolute;
+		width: 88.126px;
+		height: 14.495px;
+		left: 24px;
+		top: 58px;
+		overflow: visible;
+	}
+	.Path_332 {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_333 {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 18.414px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_334 {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 36.827px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_335 {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 55.241px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_336 {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 73.654px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.image_daa {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 408px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_dab {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 1015px;
+		top: 1653px;
+		overflow: visible;
+	}
+	.BG_dac {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_dad {
+		position: absolute;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 408px;
+		overflow: visible;
+	}
+	.Rectangle_740_dae {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_daf {
+		position: absolute;
+		left: 129px;
+		top: 24px;
+		overflow: visible;
+		width: 113px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_89 {
+		position: absolute;
+		left: 171px;
+		top: 69px;
+		overflow: visible;
+		width: 29px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(255,101,101,1);
+	}
+	#Lorem_ipsum_dolor_ {
+		opacity: 0.5;
+		position: absolute;
+		left: 133px;
+		top: 47px;
+		overflow: visible;
+		width: 106px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	.image_dai {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 408px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label_daj {
+		position: absolute;
+		width: 65px;
+		height: 24px;
+		left: 26px;
+		top: 26px;
+		overflow: visible;
+	}
+	.Label_BG_dak {
+		position: absolute;
+		overflow: visible;
+		width: 65px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label_Content_dal {
+		position: absolute;
+		left: 19px;
+		top: 4px;
+		overflow: visible;
+		width: 29px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	.Heart {
+		overflow: visible;
+		position: absolute;
+		width: 22.664px;
+		height: 20px;
+		left: 312px;
+		top: 28px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dan {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 615px;
+		top: 2203px;
+		overflow: visible;
+	}
+	.BG_dao {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dap {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 156px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#_10_00 {
+		position: absolute;
+		left: 20px;
+		top: 464px;
+		overflow: visible;
+		width: 75px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#Product_description_dar {
+		opacity: 0.5;
+		position: absolute;
+		left: 20px;
+		top: 60px;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	.Heart_das {
+		overflow: visible;
+		position: absolute;
+		width: 24px;
+		height: 20px;
+		left: 326px;
+		top: 470px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dat {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 215px;
+		top: 2203px;
+		overflow: visible;
+	}
+	.BG_dau {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_dav {
+		position: absolute;
+		width: 370px;
+		height: 149px;
+		left: 0px;
+		top: 371px;
+		overflow: visible;
+	}
+	.Rectangle_740_daw {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 149px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dax {
+		position: absolute;
+		left: 107px;
+		top: 24px;
+		overflow: visible;
+		width: 155px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#_89_day {
+		position: absolute;
+		left: 164px;
+		top: 93px;
+		overflow: visible;
+		width: 41px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#Product_description_daz {
+		opacity: 0.5;
+		position: absolute;
+		left: 122px;
+		top: 60px;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	.image_da {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 371px;
+		left: 0px;
+		top: 0px;
+	}
+	#scroll {
+		position: absolute;
+		width: 61px;
+		height: 10px;
+		left: 155px;
+		top: 328px;
+		overflow: visible;
+	}
+	.Ellipse_32 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 0px;
+		top: 0px;
+	}
+	#Ellipse_33 {
+		opacity: 0.3;
+	}
+	.Ellipse_33 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 17px;
+		top: 0px;
+	}
+	#Ellipse_34 {
+		opacity: 0.3;
+	}
+	.Ellipse_34 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 34px;
+		top: 0px;
+	}
+	#Ellipse_35 {
+		opacity: 0.3;
+	}
+	.Ellipse_35 {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 51px;
+		top: 0px;
+	}
+	#Product_da {
+		position: absolute;
+		width: 370px;
+		height: 520px;
+		left: 1015px;
+		top: 2203px;
+		overflow: visible;
+	}
+	.BG_da {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 538px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_da {
+		position: absolute;
+		width: 370px;
+		height: 220px;
+		left: 0px;
+		top: 300px;
+		overflow: visible;
+	}
+	.Rectangle_740_da {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 220px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dba {
+		position: absolute;
+		left: 108px;
+		top: 36px;
+		overflow: visible;
+		width: 155px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#_89_dbb {
+		position: absolute;
+		left: 165px;
+		top: 99px;
+		overflow: visible;
+		width: 41px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(77,79,92,1);
+	}
+	#Product_description_dbc {
+		opacity: 0.5;
+		position: absolute;
+		left: 123px;
+		top: 72px;
+		overflow: visible;
+		width: 125px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#btn_signup {
+		position: absolute;
+		width: 185px;
+		height: 50px;
+		left: 93px;
+		top: 138px;
+		overflow: visible;
+	}
+	.Rectangle_166 {
+		position: absolute;
+		overflow: visible;
+		width: 185px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+	}
+	#Shop_now {
+		position: absolute;
+		left: 51px;
+		top: 14px;
+		overflow: visible;
+		width: 77px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(255,255,255,1);
+	}
+	.image_dbg {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 300px;
+		left: 0px;
+		top: 0px;
+	}
+	#Like {
+		position: absolute;
+		width: 63px;
+		height: 63px;
+		left: 273px;
+		top: 267px;
+		overflow: visible;
+	}
+	.Ellipse_42 {
+		filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.161));
+		position: absolute;
+		overflow: visible;
+		width: 81px;
+		height: 81px;
+		left: 0px;
+		top: 0px;
+	}
+	.Heart_dbj {
+		overflow: visible;
+		position: absolute;
+		width: 30.662px;
+		height: 27.057px;
+		left: 16.001px;
+		top: 19.472px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dbk {
+		position: absolute;
+		width: 570px;
+		height: 462px;
+		left: 215px;
+		top: 592px;
+		overflow: visible;
+	}
+	.BG_dbl {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 588px;
+		height: 480px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dbm {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(255,255,255,1);
+	}
+	#Product_description_dbn {
+		opacity: 0.704;
+		position: absolute;
+		left: 20px;
+		top: 50px;
+		overflow: visible;
+		width: 108px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#ID4_1_Rating {
+		position: absolute;
+		left: 20px;
+		top: 421px;
+		overflow: visible;
+		width: 55px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Group_251 {
+		position: absolute;
+		width: 123.912px;
+		height: 20.38px;
+		left: 20px;
+		top: 391.114px;
+		overflow: visible;
+	}
+	.Path_332_dbq {
+		overflow: visible;
+		position: absolute;
+		width: 20.349px;
+		height: 20.38px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_333_dbr {
+		overflow: visible;
+		position: absolute;
+		width: 20.349px;
+		height: 20.38px;
+		left: 25.891px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_334_dbs {
+		overflow: visible;
+		position: absolute;
+		width: 20.349px;
+		height: 20.38px;
+		left: 51.781px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_335_dbt {
+		overflow: visible;
+		position: absolute;
+		width: 20.349px;
+		height: 20.38px;
+		left: 77.672px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_336_dbu {
+		overflow: visible;
+		position: absolute;
+		width: 20.349px;
+		height: 20.38px;
+		left: 103.562px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dbv {
+		position: absolute;
+		width: 570px;
+		height: 297px;
+		left: 215px;
+		top: 2753px;
+		overflow: visible;
+	}
+	.BG_dbw {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 588px;
+		height: 315px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dbx {
+		position: absolute;
+		left: 305px;
+		top: 44px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(67,66,93,1);
+	}
+	#Product_description_dby {
+		opacity: 0.704;
+		position: absolute;
+		left: 305px;
+		top: 72px;
+		overflow: visible;
+		width: 108px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	.Rectangle_747 {
+		position: absolute;
+		overflow: visible;
+		width: 285px;
+		height: 297px;
+		left: 0px;
+		top: 0px;
+	}
+	#Lorem_ipsum_dolor_sit_amet__co {
+		opacity: 0.5;
+		position: absolute;
+		left: 305px;
+		top: 118px;
+		overflow: hidden;
+		width: 206px;
+		height: 89px;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	#btn_buy {
+		position: absolute;
+		width: 140px;
+		height: 35px;
+		left: 358px;
+		top: 222px;
+		overflow: visible;
+	}
+	.Rectangle_166_db {
+		position: absolute;
+		overflow: visible;
+		width: 140px;
+		height: 35px;
+		left: 0px;
+		top: 0px;
+	}
+	#Shop_now_db {
+		position: absolute;
+		left: 39px;
+		top: 8px;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+	#scroll_db {
+		position: absolute;
+		width: 61px;
+		height: 10px;
+		left: 112px;
+		top: 253px;
+		overflow: visible;
+	}
+	.Ellipse_32_db {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 0px;
+		top: 0px;
+	}
+	#Ellipse_33_db {
+		opacity: 0.3;
+	}
+	.Ellipse_33_db {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 17px;
+		top: 0px;
+	}
+	#Ellipse_34_db {
+		opacity: 0.3;
+	}
+	.Ellipse_34_db {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 34px;
+		top: 0px;
+	}
+	#Ellipse_35_db {
+		opacity: 0.3;
+	}
+	.Ellipse_35_db {
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		height: 10px;
+		left: 51px;
+		top: 0px;
+	}
+	#new {
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	.Path_332_dca {
+		overflow: visible;
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Label_Content_dcb {
+		transform: translate(-215px, -540px) matrix(1,0,0,1,227,555) rotate(-45deg);
+		transform-origin: center;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Product_dcc {
+		position: absolute;
+		width: 570px;
+		height: 297px;
+		left: 815px;
+		top: 2753px;
+		overflow: visible;
+	}
+	.BG_dcd {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 588px;
+		height: 315px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dce {
+		position: absolute;
+		left: 46px;
+		top: 44px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(67,66,93,1);
+	}
+	.Rectangle_747_dcf {
+		position: absolute;
+		overflow: visible;
+		width: 285px;
+		height: 297px;
+		left: 285px;
+		top: 0px;
+	}
+	#Lorem_ipsum_dolor_sit_amet__co_dcg {
+		opacity: 0.5;
+		position: absolute;
+		left: 46px;
+		top: 118px;
+		overflow: hidden;
+		width: 206px;
+		height: 89px;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(77,79,92,1);
+	}
+	#btn_buy_dch {
+		position: absolute;
+		width: 140px;
+		height: 35px;
+		left: 46px;
+		top: 223px;
+		overflow: visible;
+	}
+	.Rectangle_166_dci {
+		position: absolute;
+		overflow: visible;
+		width: 140px;
+		height: 35px;
+		left: 0px;
+		top: 0px;
+	}
+	#Shop_now_dcj {
+		position: absolute;
+		left: 39px;
+		top: 8px;
+		overflow: visible;
+		width: 63px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+	#scroll_dck {
+		position: absolute;
+		width: 121px;
+		height: 4px;
+		left: 367px;
+		top: 258px;
+		overflow: visible;
+	}
+	.Rectangle_152 {
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		height: 4px;
+		left: 0px;
+		top: 0px;
+	}
+	#Rectangle_153 {
+		opacity: 0.3;
+	}
+	.Rectangle_153 {
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		height: 4px;
+		left: 32px;
+		top: 0px;
+	}
+	#Rectangle_154 {
+		opacity: 0.3;
+	}
+	.Rectangle_154 {
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		height: 4px;
+		left: 64px;
+		top: 0px;
+	}
+	#Rectangle_155 {
+		opacity: 0.3;
+	}
+	.Rectangle_155 {
+		position: absolute;
+		overflow: visible;
+		width: 25px;
+		height: 4px;
+		left: 96px;
+		top: 0px;
+	}
+	.Heart_dcp {
+		overflow: visible;
+		position: absolute;
+		width: 24px;
+		height: 20px;
+		left: 228px;
+		top: 46px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Group_254 {
+		position: absolute;
+		width: 88.126px;
+		height: 14.495px;
+		left: 46px;
+		top: 80px;
+		overflow: visible;
+	}
+	.Path_332_dcr {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_333_dcs {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 18.414px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_334_dct {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 36.827px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_335_dcu {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 55.241px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_336_dcv {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 73.654px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dcw {
+		position: absolute;
+		width: 770px;
+		height: 540px;
+		left: 615px;
+		top: 1084px;
+		overflow: visible;
+	}
+	.BG_dcx {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 788px;
+		height: 558px;
+		left: 0px;
+		top: 0px;
+	}
+	#Up_to_60__off {
+		position: absolute;
+		left: 473px;
+		top: 87px;
+		overflow: visible;
+		width: 208px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		color: rgba(255,101,101,1);
+	}
+	#Special_Promotion {
+		position: absolute;
+		left: 518px;
+		top: 48px;
+		overflow: visible;
+		width: 117px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#Ends_July_15__2019_Valid_on_sa {
+		position: absolute;
+		left: 483px;
+		top: 472px;
+		overflow: visible;
+		width: 191px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#Use_code__ABC123 {
+		position: absolute;
+		left: 510px;
+		top: 326px;
+		overflow: visible;
+		width: 137px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	.Rectangle_746 {
+		position: absolute;
+		overflow: visible;
+		width: 385px;
+		height: 540px;
+		left: 0px;
+		top: 0px;
+	}
+	#Lorem_ipsum_dolor_sit_amet__co_dc {
+		position: absolute;
+		left: 427px;
+		top: 151px;
+		overflow: hidden;
+		width: 301px;
+		height: 75px;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#Product_dc {
+		position: absolute;
+		width: 570px;
+		height: 462px;
+		left: 815px;
+		top: 592px;
+		overflow: visible;
+	}
+	.BG_dc {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 588px;
+		height: 480px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dc {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 156px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 25px;
+		color: rgba(255,255,255,1);
+	}
+	#ID4_1_____500_Reviews {
+		opacity: 0.704;
+		position: absolute;
+		left: 122px;
+		top: 64px;
+		overflow: visible;
+		width: 97px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Choose_Colors {
+		position: absolute;
+		left: 246px;
+		top: 425px;
+		overflow: visible;
+		width: 79px;
+		white-space: nowrap;
+		line-height: 20px;
+		margin-top: -3.5px;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Group_251_dc {
+		position: absolute;
+		width: 90px;
+		height: 16px;
+		left: 20px;
+		top: 64px;
+		overflow: visible;
+	}
+	.Path_332_dda {
+		overflow: visible;
+		position: absolute;
+		width: 14.78px;
+		height: 16px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_333_ddb {
+		overflow: visible;
+		position: absolute;
+		width: 14.78px;
+		height: 16px;
+		left: 18.805px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_334_ddc {
+		overflow: visible;
+		position: absolute;
+		width: 14.78px;
+		height: 16px;
+		left: 37.61px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_335_ddd {
+		overflow: visible;
+		position: absolute;
+		width: 14.78px;
+		height: 16px;
+		left: 56.415px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_336_dde {
+		overflow: visible;
+		position: absolute;
+		width: 14.78px;
+		height: 16px;
+		left: 75.22px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Group_252 {
+		position: absolute;
+		width: 84px;
+		height: 24px;
+		left: 241px;
+		top: 397.001px;
+		overflow: visible;
+	}
+	#Ellipse_40 {
+		opacity: 0.2;
+	}
+	.Ellipse_40 {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	.Ellipse_39 {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 4.003px;
+		top: 3.999px;
+	}
+	.Ellipse_41 {
+		position: absolute;
+		overflow: visible;
+		width: 16px;
+		height: 16px;
+		left: 36px;
+		top: 3.999px;
+	}
+	.Path_343 {
+		overflow: visible;
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		left: 68px;
+		top: 3.999px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_ddk {
+		position: absolute;
+		width: 370px;
+		height: 462px;
+		left: 1015px;
+		top: 100px;
+		overflow: visible;
+	}
+	.BG_ddl {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 480px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_ddm {
+		position: absolute;
+		width: 370px;
+		height: 124px;
+		left: 0px;
+		top: 338px;
+		overflow: visible;
+	}
+	.Rectangle_740_ddn {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 124px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_ddo {
+		position: absolute;
+		left: 20px;
+		top: 23px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_59_95 {
+		position: absolute;
+		left: 297px;
+		top: 24px;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(255,101,101,1);
+	}
+	#Group_250 {
+		position: absolute;
+		width: 88.126px;
+		height: 14.495px;
+		left: 20px;
+		top: 66px;
+		overflow: visible;
+	}
+	.Path_332_ddr {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_333_dds {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 18.414px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_334_ddt {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 36.827px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_335_ddu {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 55.241px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	.Path_336_ddv {
+		overflow: visible;
+		position: absolute;
+		width: 14.472px;
+		height: 14.495px;
+		left: 73.654px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#btn_buy_ddw {
+		position: absolute;
+		width: 120px;
+		height: 35px;
+		left: 230px;
+		top: 67px;
+		overflow: visible;
+	}
+	.Rectangle_166_ddx {
+		position: absolute;
+		overflow: visible;
+		width: 120px;
+		height: 35px;
+		left: 0px;
+		top: 0px;
+	}
+	#Add_to_cart {
+		position: absolute;
+		left: 26px;
+		top: 8px;
+		overflow: visible;
+		width: 69px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+	.image_ddz {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 337px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label_dd {
+		position: absolute;
+		width: 85px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	.Label_BG_dd {
+		position: absolute;
+		overflow: visible;
+		width: 85px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#Label_Content_dd {
+		position: absolute;
+		left: 21px;
+		top: 4px;
+		overflow: visible;
+		width: 45px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	.Heart_dd {
+		overflow: visible;
+		position: absolute;
+		width: 24px;
+		height: 20px;
+		left: 326px;
+		top: 20px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Product_dd {
+		position: absolute;
+		width: 370px;
+		height: 462px;
+		left: 615px;
+		top: 100px;
+		overflow: visible;
+	}
+	.BG_dd {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 480px;
+		left: 0px;
+		top: 0px;
+	}
+	#product_detail_dd {
+		position: absolute;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 350px;
+		overflow: visible;
+	}
+	.Rectangle_740_dd {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 112px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dd {
+		position: absolute;
+		left: 20px;
+		top: 24px;
+		overflow: visible;
+		width: 112px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 18px;
+		color: rgba(77,79,92,1);
+	}
+	#_678 {
+		position: absolute;
+		left: 300px;
+		top: 24px;
+		overflow: visible;
+		width: 51px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 25px;
+		color: rgba(67,66,93,1);
+	}
+	#Group_249 {
+		position: absolute;
+		width: 34.647px;
+		height: 19px;
+		left: 315.057px;
+		top: 60px;
+		overflow: visible;
+	}
+	#_754 {
+		position: absolute;
+		left: 0.943px;
+		top: 0px;
+		overflow: visible;
+		width: 31px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,101,101,1);
+	}
+	.Path_331 {
+		overflow: visible;
+		position: absolute;
+		width: 34.647px;
+		height: 1px;
+		left: 0px;
+		top: 9.538px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#size {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 20px;
+		top: 55px;
+		overflow: visible;
+	}
+	.Rectangle_741 {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#S {
+		position: absolute;
+		left: 11px;
+		top: 6px;
+		overflow: visible;
+		width: 9px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#size_deg {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 60px;
+		top: 55px;
+		overflow: visible;
+	}
+	.Rectangle_741_deh {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#M {
+		position: absolute;
+		left: 10px;
+		top: 6px;
+		overflow: visible;
+		width: 11px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+	}
+	#size_dej {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 100px;
+		top: 55px;
+		overflow: visible;
+	}
+	.Rectangle_741_dek {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#L {
+		position: absolute;
+		left: 11px;
+		top: 6px;
+		overflow: visible;
+		width: 9px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	#size_dem {
+		position: absolute;
+		width: 30px;
+		height: 30px;
+		left: 140px;
+		top: 55px;
+		overflow: visible;
+	}
+	.Rectangle_741_den {
+		position: absolute;
+		overflow: visible;
+		width: 30px;
+		height: 30px;
+		left: 0px;
+		top: 0px;
+	}
+	#XL {
+		position: absolute;
+		left: 8px;
+		top: 6px;
+		overflow: visible;
+		width: 15px;
+		white-space: nowrap;
+		line-height: 25px;
+		margin-top: -5px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(67,66,93,1);
+	}
+	.image_dep {
+		position: absolute;
+		overflow: visible;
+		width: 370px;
+		height: 350px;
+		left: 0px;
+		top: 0px;
+	}
+	#new_deq {
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+	}
+	.Path_332_der {
+		overflow: visible;
+		position: absolute;
+		width: 80px;
+		height: 80px;
+		left: 0px;
+		top: 0px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Label_Content_des {
+		transform: translate(-215px, -540px) matrix(1,0,0,1,227,555) rotate(-45deg);
+		transform-origin: center;
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		width: 27px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+	}
+	#Product_det {
+		position: absolute;
+		width: 370px;
+		height: 540px;
+		left: 215px;
+		top: 1084px;
+		overflow: visible;
+	}
+	.BG_deu {
+		filter: drop-shadow(0px 2px 6px rgba(0, 0, 0, 0.039));
+		position: absolute;
+		overflow: visible;
+		width: 388px;
+		height: 558px;
+		left: 0px;
+		top: 0px;
+	}
+	#Product_name_dev {
+		position: absolute;
+		left: 77px;
+		top: 360px;
+		overflow: visible;
+		width: 217px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 35px;
+		color: rgba(255,255,255,1);
+	}
+	#Product_description_dew {
+		position: absolute;
+		left: 36px;
+		top: 408px;
+		overflow: hidden;
+		width: 299px;
+		height: 23px;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(255,255,255,1);
+	}
+	#btn_signup_dex {
+		position: absolute;
+		width: 185px;
+		height: 50px;
+		left: 93px;
+		top: 450px;
+		overflow: visible;
+	}
+	.Rectangle_166_dey {
+		position: absolute;
+		overflow: visible;
+		width: 185px;
+		height: 50px;
+		left: 0px;
+		top: 0px;
+	}
+	#Shop_now_dez {
+		position: absolute;
+		left: 51px;
+		top: 14px;
+		overflow: visible;
+		width: 77px;
+		white-space: nowrap;
+		text-align: center;
+		font-family: Source Sans Pro;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: rgba(255,255,255,1);
+	}
+</style>
+<script id="applicationScript">
+///////////////////////////////////////
+// INITIALIZATION
+///////////////////////////////////////
+
+/**
+ * Functionality for scaling, showing by media query, and navigation between multiple pages on a single page. 
+ * Code subject to change.
+ **/
+
+if (window.console==null) { window["console"] = { log : function() {} } }; // some browsers do not set console
+
+var Application = function() {
+	// event constants
+	this.NAVIGATION_CHANGE = "viewChange";
+	this.VIEW_NOT_FOUND = "viewNotFound";
+	this.VIEW_CHANGE = "viewChange";
+	this.STATE_NOT_FOUND = "stateNotFound";
+	this.APPLICATION_COMPLETE = "applicationComplete";
+	this.SIZE_STATE_NAME = "data-is-view-scaled";
+
+	this.lastView = null;
+	this.lastState = null;
+	this.lastOverlay = null;
+	this.currentView = null;
+	this.currentState = null;
+	this.currentOverlay = null;
+	this.currentQuery = {index: 0, rule: null, mediaText: null, id: null};
+	this.inclusionQuery = "(min-width: 0px)";
+	this.exclusionQuery = "none and (min-width: 99999px)";
+	this.LastModifiedDateLabelName = "LastModifiedDateLabel";
+	this.viewScaleSliderId = "ViewScaleSliderInput";
+	this.pageRefreshedName = "showPageRefreshedNotification";
+	this.prefix = "--web-";
+	this.applicationStylesheet = null;
+	this.mediaQueryDictionary = {};
+	this.viewsDictionary = {};
+	this.addedViews = [];
+	this.views = {};
+	this.viewIds = [];
+	this.viewQueries = {};
+	this.numberOfViews = 0;
+	this.verticalPadding = 0;
+	this.horizontalPadding = 0;
+	this.stateName = null;
+	this.viewScale = 1;
+	this.viewLeft = 0;
+	this.viewTop = 0;
+
+	// view settings
+	this.showUpdateNotification = false;
+	this.showNavigationControls = false;
+	this.scaleViewsToFit = false;
+	this.scaleToFitOnDoubleClick = false;
+	this.actualSizeOnDoubleClick = false;
+	this.scaleViewsOnResize = false;
+	this.navigationOnKeypress = false;
+	this.showViewName = false;
+	this.enableDeepLinking = true;
+	this.refreshPageForChanges = false;
+	this.showRefreshNotifications = true;
+
+	// view controls
+	this.scaleViewSlider = null;
+	this.lastModifiedLabel = null;
+	this.supportsPopState = false; // window.history.pushState!=null;
+	this.initialized = false;
+
+	// refresh properties
+	this.refreshDuration = 250;
+	this.lastModifiedDate = null;
+	this.refreshRequest = null;
+	this.refreshInterval = null;
+	this.refreshContent = null;
+	this.refreshContentSize = null;
+	this.refreshCheckContent = false;
+	this.refreshCheckContentSize = false;
+
+	var self = this;
+
+	self.initialize = function(event) {
+		var view = self.getVisibleView();
+		if (view==null) view = self.getInitialView();
+		self.collectViews();
+		self.collectMediaQueries();
+		self.setViewOptions(view);
+		self.setViewVariables(view);
+
+		// sometimes the body size is 0 so we call this now and again later
+		if (self.initialized) {
+			window.addEventListener(self.NAVIGATION_CHANGE, self.viewChangeHandler);
+			window.addEventListener("keyup", self.keypressHandler);
+			window.addEventListener("keypress", self.keypressHandler);
+			window.addEventListener("resize", self.resizeHandler);
+			window.document.addEventListener("dblclick", self.doubleClickHandler);
+
+			if (self.supportsPopState) {
+				window.addEventListener('popstate', self.popStateHandler);
+			}
+			else {
+				window.addEventListener('hashchange', self.hashChangeHandler);
+			}
+
+			// we are ready to go
+			window.dispatchEvent(new Event(self.APPLICATION_COMPLETE));
+		}
+
+		if (self.initialized==false) {
+			if (self.showNavigationControls || (self.singlePageApplication && self.showByMediaQuery==false)) {
+				self.syncronizeViewToURL();
+			}
+	
+			if (self.refreshPageForChanges) {
+				self.setupRefreshForChanges();
+			}
+	
+			self.initialized = true;
+		}
+		
+		if (self.scaleViewsToFit) {
+			self.viewScale = self.scaleViewToFit(view);
+			
+			if (self.viewScale<0) {
+				setTimeout(self.scaleViewToFit, 500, view);
+			}
+		}
+		else if (view) {
+			self.viewScale = self.getViewScaleValue(view);
+			self.updateSliderValue(self.viewScale);
+		}
+		else {
+			// no view found
+		}
+	
+		if (self.showUpdateNotification) {
+			self.showNotification();
+		}
+	
+		//"addEventListener" in window ? null : window.addEventListener = window.attachEvent;
+		//"addEventListener" in document ? null : document.addEventListener = document.attachEvent;
+	}
+
+
+	///////////////////////////////////////
+	// AUTO REFRESH 
+	///////////////////////////////////////
+
+	self.setupRefreshForChanges = function() {
+		self.refreshRequest = new XMLHttpRequest();
+
+		if (!self.refreshRequest) {
+			return false;
+		}
+
+		// get document start values immediately
+		self.requestRefreshUpdate();
+	}
+
+	/**
+	 * Attempt to check the last modified date by the headers 
+	 * or the last modified property from the byte array (experimental)
+	 **/
+	self.requestRefreshUpdate = function() {
+		var url = document.location.href;
+		var protocol = window.location.protocol;
+		var method;
+		
+		try {
+
+			if (self.refreshCheckContentSize) {
+				self.refreshRequest.open('HEAD', url, true);
+			}
+			else if (self.refreshCheckContent) {
+				self.refreshContent = document.documentElement.outerHTML;
+				self.refreshRequest.open('GET', url, true);
+				self.refreshRequest.responseType = "text";
+			}
+			else {
+
+				// get page last modified date for the first call to compare to later
+				if (self.lastModifiedDate==null) {
+
+					// File system does not send headers in FF so get blob if possible
+					if (protocol=="file:") {
+						self.refreshRequest.open("GET", url, true);
+						self.refreshRequest.responseType = "blob";
+					}
+					else {
+						self.refreshRequest.open("HEAD", url, true);
+						self.refreshRequest.responseType = "blob";
+					}
+
+					self.refreshRequest.onload = self.refreshOnLoadOnceHandler;
+
+					// In some browsers (Chrome & Safari) this error occurs at send: 
+					// 
+					// Chrome - Access to XMLHttpRequest at 'file:///index.html' from origin 'null' 
+					// has been blocked by CORS policy: 
+					// Cross origin requests are only supported for protocol schemes: 
+					// http, data, chrome, chrome-extension, https.
+					// 
+					// Safari - XMLHttpRequest cannot load file:///Users/user/Public/index.html. Cross origin requests are only supported for HTTP.
+					// 
+					// Solution is to run a local server, set local permissions or test in another browser
+					self.refreshRequest.send(null);
+
+					// In MS browsers the following behavior occurs possibly due to an AJAX call to check last modified date: 
+					// 
+					// DOM7011: The code on this page disabled back and forward caching.
+
+					// In Brave (Chrome) error when on the server
+					// index.js:221 HEAD https://www.example.com/ net::ERR_INSUFFICIENT_RESOURCES
+					// self.refreshRequest.send(null);
+
+				}
+				else {
+					self.refreshRequest = new XMLHttpRequest();
+					self.refreshRequest.onreadystatechange = self.refreshHandler;
+					self.refreshRequest.ontimeout = function() {
+						self.log("Couldn't find page to check for updates");
+					}
+					
+					var method;
+					if (protocol=="file:") {
+						method = "GET";
+					}
+					else {
+						method = "HEAD";
+					}
+
+					//refreshRequest.open('HEAD', url, true);
+					self.refreshRequest.open(method, url, true);
+					self.refreshRequest.responseType = "blob";
+					self.refreshRequest.send(null);
+				}
+			}
+		}
+		catch (error) {
+			self.log("Refresh failed for the following reason:")
+			self.log(error);
+		}
+	}
+
+	self.refreshHandler = function() {
+		var contentSize;
+
+		try {
+
+			if (self.refreshRequest.readyState === XMLHttpRequest.DONE) {
+				
+				if (self.refreshRequest.status === 2 || 
+					self.refreshRequest.status === 200) {
+					var pageChanged = false;
+
+					self.updateLastModifiedLabel();
+
+					if (self.refreshCheckContentSize) {
+						var lastModifiedHeader = self.refreshRequest.getResponseHeader("Last-Modified");
+						contentSize = self.refreshRequest.getResponseHeader("Content-Length");
+						//lastModifiedDate = refreshRequest.getResponseHeader("Last-Modified");
+						var headers = self.refreshRequest.getAllResponseHeaders();
+						var hasContentHeader = headers.indexOf("Content-Length")!=-1;
+						
+						if (hasContentHeader) {
+							contentSize = self.refreshRequest.getResponseHeader("Content-Length");
+
+							// size has not been set yet
+							if (self.refreshContentSize==null) {
+								self.refreshContentSize = contentSize;
+								// exit and let interval call this method again
+								return;
+							}
+
+							if (contentSize!=self.refreshContentSize) {
+								pageChanged = true;
+							}
+						}
+					}
+					else if (self.refreshCheckContent) {
+
+						if (self.refreshRequest.responseText!=self.refreshContent) {
+							pageChanged = true;
+						}
+					}
+					else {
+						lastModifiedHeader = self.getLastModified(self.refreshRequest);
+
+						if (self.lastModifiedDate!=lastModifiedHeader) {
+							self.log("lastModifiedDate:" + self.lastModifiedDate + ",lastModifiedHeader:" +lastModifiedHeader);
+							pageChanged = true;
+						}
+
+					}
+
+					
+					if (pageChanged) {
+						clearInterval(self.refreshInterval);
+						self.refreshUpdatedPage();
+						return;
+					}
+
+				}
+				else {
+					self.log('There was a problem with the request.');
+				}
+
+			}
+		}
+		catch( error ) {
+			//console.log('Caught Exception: ' + error);
+		}
+	}
+
+	self.refreshOnLoadOnceHandler = function(event) {
+
+		// get the last modified date
+		if (self.refreshRequest.response) {
+			self.lastModifiedDate = self.getLastModified(self.refreshRequest);
+
+			if (self.lastModifiedDate!=null) {
+
+				if (self.refreshInterval==null) {
+					self.refreshInterval = setInterval(self.requestRefreshUpdate, self.refreshDuration);
+				}
+			}
+			else {
+				self.log("Could not get last modified date from the server");
+			}
+		}
+	}
+
+	self.refreshUpdatedPage = function() {
+		if (self.showRefreshNotifications) {
+			var date = new Date().setTime((new Date().getTime()+10000));
+			document.cookie = encodeURIComponent(self.pageRefreshedName) + "=true" + "; max-age=6000;" + " path=/";
+		}
+
+		document.location.reload(true);
+	}
+
+	self.showNotification = function(duration) {
+		var notificationID = self.pageRefreshedName+"ID";
+		var notification = document.getElementById(notificationID);
+		if (duration==null) duration = 4000;
+
+		if (notification!=null) {return;}
+
+		notification = document.createElement("div");
+		notification.id = notificationID;
+		notification.textContent = "PAGE UPDATED";
+		var styleRule = ""
+		styleRule = "position: fixed; padding: 7px 16px 6px 16px; font-family: Arial, sans-serif; font-size: 10px; font-weight: bold; left: 50%;";
+		styleRule += "top: 20px; background-color: rgba(0,0,0,.5); border-radius: 12px; color:rgb(235, 235, 235); transition: all 2s linear;";
+		styleRule += "transform: translateX(-50%); letter-spacing: .5px; filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, .1))";
+		notification.setAttribute("style", styleRule);
+
+		notification.className= "PageRefreshedClass";
+		
+		document.body.appendChild(notification);
+
+		setTimeout(function() {
+			notification.style.opacity = "0";
+			notification.style.filter = "drop-shadow( 0px 0px 0px rgba(0,0,0, .5))";
+			setTimeout(function() {
+				notification.parentNode.removeChild(notification);
+			}, duration)
+		}, duration);
+
+		document.cookie = encodeURIComponent(self.pageRefreshedName) + "=; max-age=1; path=/";
+	}
+
+	/**
+	 * Get the last modified date from the header 
+	 * or file object after request has been received
+	 **/
+	self.getLastModified = function(request) {
+		var date;
+
+		// file protocol - FILE object with last modified property
+		if (request.response && request.response.lastModified) {
+			date = request.response.lastModified;
+		}
+		
+		// http protocol - check headers
+		if (date==null) {
+			date = request.getResponseHeader("Last-Modified");
+		}
+
+		return date;
+	}
+
+	self.updateLastModifiedLabel = function() {
+		var labelValue = "";
+		
+		if (self.lastModifiedLabel==null) {
+			self.lastModifiedLabel = document.getElementById("LastModifiedLabel");
+		}
+
+		if (self.lastModifiedLabel) {
+			var seconds = parseInt(((new Date().getTime() - Date.parse(document.lastModified)) / 1000 / 60) * 100 + "");
+			var minutes = 0;
+			var hours = 0;
+
+			if (seconds < 60) {
+				seconds = Math.floor(seconds/10)*10;
+				labelValue = seconds + " seconds";
+			}
+			else {
+				minutes = parseInt((seconds/60) + "");
+
+				if (minutes>60) {
+					hours = parseInt((seconds/60/60) +"");
+					labelValue += hours==1 ? " hour" : " hours";
+				}
+				else {
+					labelValue = minutes+"";
+					labelValue += minutes==1 ? " minute" : " minutes";
+				}
+			}
+			
+			if (seconds<10) {
+				labelValue = "Updated now";
+			}
+			else {
+				labelValue = "Updated " + labelValue + " ago";
+			}
+
+			if (self.lastModifiedLabel.firstElementChild) {
+				self.lastModifiedLabel.firstElementChild.textContent = labelValue;
+
+			}
+			else if ("textContent" in self.lastModifiedLabel) {
+				self.lastModifiedLabel.textContent = labelValue;
+			}
+		}
+	}
+
+	self.getShortString = function(string, length) {
+		if (length==null) length = 30;
+		string = string!=null ? string.substr(0, length).replace(/\n/g, "") : "[String is null]";
+		return string;
+	}
+
+	self.getShortNumber = function(value, places) {
+		if (places==null || places<1) places = 4;
+		value = Math.round(value * Math.pow(10,places)) / Math.pow(10, places);
+		return value;
+	}
+
+	///////////////////////////////////////
+	// NAVIGATION CONTROLS
+	///////////////////////////////////////
+
+	self.updateViewLabel = function() {
+		var viewNavigationLabel = document.getElementById("ViewNavigationLabel");
+		var view = self.getVisibleView();
+		var viewIndex = view ? self.getViewIndex(view) : -1;
+		var viewName = view ? self.getViewPreferenceValue(view, self.prefix + "view-name") : null;
+		var viewId = view ? view.id : null;
+
+		if (viewNavigationLabel && view) {
+			if (viewName && viewName.indexOf('"')!=-1) {
+				viewName = viewName.replace(/"/g, "");
+			}
+
+			if (self.showViewName) {
+				viewNavigationLabel.textContent = viewName;
+				self.setTooltip(viewNavigationLabel, viewIndex + 1 + " of " + self.numberOfViews);
+			}
+			else {
+				viewNavigationLabel.textContent = viewIndex + 1 + " of " + self.numberOfViews;
+				self.setTooltip(viewNavigationLabel, viewName);
+			}
+
+		}
+	}
+
+	self.updateURL = function(view) {
+		view = view == null ? self.getVisibleView() : view;
+		var viewId = view ? view.id : null
+		var viewFragment = view ? "#"+ viewId : null;
+
+		if (viewId && self.viewIds.length>1 && self.enableDeepLinking) {
+
+			if (self.supportsPopState==false) {
+				self.setFragment(viewId);
+			}
+			else {
+				if (viewFragment!=window.location.hash) {
+
+					if (window.location.hash==null) {
+						window.history.replaceState({name:viewId}, null, viewFragment);
+					}
+					else {
+						window.history.pushState({name:viewId}, null, viewFragment);
+					}
+				}
+			}
+		}
+	}
+
+	self.setFragment = function(value) {
+		window.location.hash = "#" + value;
+	}
+
+	self.setTooltip = function(element, value) {
+		// setting the tooltip in edge causes a page crash on hover
+		if (/Edge/.test(navigator.userAgent)) { return; }
+
+		if ("title" in element) {
+			element.title = value;
+		}
+	}
+
+	self.getStylesheetRules = function(styleSheet) {
+		try {
+			if (styleSheet) return styleSheet.cssRules || styleSheet.rules;
+	
+			return document.styleSheets[0]["cssRules"] || document.styleSheets[0]["rules"];
+		}
+		catch (error) {
+			// ERRORS:
+			// SecurityError: The operation is insecure.
+			// Errors happen when script loads before stylesheet or loading an external css locally
+
+			// InvalidAccessError: A parameter or an operation is not supported by the underlying object
+			// Place script after stylesheet
+
+			console.log(error);
+			if (error.toString().indexOf("The operation is insecure")!=-1) {
+				console.log("Load the stylesheet before the script or load the stylesheet inline until it can be loaded on a server")
+			}
+			return [];
+		}
+	}
+
+	/**
+	 * If single page application hide all of the views. 
+	 * @param {Number} selectedIndex if provided shows the view at index provided
+	 **/
+	self.hideViews = function(selectedIndex, animation) {
+		var rules = self.getStylesheetRules();
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+
+			if (rule.media!=null) {
+
+				if (queryIndex==selectedIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = selectedIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+				}
+				else {
+					if (animation) {
+						self.fadeOut(rule)
+					}
+					else {
+						self.disableMediaQuery(rule);
+					}
+				}
+				
+				queryIndex++;
+			}
+		}
+
+		self.numberOfViews = queryIndex;
+		self.updateViewLabel();
+		self.updateURL();
+
+		self.dispatchViewChange();
+
+		var view = self.getVisibleView();
+		var viewIndex = view ? self.getViewIndex(view) : -1;
+
+		return viewIndex==selectedIndex ? view : null;
+	}
+
+	/**
+	 * Hide view
+	 * @param {Object} view element to hide
+	 **/
+	self.hideView = function(view) {
+		var rule = view ? self.mediaQueryDictionary[view.id] : null;
+
+		if (rule) {
+			self.disableMediaQuery(rule);
+		}
+	}
+
+	/**
+	 * Show the view by media query. Does not hide current views
+	 * Sets view options by default
+	 * @param {Object} view element to show
+	 * @param {Boolean} setViewOptions sets view options if null or true
+	 */
+	self.showViewByMediaQuery = function(view, setViewOptions) {
+		var id = view ? view.id : null;
+		var query = id ? self.mediaQueryDictionary[id] : null;
+		var display = null;
+		setViewOptions = setViewOptions==null ? true : setViewOptions;
+
+		if (query) {
+			self.enableMediaQuery(query);
+			if (view && setViewOptions) self.setViewOptions(view);
+			if (view && setViewOptions) self.setViewVariables(view);
+		}
+	}
+
+	/**
+	 * Show the view. Does not hide current views
+	 */
+	self.showView = function(view, setViewOptions) {
+		var id = view ? view.id : null;
+		var query = id ? self.mediaQueryDictionary[id] : null;
+		var display = null;
+		setViewOptions = setViewOptions==null ? true : setViewOptions;
+
+		if (query) {
+			self.enableMediaQuery(query);
+			if (view==null) view =self.getVisibleView();
+			if (view && setViewOptions) self.setViewOptions(view);
+		}
+		else if (id) {
+			display = window.getComputedStyle(view).getPropertyValue("display");
+			if (display=="" || display=="none") {
+				view.style.display = "block";
+			}
+		}
+
+		if (view) {
+			if (self.currentView!=null) {
+				self.lastView = self.currentView;
+			}
+
+			self.currentView = view;
+		}
+	}
+
+	self.showViewById = function(id, setViewOptions) {
+		var view = id ? self.getViewById(id) : null;
+
+		if (view) {
+			self.showView(view);
+			return;
+		}
+
+		self.log("View not found '" + id + "'");
+	}
+
+	/**
+	 * Show overlay over view
+	 * @param {String} id id of view
+	 * @param {Number} x x location
+	 * @param {Number} y y location
+	 * @param {Event | HTMLElement} event event or html element with styles applied
+	 */
+	self.showOverlay = function(id, x, y, event) {
+		var view = id ? self.getViewById(id) : null;
+		var query = id ? self.mediaQueryDictionary[id] : null;
+		var centerHorizontally = false;
+		var centerVertically = false;
+		var display = null;
+
+		// get enter animation - event target must have css variables declared
+		if (event) {
+			var button = event.currentTarget || event; // can be event or htmlelement
+			var buttonComputedStyles = getComputedStyle(button);
+			var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
+			var targetAnimation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+			var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
+			var actionTarget = self.application ? null : self.getElement(actionTargetValue);
+			var actionTargetStyles = actionTarget ? actionTarget.style : null;
+
+			if (actionTargetStyles) {
+				actionTargetStyles.setProperty("animation", targetAnimation);
+			}
+		}
+		
+		if (self.application==false || targetType=="page") {
+			document.location.href = "./" + actionTargetValue;
+			return;
+		}
+
+		if (query) {
+			self.enableMediaQuery(query);
+		}
+		else if (id) {
+			if (view==null) {
+				self.log("View not found, '"+ id + "'");
+				return;
+			}
+
+			display = window.getComputedStyle(view).getPropertyValue("display");
+
+			if (display=="" || display=="none") {
+				view.style.display = "block";
+			}
+		}
+
+		// do not set x or y position if centering
+		centerHorizontally = self.getViewPreferenceBoolean(view, self.prefix + "center-horizontally");
+		centerVertically = self.getViewPreferenceBoolean(view, self.prefix + "center-vertically");
+
+		if (view && centerHorizontally==false) {
+			view.style.left = x + "px";
+		}
+		
+		if (view && centerVertically==false) {
+			view.style.top = y + "px";
+		}
+
+		self.currentOverlay = view;
+	}
+
+	self.goBack = function() {
+		if (self.currentOverlay) {
+			self.removeOverlay();
+		}
+		else if (self.lastView) {
+			self.goToView(self.lastView.id);
+		}
+	}
+
+	self.removeOverlay = function() {
+		var overlay = self.currentOverlay;
+
+		if (overlay) {
+			var style = overlay.style;
+			
+			if (style.animation) {
+				self.reverseAnimation(overlay, true);
+			}
+			else {
+				self.setViewVariables(null, self.currentOverlay);
+				self.hideView(self.currentOverlay);
+			}
+		}
+	}
+
+	/**
+	 * Reverse the animation and hide after
+	 * @param {Object} target element with animation
+	 * @param {Boolean} hide hide after animation ends
+	 */
+	self.reverseAnimation = function(target, hide) {
+		var lastAnimation = null;
+		var style = target.style;
+
+		style.animationPlayState = "paused";
+		lastAnimation = style.animation;
+		style.animation = null;
+		style.animationPlayState = "paused";
+
+		if (hide) {
+			target.addEventListener("animationend", self.animationEndHideHandler);
+		}
+
+		setTimeout(function() {
+			style.animation = lastAnimation;
+			style.animationPlayState = "paused";
+			style.animationDirection = "reverse";
+			style.animationPlayState = "running";
+		}, 30);
+	}
+
+	self.animationEndHandler = function(event) {
+		var target = event.currentTarget;
+	}
+
+	self.animationEndHideHandler = function(event) {
+		var target = event.currentTarget;
+		self.setViewVariables(null, target);
+		self.hideView(target);
+		target.removeEventListener("animationend", self.animationEndHideHandler);
+	}
+
+	self.animationEndShowHandler = function(event) {
+		var target = event.currentTarget;
+		target.removeEventListener("animationend", self.animationEndShowHandler);
+	}
+
+	self.setViewOptions = function(view) {
+
+		if (view) {
+			self.minimumScale = self.getViewPreferenceValue(view, self.prefix + "minimum-scale");
+			self.scaleViewsToFit = self.getViewPreferenceBoolean(view, self.prefix + "scale-to-fit");
+			self.scaleToFitType = self.getViewPreferenceValue(view, self.prefix + "scale-to-fit-type");
+			self.scaleToFitOnDoubleClick = self.getViewPreferenceBoolean(view, self.prefix + "scale-on-double-click");
+			self.actualSizeOnDoubleClick = self.getViewPreferenceBoolean(view, self.prefix + "actual-size-on-double-click");
+			self.scaleViewsOnResize = self.getViewPreferenceBoolean(view, self.prefix + "scale-on-resize");
+			self.enableScaleUp = self.getViewPreferenceBoolean(view, self.prefix + "enable-scale-up");
+			self.centerHorizontally = self.getViewPreferenceBoolean(view, self.prefix + "center-horizontally");
+			self.centerVertically = self.getViewPreferenceBoolean(view, self.prefix + "center-vertically");
+			self.navigationOnKeypress = self.getViewPreferenceBoolean(view, self.prefix + "navigate-on-keypress");
+			self.showViewName = self.getViewPreferenceBoolean(view, self.prefix + "show-view-name");
+			self.refreshPageForChanges = self.getViewPreferenceBoolean(view, self.prefix + "refresh-for-changes");
+			self.refreshPageForChangesInterval = self.getViewPreferenceValue(view, self.prefix + "refresh-interval");
+			self.showNavigationControls = self.getViewPreferenceBoolean(view, self.prefix + "show-navigation-controls");
+			self.scaleViewSlider = self.getViewPreferenceBoolean(view, self.prefix + "show-scale-controls");
+			self.enableDeepLinking = self.getViewPreferenceBoolean(view, self.prefix + "enable-deep-linking");
+			self.singlePageApplication = self.getViewPreferenceBoolean(view, self.prefix + "application");
+			self.showByMediaQuery = self.getViewPreferenceBoolean(view, self.prefix + "show-by-media-query");
+			self.showUpdateNotification = document.cookie!="" ? document.cookie.indexOf(self.pageRefreshedName)!=-1 : false;
+			self.imageComparisonDuration = self.getViewPreferenceValue(view, self.prefix + "image-comparison-duration");
+			self.supportAnimations = self.getViewPreferenceBoolean(view, self.prefix + "enable-animations", true);
+
+			if (self.scaleViewsToFit) {
+				var newScaleValue = self.scaleViewToFit(view);
+				
+				if (newScaleValue<0) {
+					setTimeout(self.scaleViewToFit, 500, view);
+				}
+			}
+			else {
+				self.viewScale = self.getViewScaleValue(view);
+				self.updateSliderValue(self.viewScale);
+			}
+
+			if (self.imageComparisonDuration!=null) {
+				// todo
+			}
+
+			if (self.refreshPageForChangesInterval!=null) {
+				self.refreshDuration = Number(self.refreshPageForChangesInterval);
+			}
+		}
+	}
+
+	self.previousView = function(event) {
+		var rules = self.getStylesheetRules();
+		var view = self.getVisibleView()
+		var index = view ? self.getViewIndex(view) : -1;
+		var prevQueryIndex = index!=-1 ? index-1 : self.currentQuery.index-1;
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+
+		if (event) {
+			event.stopImmediatePropagation();
+		}
+
+		if (prevQueryIndex<0) {
+			return;
+		}
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+			
+			if (rule.media!=null) {
+
+				if (queryIndex==prevQueryIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = prevQueryIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+					self.updateViewLabel();
+					self.updateURL();
+					self.dispatchViewChange();
+				}
+				else {
+					self.disableMediaQuery(rule);
+				}
+
+				queryIndex++;
+			}
+		}
+	}
+
+	self.nextView = function(event) {
+		var rules = self.getStylesheetRules();
+		var view = self.getVisibleView();
+		var index = view ? self.getViewIndex(view) : -1;
+		var nextQueryIndex = index!=-1 ? index+1 : self.currentQuery.index+1;
+		var queryIndex = 0;
+		var numberOfRules = rules!=null ? rules.length : 0;
+		var numberOfMediaQueries = self.getNumberOfMediaRules();
+
+		if (event) {
+			event.stopImmediatePropagation();
+		}
+
+		if (nextQueryIndex>=numberOfMediaQueries) {
+			return;
+		}
+
+		// loop through rules and hide media queries except selected
+		for (var i=0;i<numberOfRules;i++) {
+			var rule = rules[i];
+			
+			if (rule.media!=null) {
+
+				if (queryIndex==nextQueryIndex) {
+					self.currentQuery.mediaText = rule.conditionText;
+					self.currentQuery.index = nextQueryIndex;
+					self.currentQuery.rule = rule;
+					self.enableMediaQuery(rule);
+					self.updateViewLabel();
+					self.updateURL();
+					self.dispatchViewChange();
+				}
+				else {
+					self.disableMediaQuery(rule);
+				}
+
+				queryIndex++;
+			}
+		}
+	}
+
+	/**
+	 * Enables a view via media query
+	 */
+	self.enableMediaQuery = function(rule) {
+
+		try {
+			rule.media.mediaText = self.inclusionQuery;
+		}
+		catch(error) {
+			//self.log(error);
+			rule.conditionText = self.inclusionQuery;
+		}
+	}
+
+	self.disableMediaQuery = function(rule) {
+
+		try {
+			rule.media.mediaText = self.exclusionQuery;
+		}
+		catch(error) {
+			rule.conditionText = self.exclusionQuery;
+		}
+	}
+
+	self.dispatchViewChange = function() {
+		try {
+			var event = new Event(self.NAVIGATION_CHANGE);
+			window.dispatchEvent(event);
+		}
+		catch (error) {
+			// In IE 11: Object doesn't support this action
+		}
+	}
+
+	self.getNumberOfMediaRules = function() {
+		var rules = self.getStylesheetRules();
+		var numberOfRules = rules ? rules.length : 0;
+		var numberOfQueries = 0;
+
+		for (var i=0;i<numberOfRules;i++) {
+			if (rules[i].media!=null) { numberOfQueries++; }
+		}
+		return numberOfQueries;
+	}
+
+	/////////////////////////////////////////
+	// VIEW SCALE 
+	/////////////////////////////////////////
+
+	self.sliderChangeHandler = function(event) {
+		var value = self.getShortNumber(event.currentTarget.value/100);
+		var view = self.getVisibleView();
+		self.setViewScaleValue(view, false, value, true);
+	}
+
+	self.updateSliderValue = function(scale) {
+		var slider = document.getElementById(self.viewScaleSliderId);
+		var tooltip = parseInt(scale * 100 + "") + "%";
+		var inputType;
+		var inputValue;
+		
+		if (slider) {
+			inputValue = self.getShortNumber(scale * 100);
+			if (inputValue!=slider["value"]) {
+				slider["value"] = inputValue;
+			}
+			inputType = slider.getAttributeNS(null, "type");
+
+			if (inputType!="range") {
+				// input range is not supported
+				slider.style.display = "none";
+			}
+
+			self.setTooltip(slider, tooltip);
+		}
+	}
+
+	self.viewChangeHandler = function(event) {
+		var view = self.getVisibleView();
+		var matrix = view ? getComputedStyle(view).transform : null;
+		
+		if (matrix) {
+			self.viewScale = self.getViewScaleValue(view);
+			
+			var scaleNeededToFit = self.getViewFitToViewportScale(view);
+			var isViewLargerThanViewport = scaleNeededToFit<1;
+			
+			// scale large view to fit if scale to fit is enabled
+			if (self.scaleViewsToFit) {
+				self.scaleViewToFit(view);
+			}
+			else {
+				self.updateSliderValue(self.viewScale);
+			}
+		}
+	}
+
+	self.getViewScaleValue = function(view) {
+		var matrix = getComputedStyle(view).transform;
+
+		if (matrix) {
+			var matrixArray = matrix.replace("matrix(", "").split(",");
+			var scaleX = parseFloat(matrixArray[0]);
+			var scaleY = parseFloat(matrixArray[3]);
+			var scale = Math.min(scaleX, scaleY);
+		}
+
+		return scale;
+	}
+
+	/**
+	 * Scales view to scale. 
+	 * @param {Object} view view to scale. views are in views array
+	 * @param {Boolean} scaleToFit set to true to scale to fit. set false to use desired scale value
+	 * @param {Number} desiredScale scale to define. not used if scale to fit is false
+	 * @param {Boolean} isSliderChange indicates if slider is callee
+	 */
+	self.setViewScaleValue = function(view, scaleToFit, desiredScale, isSliderChange) {
+		var enableScaleUp = self.enableScaleUp;
+		var scaleToFitType = self.scaleToFitType;
+		var minimumScale = self.minimumScale;
+		var hasMinimumScale = !isNaN(minimumScale) && minimumScale!=""
+		var scaleNeededToFit = self.getViewFitToViewportScale(view, enableScaleUp);
+		var scaleNeededToFitWidth = self.getViewFitToViewportWidthScale(view, enableScaleUp);
+		var scaleNeededToFitHeight = self.getViewFitToViewportHeightScale(view, enableScaleUp);
+		var scaleToFitFull = self.getViewFitToViewportScale(view, true);
+		var scaleToFitFullWidth = self.getViewFitToViewportWidthScale(view, true);
+		var scaleToFitFullHeight = self.getViewFitToViewportHeightScale(view, true);
+		var scaleToWidth = scaleToFitType=="width";
+		var scaleToHeight = scaleToFitType=="height";
+		var shrunkToFit = false;
+		var topPosition = null;
+		var leftPosition = null;
+		var translateY = null;
+		var translateX = null;
+		var transformValue = "";
+		var canCenterVertically = true;
+		var canCenterHorizontally = true;
+
+		//console.log("height:"+scaleNeededToFitHeight+",width:"+scaleNeededToFitWidth+",fit:"+scaleNeededToFit,"desired:"+desiredScale);
+
+		if (scaleToFit && isSliderChange!=true) {
+			if (scaleToFitType=="fit") {
+				desiredScale = scaleNeededToFit;
+			}
+			else if (scaleToFitType=="width") {
+				desiredScale = scaleNeededToFitWidth;
+			}
+			else if (scaleToFitType=="height") {
+				desiredScale = scaleNeededToFitHeight;
+			}
+		}
+		else {
+			if (isNaN(desiredScale)) {
+				desiredScale = 1;
+			}
+		}
+
+		self.updateSliderValue(desiredScale);
+		
+		// scale to fit width
+		if (scaleToWidth && scaleToHeight==false) {
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			canCenterHorizontally = scaleNeededToFitWidth>=1 && enableScaleUp==false;
+
+			if (isSliderChange) {
+				canCenterHorizontally = desiredScale<scaleToFitFullWidth;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFitWidth;
+			}
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			//desiredScale = self.getShortNumber(desiredScale);
+			desiredScale = self.getShortNumber(desiredScale);
+
+			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+			else if (desiredScale>=1 && enableScaleUp==false) {
+				transformValue = "scale(" + 1 + ")";
+			}
+			else {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			return desiredScale;
+		}
+
+		// scale to fit height
+		if (scaleToHeight && scaleToWidth==false) {
+			//canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			//canCenterHorizontally = scaleNeededToFitHeight<=scaleNeededToFitWidth && enableScaleUp==false;
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			canCenterHorizontally = scaleNeededToFitWidth>=1 && enableScaleUp==false;
+			
+			if (isSliderChange) {
+				canCenterHorizontally = desiredScale<scaleToFitFullHeight;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFitHeight;
+			}
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			desiredScale = self.getShortNumber(desiredScale);
+
+			if (desiredScale>1 && (enableScaleUp || isSliderChange)) {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+			else if (desiredScale>=1 && enableScaleUp==false) {
+				transformValue = "scale(" + 1 + ")";
+			}
+			else {
+				transformValue = "scale(" + desiredScale + ")";
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			return scaleNeededToFitHeight;
+		}
+
+		if (scaleToFitType=="fit") {
+			//canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFitWidth;
+			//canCenterHorizontally = scaleNeededToFitWidth>=scaleNeededToFitHeight;
+			canCenterVertically = scaleNeededToFitHeight>=scaleNeededToFit;
+			canCenterHorizontally = scaleNeededToFitWidth>=scaleNeededToFit;
+
+			if (hasMinimumScale) {
+				desiredScale = Math.max(desiredScale, Number(minimumScale));
+			}
+
+			desiredScale = self.getShortNumber(desiredScale);
+
+			if (isSliderChange || scaleToFit==false) {
+				canCenterVertically = scaleToFitFullHeight>=desiredScale;
+				canCenterHorizontally = desiredScale<scaleToFitFullWidth;
+			}
+			else if (scaleToFit) {
+				desiredScale = scaleNeededToFit;
+			}
+
+			transformValue = "scale(" + desiredScale + ")";
+
+			if (self.centerVertically) {
+				if (canCenterVertically) {
+					translateY = "-50%";
+					topPosition = "50%";
+				}
+				else {
+					translateY = "0";
+					topPosition = "0";
+				}
+				
+				if (view.style.top != topPosition) {
+					view.style.top = topPosition + "";
+				}
+
+				if (canCenterVertically) {
+					transformValue += " translateY(" + translateY+ ")";
+				}
+			}
+
+			if (self.centerHorizontally) {
+				if (canCenterHorizontally) {
+					translateX = "-50%";
+					leftPosition = "50%";
+				}
+				else {
+					translateX = "0";
+					leftPosition = "0";
+				}
+
+				if (view.style.left != leftPosition) {
+					view.style.left = leftPosition + "";
+				}
+
+				if (canCenterHorizontally) {
+					transformValue += " translateX(" + translateX+ ")";
+				}
+			}
+
+			view.style.transformOrigin = "0 0";
+			view.style.transform = transformValue;
+
+			self.viewScale = desiredScale;
+			self.viewLeft = leftPosition;
+			self.viewTop = topPosition;
+
+			self.updateSliderValue(desiredScale);
+			
+			return desiredScale;
+		}
+	}
+
+	self.getViewFitToViewportScale = function(view, scaleUp) {
+		var enableScaleUp = scaleUp;
+		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var availableHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
+		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
+		var newScale = 1;
+
+		availableWidth -= self.horizontalPadding;
+		availableHeight -= self.verticalPadding;
+
+		if (enableScaleUp) {
+			newScale = Math.min(availableHeight/elementHeight, availableWidth/elementWidth);
+		}
+		else if (elementWidth > availableWidth || elementHeight > availableHeight) {
+			newScale = Math.min(availableHeight/elementHeight, availableWidth/elementWidth);
+		}
+		
+		return newScale;
+	}
+
+	self.getViewFitToViewportWidthScale = function(view, scaleUp) {
+		var enableScaleUp = scaleUp;
+		var availableWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+		var elementWidth = parseFloat(getComputedStyle(view, "style").width);
+		var newScale = 1;
+
+		availableWidth -= self.horizontalPadding;
+
+		if (enableScaleUp) {
+			newScale = availableWidth/elementWidth;
+		}
+		else if (elementWidth > availableWidth) {
+			newScale = availableWidth/elementWidth;
+		}
+		
+		return newScale;
+	}
+
+	self.getViewFitToViewportHeightScale = function(view, scaleUp) {
+		var enableScaleUp = scaleUp;
+		var availableHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+		var elementHeight = parseFloat(getComputedStyle(view, "style").height);
+		var newScale = 1;
+
+		availableHeight -= self.verticalPadding;
+
+		if (enableScaleUp) {
+			newScale = availableHeight/elementHeight;
+		}
+		else if (elementHeight > availableHeight) {
+			newScale = availableHeight/elementHeight;
+		}
+		
+		return newScale;
+	}
+
+	self.keypressHandler = function(event) {
+		var rightKey = 39;
+		var leftKey = 37;
+		
+		// listen for both events 
+		if (event.type=="keypress") {
+			window.removeEventListener("keyup", self.keypressHandler);
+		}
+		else {
+			window.removeEventListener("keypress", self.keypressHandler);
+		}
+		
+		if (self.showNavigationControls) {
+			if (self.navigationOnKeypress) {
+				if (event.keyCode==rightKey) {
+					self.nextView();
+				}
+				if (event.keyCode==leftKey) {
+					self.previousView();
+				}
+			}
+		}
+		else if (self.navigationOnKeypress) {
+			if (event.keyCode==rightKey) {
+				self.nextView();
+			}
+			if (event.keyCode==leftKey) {
+				self.previousView();
+			}
+		}
+	}
+
+	///////////////////////////////////
+	// GENERAL FUNCTIONS
+	///////////////////////////////////
+
+	self.getViewById = function(id) {
+		id = id ? id.replace("#", "") : "";
+		var view = self.viewIds.indexOf(id)!=-1 && self.getElement(id);
+		return view;
+	}
+
+	self.getViewIds = function() {
+		var viewIds = self.getViewPreferenceValue(document.body, self.prefix + "view-ids");
+		var viewId = null;
+
+		viewIds = viewIds!=null && viewIds!="" ? viewIds.split(",") : [];
+
+		if (viewIds.length==0) {
+			viewId = self.getViewPreferenceValue(document.body, self.prefix + "view-id");
+			viewIds = viewId ? [viewId] : [];
+		}
+
+		return viewIds;
+	}
+
+	self.getInitialViewId = function() {
+		var viewId = self.getViewPreferenceValue(document.body, self.prefix + "view-id");
+		return viewId;
+	}
+
+	self.getApplicationStylesheet = function() {
+		var stylesheetId = self.getViewPreferenceValue(document.body, self.prefix + "stylesheet-id");
+		self.applicationStylesheet = document.getElementById("applicationStylesheet");
+		return self.applicationStylesheet.sheet;
+	}
+
+	self.getVisibleView = function() {
+		var viewIds = self.getViewIds();
+		
+		for (var i=0;i<viewIds.length;i++) {
+			var viewId = viewIds[i].replace(/[\#?\.?](.*)/, "$" + "1");
+			var view = self.getElement(viewId);
+			var postName = "_Class";
+
+			if (view==null && viewId && viewId.lastIndexOf(postName)!=-1) {
+				view = self.getElement(viewId.replace(postName, ""));
+			}
+			
+			if (view) {
+				var display = getComputedStyle(view).display;
+		
+				if (display=="block" || display=="flex") {
+					return view;
+				}
+			}
+		}
+
+		return null;
+	}
+
+	self.getInitialView = function() {
+		var viewId = self.getInitialViewId();
+		viewId = viewId.replace(/[\#?\.?](.*)/, "$" + "1");
+		var view = self.getElement(viewId);
+		var postName = "_Class";
+
+		if (view==null && viewId && viewId.lastIndexOf(postName)!=-1) {
+			view = self.getElement(viewId.replace(postName, ""));
+		}
+
+		return view;
+	}
+
+	self.getViewIndex = function(view) {
+		var viewIds = self.getViewIds();
+		var id = view ? view.id : null;
+		var index = id && viewIds ? viewIds.indexOf(id) : -1;
+
+		return index;
+	}
+
+	self.syncronizeViewToURL = function() {
+		var fragment = window.location.hash;
+		var view = self.getViewById(fragment);
+		var index = view ? self.getViewIndex(view) : 0;
+		if (index==-1) index = 0;
+		var currentView = self.hideViews(index);
+
+		if (self.supportsPopState && currentView) {
+
+			if (fragment==null) {
+				window.history.replaceState({name:currentView.id}, null, "#"+ currentView.id);
+			}
+			else {
+				window.history.pushState({name:currentView.id}, null, "#"+ currentView.id);
+			}
+		}
+		
+		self.setViewVariables(view);
+		return view;
+	}
+
+	/**
+	 * Set the currentView or currentOverlay properties and set the lastView or lastOverlay properties
+	 */
+	self.setViewVariables = function(view, overlay, parentView) {
+		if (view) {
+			if (self.currentView) {
+				self.lastView = self.currentView;
+			}
+			self.currentView = view;
+		}
+
+		if (overlay) {
+			if (self.currentOverlay) {
+				self.lastOverlay = self.currentOverlay;
+			}
+			self.currentOverlay = overlay;
+		}
+	}
+
+	self.getViewPreferenceBoolean = function(view, property, altValue) {
+		var computedStyle = window.getComputedStyle(view);
+		var value = computedStyle.getPropertyValue(property);
+		var type = typeof value;
+		
+		if (value=="true" || (type=="string" && value.indexOf("true")!=-1)) {
+			return true;
+		}
+		else if (value=="" && arguments.length==3) {
+			return altValue;
+		}
+
+		return false;
+	}
+
+	self.getViewPreferenceValue = function(view, property, defaultValue) {
+		var value = window.getComputedStyle(view).getPropertyValue(property);
+
+		if (value===undefined) {
+			return defaultValue;
+		}
+		
+		value = value.replace(/^[\s\"]*/, "");
+		value = value.replace(/[\s\"]*$/, "");
+		value = value.replace(/^[\s"]*(.*?)[\s"]*$/, function (match, capture) { 
+			return capture;
+		});
+
+		return value;
+	}
+
+	self.getStyleRuleValue = function(cssRule, property) {
+		var value = cssRule ? cssRule.style.getPropertyValue(property) : null;
+
+		if (value===undefined) {
+			return null;
+		}
+		
+		value = value.replace(/^[\s\"]*/, "");
+		value = value.replace(/[\s\"]*$/, "");
+		value = value.replace(/^[\s"]*(.*?)[\s"]*$/, function (match, capture) { 
+			return capture;
+		});
+
+		return value;
+	}
+
+	self.getCSSPropertyValueForElement = function(id, property) {
+		var styleSheets = document.styleSheets;
+		var numOfStylesheets = styleSheets.length;
+		var values = [];
+		var selectorIDText = "#" + id;
+		var selectorClassText = "." + id + "_Class";
+		var value;
+
+		for(var i=0;i<numOfStylesheets;i++) {
+			var styleSheet = styleSheets[i];
+			var cssRules = self.getStylesheetRules(styleSheet);
+			var numOfCSSRules = cssRules.length;
+			var cssRule;
+			
+			for (var j=0;j<numOfCSSRules;j++) {
+				cssRule = cssRules[j];
+				
+				if (cssRule.media) {
+					var mediaRules = cssRule.cssRules;
+					var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+					
+					for(var k=0;k<numOfMediaRules;k++) {
+						var mediaRule = mediaRules[k];
+						
+						if (mediaRule.selectorText==selectorIDText || mediaRule.selectorText==selectorClassText) {
+							
+							if (mediaRule.style && property in mediaRule.style) {
+								value = mediaRule.style.getPropertyValue(property);
+								values.push(value);
+							}
+						}
+					}
+				}
+				else {
+
+					if (cssRule.selectorText==selectorIDText || cssRule.selectorText==selectorClassText) {
+						if (cssRule.style && property in cssRule.style) {
+							value = cssRule.style.getPropertyValue(property);
+							values.push(value);
+						}
+					}
+				}
+			}
+		}
+		
+		return values.pop();
+	}
+
+	self.collectViews = function() {
+		var viewIds = self.getViewIds();
+
+		for (let index = 0; index < viewIds.length; index++) {
+			const id = viewIds[index];
+			const view = self.getViewById(id);
+			//view && view.addEventListener("animationend", self.animationEndHandler);
+			self.views[id] = view;
+		}
+		
+		self.viewIds = viewIds;
+	}
+
+	self.collectMediaQueries = function() {
+		var viewIds = self.getViewIds();
+		var styleSheet = self.getApplicationStylesheet();
+		var cssRules = self.getStylesheetRules(styleSheet);
+		var numOfCSSRules = cssRules ? cssRules.length : 0;
+		var cssRule;
+		var id = viewIds.length ? viewIds[0]: ""; // single view
+		var selectorIDText = "#" + id;
+		var selectorClassText = "." + id + "_Class";
+		var viewsNotFound = viewIds.slice();
+		var viewsFound = [];
+		var selectorText = null;
+		var property = self.prefix + "view-id";
+		
+		for (var j=0;j<numOfCSSRules;j++) {
+			cssRule = cssRules[j];
+			
+			if (cssRule.media) {
+				var mediaRules = cssRule.cssRules;
+				var numOfMediaRules = mediaRules ? mediaRules.length : 0;
+				
+				for(var k=0;k<numOfMediaRules;k++) {
+					var mediaRule = mediaRules[k];
+					var mediaId = null;
+
+					selectorText = mediaRule.selectorText;
+					
+					if (selectorText==".mediaViewInfo") {
+
+						mediaId = self.getStyleRuleValue(mediaRule, property);
+
+						self.addView(mediaId, cssRule);
+						viewsFound.push(mediaId);
+
+						if (viewsNotFound.indexOf(mediaId)!=-1) {
+							viewsNotFound.splice(viewsNotFound.indexOf(mediaId));
+						}
+
+						break;
+					}
+				}
+			}
+			else {
+				selectorText = cssRule.selectorText.replace(/[#|\s|*]?/g, "");
+
+				if (viewIds.indexOf(selectorText)!=-1) {
+					self.addView(selectorText, cssRule);
+
+					if (viewsNotFound.indexOf(selectorText)!=-1) {
+						viewsNotFound.splice(viewsNotFound.indexOf(selectorText));
+					}
+
+					break;
+				}
+			}
+		}
+
+		if (viewsNotFound.length) {
+			console.log("Could not find the following views:" + viewsNotFound.join(",") + "");
+			console.log("Views found:" + viewsFound.join(",") + "");
+		}
+	}
+
+	/**
+	 * Adds a view. A view object contains the id of the view and the style rule
+	 * Use enableMediaQuery(rule) to enable
+	 * An array of view names are in self.views array
+	 */
+	self.addView = function(name, cssRule, parentId) {
+		var state = {name:name, rule:cssRule, id:name, parentId:parentId};
+		self.addedViews.push(name);
+		self.viewsDictionary[name] = state;
+		self.mediaQueryDictionary[name] = cssRule;
+	}
+
+	self.hasView = function(name) {
+
+		if (self.addedViews.indexOf(name)!=-1) {
+			return true;
+		}
+		return false;
+	}
+
+	/**
+	 * Go to view by id. Views are added in addView()
+	 * @param {String} name id of view in current
+	 * @param {String} parent id of parent view
+	 * @param {Boolean} maintainPreviousState if true then do not hide other views
+	 */
+	self.goToView = function(name, maintainPreviousState, parent) {
+		var state = self.viewsDictionary[name];
+
+		if (state) {
+			if (maintainPreviousState==false || maintainPreviousState==null) {
+				self.hideViews();
+			}
+			self.enableMediaQuery(state.rule);
+			self.updateViewLabel();
+			self.updateURL();
+		}
+		else {
+			var event = new Event(self.STATE_NOT_FOUND);
+			self.stateName = name;
+			window.dispatchEvent(event);
+		}
+	}
+
+	/**
+	 * Go to the view in the event targets CSS variable
+	 */
+	self.goToTargetView = function(event) {
+		var button = event.currentTarget;
+		var buttonComputedStyles = getComputedStyle(button);
+		var actionTargetValue = buttonComputedStyles.getPropertyValue(self.prefix+"action-target").trim();
+		var animation = buttonComputedStyles.getPropertyValue(self.prefix+"animation").trim();
+		var targetType = buttonComputedStyles.getPropertyValue(self.prefix+"action-type").trim();
+		var targetView = self.application ? null : self.getElement(actionTargetValue);
+		var actionTargetStyles = targetView ? targetView.style : null;
+		var state = self.viewsDictionary[actionTargetValue];
+		
+		// navigate to page
+		if (self.application==false || targetType=="page") {
+			document.location.href = "./" + actionTargetValue;
+			return;
+		}
+
+		// if view is found
+		if (targetView) {
+
+			// add animation set in event target style declaration
+			if (animation && self.supportAnimations) {
+				self.crossFade(self.currentView, targetView, false, animation);
+			}
+			else {
+				self.setViewVariables(self.currentView);
+				self.hideViews();
+				self.enableMediaQuery(state.rule);
+				self.scaleViewIfNeeded(targetView);
+				self.updateViewLabel();
+				self.updateURL();
+			}
+		}
+		else {
+			var stateEvent = new Event(self.STATE_NOT_FOUND);
+			self.stateName = name;
+			window.dispatchEvent(stateEvent);
+		}
+		
+	}
+
+	/**
+	 * Cross fade between views
+	 **/
+	self.crossFade = function(from, to, update, animation) {
+		var targetIndex = to.parentNode
+		var fromIndex = Array.prototype.slice.call(from.parentElement.children).indexOf(from);
+		var toIndex = Array.prototype.slice.call(to.parentElement.children).indexOf(to);
+
+		if (from.parentNode==to.parentNode) {
+			var reverse = self.getReverseAnimation(animation);
+			var duration = self.getAnimationDuration(animation, true);
+
+			// if target view is above (higher index)
+			// then fade in target view 
+			// and after fade in then hide previous view instantly
+			if (fromIndex<toIndex) {
+				self.setElementAnimation(from, null);
+				self.setElementAnimation(to, null);
+				self.showViewByMediaQuery(to);
+				self.fadeIn(to, update, animation);
+
+				setTimeout(function() {
+					self.setElementAnimation(to, null);
+					self.setElementAnimation(from, null);
+					self.hideView(from);
+					self.updateURL();
+					self.setViewVariables(to);
+					self.updateViewLabel();
+				}, duration)
+			}
+			// if target view is on bottom
+			// then show target view instantly 
+			// and fade out current view
+			else if (fromIndex>toIndex) {
+				self.setElementAnimation(to, null);
+				self.setElementAnimation(from, null);
+				self.showViewByMediaQuery(to);
+				self.fadeOut(from, update, reverse);
+
+				setTimeout(function() {
+					self.setElementAnimation(to, null);
+					self.setElementAnimation(from, null);
+					self.hideView(from);
+					self.updateURL();
+				}, duration)
+			}
+		}
+	}
+
+	self.fadeIn = function(element, update, animation) {
+		self.showViewByMediaQuery(element);
+
+		if (update) {
+			self.updateURL(element);
+			element.addEventListener("animationend", function(event) {
+				element.style.animation = null;
+				self.setViewVariables(element);
+				self.updateViewLabel();
+				element.removeEventListener("animationend", arguments.callee);
+			});
+		}
+		
+		element.style.animation = animation;
+	}
+
+	self.fadeOutCurrentView = function(animation, update) {
+		if (self.currentView) {
+			self.fadeOut(self.currentView, update, animation);
+		}
+		if (self.currentOverlay) {
+			self.fadeOut(self.currentOverlay, update, animation);
+		}
+	}
+
+	self.fadeOut = function(element, update, animation) {
+		if (update) {
+			element.addEventListener("animationend", function(event) {
+				element.style.animation = null;
+				self.hideView(element);
+				element.removeEventListener("animationend", arguments.callee);
+			});
+		}
+
+		element.style.animationPlayState = "paused";
+		element.style.animation = animation;
+		element.style.animationPlayState = "running";
+	}
+
+	self.getReverseAnimation = function(animation) {
+		if (animation && animation.indexOf("reverse")==-1) {
+			animation += " reverse";
+		}
+
+		return animation;
+	}
+
+	self.getAnimationDuration = function(animation, inMilliseconds) {
+		var duration = 0;
+		var expression = /.+(\d\.\d)s.+/;
+
+		if (animation && animation.match(expression)) {
+			duration = animation.replace(expression, "$" + "1");
+			if (duration && inMilliseconds) duration = duration * 1000;
+		}
+
+		return duration;
+	}
+
+	self.setElementAnimation = function(element, animation, priority) {
+		element.style.setProperty("animation", animation, "important");
+	}
+
+	self.getElement = function(id) {
+		var elementId = id ? id.trim() : id;
+		var element = elementId ? document.getElementById(elementId) : null;
+
+		return element;
+	}
+
+	self.resizeHandler = function(event) {
+		self.scaleViewIfNeeded();
+	}
+
+	self.scaleViewIfNeeded = function(view) {
+
+		if (self.scaleViewsOnResize) {
+			if (view==null) {
+				view = self.getVisibleView();
+			}
+
+			var isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME)=="false" ? false : true;
+
+			if (isViewScaled) {
+				self.scaleViewToFit(view, true);
+			}
+			else {
+				self.scaleViewToActualSize(view);
+			}
+		}
+	}
+
+	self.preventDoubleClick = function(event) {
+		event.stopImmediatePropagation();
+	}
+
+	self.hashChangeHandler = function(event) {
+		var fragment = window.location.hash ? window.location.hash.replace("#", "") : "";
+		var view = self.getViewById(fragment);
+
+		if (view) {
+			self.hideViews();
+			self.showView(view);
+			self.setViewVariables(view);
+			self.updateViewLabel();
+			window.dispatchEvent(new Event(self.VIEW_CHANGE));
+		}
+		else {
+			window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+		}
+	}
+
+	self.popStateHandler = function(event) {
+		var state = event.state;
+		var fragment = state ? state.name : window.location.hash;
+		var view = self.getViewById(fragment);
+
+		if (view) {
+			self.hideViews();
+			self.showView(view);
+			self.updateViewLabel();
+		}
+		else {
+			window.dispatchEvent(new Event(self.VIEW_NOT_FOUND));
+		}
+	}
+
+	self.doubleClickHandler = function(event) {
+		var view = self.getVisibleView();
+		var scaleValue = view ? self.getViewScaleValue(view) : 1;
+		var scaleNeededToFit = view ? self.getViewFitToViewportScale(view) : 1;
+		var scaleNeededToFitWidth = view ? self.getViewFitToViewportWidthScale(view) : 1;
+		var scaleNeededToFitHeight = view ? self.getViewFitToViewportHeightScale(view) : 1;
+		var scaleToFitType = self.scaleToFitType;
+
+		// Three scenarios
+		// - scale to fit on double click
+		// - set scale to actual size on double click
+		// - switch between scale to fit and actual page size
+
+		if (scaleToFitType=="width") {
+			scaleNeededToFit = scaleNeededToFitWidth;
+		}
+		else if (scaleToFitType=="height") {
+			scaleNeededToFit = scaleNeededToFitHeight;
+		}
+
+		// if scale and actual size enabled then switch between
+		if (self.scaleToFitOnDoubleClick && self.actualSizeOnDoubleClick) {
+			var isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME);
+			var isScaled = false;
+			
+			// if scale is not 1 then view needs scaling
+			if (scaleNeededToFit!=1) {
+
+				// if current scale is at 1 it is at actual size
+				// scale it to fit
+				if (scaleValue==1) {
+					self.scaleViewToFit(view);
+					isScaled = true;
+				}
+				else {
+					// scale is not at 1 so switch to actual size
+					self.scaleViewToActualSize(view);
+					isScaled = false;
+				}
+			}
+			else {
+				// view is smaller than viewport 
+				// so scale to fit() is scale actual size
+				// actual size and scaled size are the same
+				// but call scale to fit to retain centering
+				self.scaleViewToFit(view);
+				isScaled = false;
+			}
+			
+			view.setAttributeNS(null, self.SIZE_STATE_NAME, isScaled+"");
+			isViewScaled = view.getAttributeNS(null, self.SIZE_STATE_NAME);
+		}
+		else if (self.scaleToFitOnDoubleClick) {
+			self.scaleViewToFit(view);
+		}
+		else if (self.actualSizeOnDoubleClick) {
+			self.scaleViewToActualSize(view);
+		}
+
+	}
+
+	self.scaleViewToFit = function(view) {
+		return self.setViewScaleValue(view, true);
+	}
+
+	self.scaleViewToActualSize = function(view) {
+		self.setViewScaleValue(view, false, 1);
+	}
+
+	self.onloadHandler = function(event) {
+		self.initialize();
+	}
+
+	self.getStackArray = function(error) {
+		var value = "";
+		
+		if (error==null) {
+		  try {
+			 error = new Error("Stack");
+		  }
+		  catch (e) {
+			 
+		  }
+		}
+		
+		if ("stack" in error) {
+		  value = error.stack;
+		  var methods = value.split(/\n/g);
+	 
+		  var newArray = methods ? methods.map(function (value, index, array) {
+			 value = value.replace(/\@.*/,"");
+			 return value;
+		  }) : null;
+	 
+		  if (newArray && newArray[0].includes("getStackTrace")) {
+			 newArray.shift();
+		  }
+		  if (newArray && newArray[0].includes("getStackArray")) {
+			 newArray.shift();
+		  }
+		  if (newArray && newArray[0]=="") {
+			 newArray.shift();
+		  }
+	 
+			return newArray;
+		}
+		
+		return null;
+	}
+
+	self.log = function(value) {
+		console.log.apply(this, [value]);
+	}
+	
+	// initialize on load
+	// sometimes the body size is 0 so we call this now and again later
+	window.addEventListener("load", self.onloadHandler);
+	window.document.addEventListener("DOMContentLoaded", self.onloadHandler);
+}
+
+window.application = new Application();
+</script>
+</head>
+<body>
+<div id="Components_7">
+	<div id="Product">
+		<svg class="BG">
+			<rect fill="rgba(255,255,255,1)" id="BG" rx="0" ry="0" x="0" y="0" width="370" height="462">
+			</rect>
+		</svg>
+		<div id="product_detail">
+			<svg class="Rectangle_740">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740" rx="0" ry="0" x="0" y="0" width="370" height="112">
+				</rect>
+			</svg>
+			<div id="Product_name">
+				<span>Product name</span>
+			</div>
+			<div id="_599">
+				<span>$599</span>
+			</div>
+			<div id="Product_description">
+				<span>Product description</span>
+			</div>
+		</div>
+		<svg class="image">
+			<rect fill="rgba(67,66,93,1)" id="image" rx="0" ry="0" x="0" y="0" width="370" height="350">
+			</rect>
+		</svg>
+		<div id="Label">
+			<svg class="Label_BG">
+				<rect fill="rgba(255,101,101,1)" id="Label_BG" rx="12" ry="12" x="0" y="0" width="65" height="24">
+				</rect>
+			</svg>
+			<div id="Label_Content">
+				<span>New</span>
+			</div>
+		</div>
+	</div>
+	<div id="Product_co">
+		<svg class="BG_cp">
+			<rect fill="rgba(255,255,255,1)" id="BG_cp" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="product_detail_cq">
+			<svg class="Rectangle_740_cr">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_cr" rx="0" ry="0" x="0" y="0" width="370" height="112">
+				</rect>
+			</svg>
+			<div id="Event_name">
+				<span>Event name</span>
+			</div>
+			<div id="_200">
+				<span>$200</span>
+			</div>
+			<div id="Location">
+				<span>Location</span>
+			</div>
+			<svg class="Path_344" viewBox="0 0 12 15">
+				<path fill="rgba(166,167,173,1)" id="Path_344" d="M 6 0 C 2.687500238418579 0 0 2.689367771148682 0 6.004169464111328 C 0 9.318971633911133 6 15 6 15 C 6 15 12 9.318971633911133 12 6.00416898727417 C 12 2.689366579055786 9.317708015441895 0 6 0 Z M 6 8.756081581115723 C 4.552083492279053 8.756081581115723 3.380207777023315 7.583391189575195 3.380207777023315 6.134468078613281 C 3.380207777023315 4.685545444488525 4.552083492279053 3.512856006622314 6 3.512856006622314 C 7.447916507720947 3.512856006622314 8.619791984558105 4.685545444488525 8.619791984558105 6.134468078613281 C 8.619791984558105 7.583391189575195 7.447916507720947 8.756081581115723 6 8.756081581115723 Z">
+				</path>
+			</svg>
+		</div>
+		<svg class="image_cw">
+			<rect fill="rgba(67,66,93,1)" id="image_cw" rx="0" ry="0" x="0" y="0" width="370" height="408">
+			</rect>
+		</svg>
+	</div>
+	<div id="Product_cx">
+		<svg class="BG_cy">
+			<rect fill="rgba(255,255,255,1)" id="BG_cy" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="product_detail_cz">
+			<svg class="Rectangle_740_c">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_c" rx="0" ry="0" x="0" y="0" width="370" height="112">
+				</rect>
+			</svg>
+			<div id="Event_name_c">
+				<span>Event name</span>
+			</div>
+			<div id="_549_79">
+				<span>$549.</span><span style="font-size:13px;">79</span>
+			</div>
+			<div id="ID2_Nights___3_Days">
+				<span>2 Nights / 3 Days</span>
+			</div>
+			<div id="Group_253">
+				<svg class="Path_332" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_332" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_333" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_333" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_334" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_334" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_335" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_335" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_336" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(233,233,240,1)" id="Path_336" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+			</div>
+		</div>
+		<svg class="image_daa">
+			<rect fill="rgba(67,66,93,1)" id="image_daa" rx="0" ry="0" x="0" y="0" width="370" height="408">
+			</rect>
+		</svg>
+	</div>
+	<div id="Product_dab">
+		<svg class="BG_dac">
+			<rect fill="rgba(255,255,255,1)" id="BG_dac" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="product_detail_dad">
+			<svg class="Rectangle_740_dae">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_dae" rx="0" ry="0" x="0" y="0" width="370" height="112">
+				</rect>
+			</svg>
+			<div id="Product_name_daf">
+				<span>Product name</span>
+			</div>
+			<div id="_89">
+				<span>$89</span>
+			</div>
+			<div id="Lorem_ipsum_dolor_">
+				<span>Lorem ipsum dolor </span>
+			</div>
+		</div>
+		<svg class="image_dai">
+			<rect fill="rgba(67,66,93,1)" id="image_dai" rx="0" ry="0" x="0" y="0" width="370" height="408">
+			</rect>
+		</svg>
+		<div id="Label_daj">
+			<svg class="Label_BG_dak">
+				<rect fill="rgba(255,101,101,1)" id="Label_BG_dak" rx="0" ry="0" x="0" y="0" width="65" height="24">
+				</rect>
+			</svg>
+			<div id="Label_Content_dal">
+				<span>SALE</span>
+			</div>
+		</div>
+		<svg class="Heart" viewBox="0.025 0.025 22.664 20">
+			<path fill="rgba(255,101,101,1)" id="Heart" d="M 20.8775749206543 1.836722850799561 C 18.46194458007812 -0.5789077877998352 14.62535285949707 -0.5789077877998352 12.20972537994385 1.836722850799561 L 11.35715007781982 2.689298391342163 L 10.5045747756958 1.836722850799561 C 8.088943481445312 -0.5789077281951904 4.252353191375732 -0.5789077281951904 1.836722612380981 1.836722850799561 C -0.5789077281951904 4.252353668212891 -0.5789077281951904 8.088944435119629 1.836722612380981 10.5045747756958 L 11.35715007781982 20.02499961853027 L 20.8775749206543 10.50457572937012 C 23.29320526123047 8.088944435119629 23.29320526123047 4.252353668212891 20.8775749206543 1.836722850799561">
+			</path>
+		</svg>
+	</div>
+	<div id="Product_dan">
+		<svg class="BG_dao">
+			<rect fill="rgba(255,255,255,1)" id="BG_dao" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="Product_name_dap">
+			<span>Product name</span>
+		</div>
+		<div id="_10_00">
+			<span>$10.00</span>
+		</div>
+		<div id="Product_description_dar">
+			<span>Product description</span>
+		</div>
+		<svg class="Heart_das" viewBox="0.025 0.025 24 20">
+			<path fill="rgba(255,101,101,1)" id="Heart_das" d="M 22.10650634765625 1.836722850799561 C 19.54851150512695 -0.5789077877998352 15.48581314086914 -0.5789077877998352 12.92782211303711 1.836722850799561 L 12.02500152587891 2.689298391342163 L 11.12217998504639 1.836722850799561 C 8.56418514251709 -0.5789077281951904 4.50148868560791 -0.5789077281951904 1.943495154380798 1.836722850799561 C -0.6144985556602478 4.252353668212891 -0.6144985556602478 8.088944435119629 1.943495154380798 10.5045747756958 L 12.02500152587891 20.02499961853027 L 22.10650634765625 10.50457572937012 C 24.66449928283691 8.088944435119629 24.66449928283691 4.252353668212891 22.10650634765625 1.836722850799561">
+			</path>
+		</svg>
+	</div>
+	<div id="Product_dat">
+		<svg class="BG_dau">
+			<rect fill="rgba(255,255,255,1)" id="BG_dau" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="product_detail_dav">
+			<svg class="Rectangle_740_daw">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_daw" rx="0" ry="0" x="0" y="0" width="370" height="149">
+				</rect>
+			</svg>
+			<div id="Product_name_dax">
+				<span>Product name</span>
+			</div>
+			<div id="_89_day">
+				<span>$89</span>
+			</div>
+			<div id="Product_description_daz">
+				<span>Product description</span>
+			</div>
+		</div>
+		<svg class="image_da">
+			<rect fill="rgba(67,66,93,1)" id="image_da" rx="0" ry="0" x="0" y="0" width="370" height="371">
+			</rect>
+		</svg>
+		<div id="scroll">
+			<svg class="Ellipse_32">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_32" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_33">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_33" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_34">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_34" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_35">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_35" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+		</div>
+	</div>
+	<div id="Product_da">
+		<svg class="BG_da">
+			<rect fill="rgba(255,255,255,1)" id="BG_da" rx="0" ry="0" x="0" y="0" width="370" height="520">
+			</rect>
+		</svg>
+		<div id="product_detail_da">
+			<svg class="Rectangle_740_da">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_da" rx="0" ry="0" x="0" y="0" width="370" height="220">
+				</rect>
+			</svg>
+			<div id="Product_name_dba">
+				<span>Product name</span>
+			</div>
+			<div id="_89_dbb">
+				<span>$89</span>
+			</div>
+			<div id="Product_description_dbc">
+				<span>Product description</span>
+			</div>
+			<div id="btn_signup">
+				<svg class="Rectangle_166">
+					<rect fill="rgba(59,134,255,1)" id="Rectangle_166" rx="4" ry="4" x="0" y="0" width="185" height="50">
+					</rect>
+				</svg>
+				<div id="Shop_now">
+					<span>Shop now</span>
+				</div>
+			</div>
+		</div>
+		<svg class="image_dbg">
+			<rect fill="rgba(67,66,93,1)" id="image_dbg" rx="0" ry="0" x="0" y="0" width="370" height="300">
+			</rect>
+		</svg>
+		<div id="Like">
+			<svg class="Ellipse_42">
+				<ellipse fill="rgba(255,101,101,1)" id="Ellipse_42" rx="31.5" ry="31.5" cx="31.5" cy="31.5">
+				</ellipse>
+			</svg>
+			<svg class="Heart_dbj" viewBox="0.025 0.025 30.662 27.057">
+				<path fill="rgba(255,255,255,1)" id="Heart_dbj" d="M 28.23566818237305 2.476012229919434 C 24.96765327453613 -0.7920041680335999 19.77727127075195 -0.7920041680335999 16.5092601776123 2.476012229919434 L 15.35584163665771 3.629429817199707 L 14.20242500305176 2.476012229919434 C 10.93440723419189 -0.7920041084289551 5.744028091430664 -0.7920041084289551 2.476011753082275 2.476012229919434 C -0.7920041084289551 5.744028568267822 -0.7920041084289551 10.93440914154053 2.476011753082275 14.20242500305176 L 15.35584163665771 27.08225059509277 L 28.23566818237305 14.20242595672607 C 31.50368499755859 10.93440914154053 31.50368499755859 5.744028568267822 28.23566818237305 2.476012229919434">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Product_dbk">
+		<svg class="BG_dbl">
+			<rect fill="rgba(67,66,93,1)" id="BG_dbl" rx="0" ry="0" x="0" y="0" width="570" height="462">
+			</rect>
+		</svg>
+		<div id="Product_name_dbm">
+			<span>Product name</span>
+		</div>
+		<div id="Product_description_dbn">
+			<span>Product description</span>
+		</div>
+		<div id="ID4_1_Rating">
+			<span>4.1 Rating</span>
+		</div>
+		<div id="Group_251">
+			<svg class="Path_332_dbq" viewBox="-0.021 0 20.349 20.38">
+				<path fill="rgba(255,101,101,1)" id="Path_332_dbq" d="M 19.97220802307129 8.802716255187988 C 20.64933776855469 8.125584602355957 20.31077194213867 6.940603733062744 19.37971687316895 6.771320819854736 L 13.79337501525879 5.924905776977539 C 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 L 11.42341232299805 0.7617737054824829 C 10.91556358337402 -0.2539244890213013 9.645941734313965 -0.2539244890213013 9.138092041015625 0.7617737054824829 L 6.598848342895508 5.924905776977539 C 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 L 0.9278668165206909 6.771320819854736 C -0.00318974070250988 6.940603733062744 -0.3417557775974274 8.125584602355957 0.3353762924671173 8.802716255187988 L 4.398168563842773 13.03479194641113 C 4.398168563842773 13.03479194641113 4.398168563842773 13.03479194641113 4.398168563842773 13.11943435668945 L 3.467111825942993 18.79041481018066 C 3.297829151153564 19.89075469970703 4.398168563842773 20.73716735839844 5.329225540161133 20.22932243347168 L 10.06914901733398 17.52079200744629 C 10.06914901733398 17.52079200744629 10.06914901733398 17.52079200744629 10.15379047393799 17.52079200744629 L 14.89371490478516 20.14468002319336 C 15.82477283477783 20.65252876281738 16.92511177062988 19.80611419677734 16.75583076477051 18.70577239990234 L 15.82477283477783 13.03479194641113 C 15.82477283477783 13.03479194641113 15.82477283477783 13.03479194641113 15.82477283477783 12.95015144348145 L 19.97220802307129 8.802716255187988 Z">
+				</path>
+			</svg>
+			<svg class="Path_333_dbr" viewBox="-0.021 0 20.349 20.38">
+				<path fill="rgba(255,101,101,1)" id="Path_333_dbr" d="M 19.97220802307129 8.802716255187988 C 20.64933776855469 8.125584602355957 20.31077194213867 6.940603733062744 19.37971687316895 6.771320819854736 L 13.79337501525879 5.924905776977539 C 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 L 11.42341232299805 0.7617737054824829 C 10.91556358337402 -0.2539244890213013 9.645941734313965 -0.2539244890213013 9.138092041015625 0.7617737054824829 L 6.598848342895508 5.924905776977539 C 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 L 0.9278668165206909 6.771320819854736 C -0.00318974070250988 6.940603733062744 -0.3417557775974274 8.125584602355957 0.3353762924671173 8.802716255187988 L 4.398168563842773 13.03479194641113 C 4.398168563842773 13.03479194641113 4.398168563842773 13.03479194641113 4.398168563842773 13.11943435668945 L 3.467111825942993 18.79041481018066 C 3.297829151153564 19.89075469970703 4.398168563842773 20.73716735839844 5.329225540161133 20.22932243347168 L 10.06914901733398 17.52079200744629 C 10.06914901733398 17.52079200744629 10.06914901733398 17.52079200744629 10.15379047393799 17.52079200744629 L 14.89371490478516 20.14468002319336 C 15.82477283477783 20.65252876281738 16.92511177062988 19.80611419677734 16.75583076477051 18.70577239990234 L 15.82477283477783 13.03479194641113 C 15.82477283477783 13.03479194641113 15.82477283477783 13.03479194641113 15.82477283477783 12.95015144348145 L 19.97220802307129 8.802716255187988 Z">
+				</path>
+			</svg>
+			<svg class="Path_334_dbs" viewBox="-0.021 0 20.349 20.38">
+				<path fill="rgba(255,101,101,1)" id="Path_334_dbs" d="M 19.97220802307129 8.802716255187988 C 20.64933776855469 8.125584602355957 20.31077194213867 6.940603733062744 19.37971687316895 6.771320819854736 L 13.79337501525879 5.924905776977539 C 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 L 11.42341232299805 0.7617737054824829 C 10.91556358337402 -0.2539244890213013 9.645941734313965 -0.2539244890213013 9.138092041015625 0.7617737054824829 L 6.598848342895508 5.924905776977539 C 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 L 0.9278668165206909 6.771320819854736 C -0.00318974070250988 6.940603733062744 -0.3417557775974274 8.125584602355957 0.3353762924671173 8.802716255187988 L 4.398168563842773 13.03479194641113 C 4.398168563842773 13.03479194641113 4.398168563842773 13.03479194641113 4.398168563842773 13.11943435668945 L 3.467111825942993 18.79041481018066 C 3.297829151153564 19.89075469970703 4.398168563842773 20.73716735839844 5.329225540161133 20.22932243347168 L 10.06914901733398 17.52079200744629 C 10.06914901733398 17.52079200744629 10.06914901733398 17.52079200744629 10.15379047393799 17.52079200744629 L 14.89371490478516 20.14468002319336 C 15.82477283477783 20.65252876281738 16.92511177062988 19.80611419677734 16.75583076477051 18.70577239990234 L 15.82477283477783 13.03479194641113 C 15.82477283477783 13.03479194641113 15.82477283477783 13.03479194641113 15.82477283477783 12.95015144348145 L 19.97220802307129 8.802716255187988 Z">
+				</path>
+			</svg>
+			<svg class="Path_335_dbt" viewBox="-0.021 0 20.349 20.38">
+				<path fill="rgba(255,101,101,1)" id="Path_335_dbt" d="M 19.97220802307129 8.802716255187988 C 20.64933776855469 8.125584602355957 20.31077194213867 6.940603733062744 19.37971687316895 6.771320819854736 L 13.79337501525879 5.924905776977539 C 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 L 11.42341232299805 0.7617737054824829 C 10.91556358337402 -0.2539244890213013 9.645941734313965 -0.2539244890213013 9.138092041015625 0.7617737054824829 L 6.598848342895508 5.924905776977539 C 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 L 0.9278668165206909 6.771320819854736 C -0.00318974070250988 6.940603733062744 -0.3417557775974274 8.125584602355957 0.3353762924671173 8.802716255187988 L 4.398168563842773 13.03479194641113 C 4.398168563842773 13.03479194641113 4.398168563842773 13.03479194641113 4.398168563842773 13.11943435668945 L 3.467111825942993 18.79041481018066 C 3.297829151153564 19.89075469970703 4.398168563842773 20.73716735839844 5.329225540161133 20.22932243347168 L 10.06914901733398 17.52079200744629 C 10.06914901733398 17.52079200744629 10.06914901733398 17.52079200744629 10.15379047393799 17.52079200744629 L 14.89371490478516 20.14468002319336 C 15.82477283477783 20.65252876281738 16.92511177062988 19.80611419677734 16.75583076477051 18.70577239990234 L 15.82477283477783 13.03479194641113 C 15.82477283477783 13.03479194641113 15.82477283477783 13.03479194641113 15.82477283477783 12.95015144348145 L 19.97220802307129 8.802716255187988 Z">
+				</path>
+			</svg>
+			<svg class="Path_336_dbu" viewBox="-0.021 0 20.349 20.38">
+				<path fill="rgba(233,233,240,1)" id="Path_336_dbu" d="M 19.97220802307129 8.802716255187988 C 20.64933776855469 8.125584602355957 20.31077194213867 6.940603733062744 19.37971687316895 6.771320819854736 L 13.79337501525879 5.924905776977539 C 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 13.79337501525879 5.924905776977539 L 11.42341232299805 0.7617737054824829 C 10.91556358337402 -0.2539244890213013 9.645941734313965 -0.2539244890213013 9.138092041015625 0.7617737054824829 L 6.598848342895508 5.924905776977539 C 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 6.598848342895508 5.924905776977539 L 0.9278668165206909 6.771320819854736 C -0.00318974070250988 6.940603733062744 -0.3417557775974274 8.125584602355957 0.3353762924671173 8.802716255187988 L 4.398168563842773 13.03479194641113 C 4.398168563842773 13.03479194641113 4.398168563842773 13.03479194641113 4.398168563842773 13.11943435668945 L 3.467111825942993 18.79041481018066 C 3.297829151153564 19.89075469970703 4.398168563842773 20.73716735839844 5.329225540161133 20.22932243347168 L 10.06914901733398 17.52079200744629 C 10.06914901733398 17.52079200744629 10.06914901733398 17.52079200744629 10.15379047393799 17.52079200744629 L 14.89371490478516 20.14468002319336 C 15.82477283477783 20.65252876281738 16.92511177062988 19.80611419677734 16.75583076477051 18.70577239990234 L 15.82477283477783 13.03479194641113 C 15.82477283477783 13.03479194641113 15.82477283477783 13.03479194641113 15.82477283477783 12.95015144348145 L 19.97220802307129 8.802716255187988 Z">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Product_dbv">
+		<svg class="BG_dbw">
+			<rect fill="rgba(255,255,255,1)" id="BG_dbw" rx="0" ry="0" x="0" y="0" width="570" height="297">
+			</rect>
+		</svg>
+		<div id="Product_name_dbx">
+			<span>Product name</span>
+		</div>
+		<div id="Product_description_dby">
+			<span>Product description</span>
+		</div>
+		<svg class="Rectangle_747">
+			<rect fill="rgba(67,66,93,1)" id="Rectangle_747" rx="0" ry="0" x="0" y="0" width="285" height="297">
+			</rect>
+		</svg>
+		<div id="Lorem_ipsum_dolor_sit_amet__co">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium mauris lectus.</span>
+		</div>
+		<div id="btn_buy">
+			<svg class="Rectangle_166_db">
+				<rect fill="rgba(59,134,255,1)" id="Rectangle_166_db" rx="4" ry="4" x="0" y="0" width="140" height="35">
+				</rect>
+			</svg>
+			<div id="Shop_now_db">
+				<span>Shop now</span>
+			</div>
+		</div>
+		<div id="scroll_db">
+			<svg class="Ellipse_32_db">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_32_db" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_33_db">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_33_db" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_34_db">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_34_db" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_35_db">
+				<ellipse fill="rgba(255,255,255,1)" id="Ellipse_35_db" rx="5" ry="5" cx="5" cy="5">
+				</ellipse>
+			</svg>
+		</div>
+		<div id="new">
+			<svg class="Path_332_dca" viewBox="0 0 80 80">
+				<path fill="rgba(255,101,101,1)" id="Path_332_dca" d="M 0 0 L 80 0 L 0 80 L 0 0 Z">
+				</path>
+			</svg>
+			<div id="Label_Content_dcb">
+				<span>New</span>
+			</div>
+		</div>
+	</div>
+	<div id="Product_dcc">
+		<svg class="BG_dcd">
+			<rect fill="rgba(255,255,255,1)" id="BG_dcd" rx="0" ry="0" x="0" y="0" width="570" height="297">
+			</rect>
+		</svg>
+		<div id="Product_name_dce">
+			<span>Product name</span>
+		</div>
+		<svg class="Rectangle_747_dcf">
+			<rect fill="rgba(67,66,93,1)" id="Rectangle_747_dcf" rx="0" ry="0" x="0" y="0" width="285" height="297">
+			</rect>
+		</svg>
+		<div id="Lorem_ipsum_dolor_sit_amet__co_dcg">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium mauris lectus.</span>
+		</div>
+		<div id="btn_buy_dch">
+			<svg class="Rectangle_166_dci">
+				<rect fill="rgba(59,134,255,1)" id="Rectangle_166_dci" rx="4" ry="4" x="0" y="0" width="140" height="35">
+				</rect>
+			</svg>
+			<div id="Shop_now_dcj">
+				<span>Shop now</span>
+			</div>
+		</div>
+		<div id="scroll_dck">
+			<svg class="Rectangle_152">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_152" rx="2" ry="2" x="0" y="0" width="25" height="4">
+				</rect>
+			</svg>
+			<svg class="Rectangle_153">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_153" rx="2" ry="2" x="0" y="0" width="25" height="4">
+				</rect>
+			</svg>
+			<svg class="Rectangle_154">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_154" rx="2" ry="2" x="0" y="0" width="25" height="4">
+				</rect>
+			</svg>
+			<svg class="Rectangle_155">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_155" rx="2" ry="2" x="0" y="0" width="25" height="4">
+				</rect>
+			</svg>
+		</div>
+		<svg class="Heart_dcp" viewBox="0.025 0.025 24 20">
+			<path fill="rgba(255,101,101,1)" id="Heart_dcp" d="M 22.10650634765625 1.836722850799561 C 19.54851150512695 -0.5789077877998352 15.48581314086914 -0.5789077877998352 12.92782211303711 1.836722850799561 L 12.02500152587891 2.689298391342163 L 11.12217998504639 1.836722850799561 C 8.56418514251709 -0.5789077281951904 4.50148868560791 -0.5789077281951904 1.943495154380798 1.836722850799561 C -0.6144985556602478 4.252353668212891 -0.6144985556602478 8.088944435119629 1.943495154380798 10.5045747756958 L 12.02500152587891 20.02499961853027 L 22.10650634765625 10.50457572937012 C 24.66449928283691 8.088944435119629 24.66449928283691 4.252353668212891 22.10650634765625 1.836722850799561">
+			</path>
+		</svg>
+		<div id="Group_254">
+			<svg class="Path_332_dcr" viewBox="-0.021 0 14.472 14.495">
+				<path fill="rgba(255,101,101,1)" id="Path_332_dcr" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+				</path>
+			</svg>
+			<svg class="Path_333_dcs" viewBox="-0.021 0 14.472 14.495">
+				<path fill="rgba(255,101,101,1)" id="Path_333_dcs" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+				</path>
+			</svg>
+			<svg class="Path_334_dct" viewBox="-0.021 0 14.472 14.495">
+				<path fill="rgba(255,101,101,1)" id="Path_334_dct" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+				</path>
+			</svg>
+			<svg class="Path_335_dcu" viewBox="-0.021 0 14.472 14.495">
+				<path fill="rgba(255,101,101,1)" id="Path_335_dcu" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+				</path>
+			</svg>
+			<svg class="Path_336_dcv" viewBox="-0.021 0 14.472 14.495">
+				<path fill="rgba(233,233,240,1)" id="Path_336_dcv" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Product_dcw">
+		<svg class="BG_dcx">
+			<rect fill="rgba(255,255,255,1)" id="BG_dcx" rx="0" ry="0" x="0" y="0" width="770" height="540">
+			</rect>
+		</svg>
+		<div id="Up_to_60__off">
+			<span>Up to 60% off</span>
+		</div>
+		<div id="Special_Promotion">
+			<span>Special Promotion</span>
+		</div>
+		<div id="Ends_July_15__2019_Valid_on_sa">
+			<span>Ends July 15, 2019<br/>Valid on sales on new arrivals. </span>
+		</div>
+		<div id="Use_code__ABC123">
+			<span>Use code: </span><span style="font-style:normal;font-weight:bold;color:rgba(255,101,101,1);">ABC123</span>
+		</div>
+		<svg class="Rectangle_746">
+			<rect fill="rgba(67,66,93,1)" id="Rectangle_746" rx="0" ry="0" x="0" y="0" width="385" height="540">
+			</rect>
+		</svg>
+		<div id="Lorem_ipsum_dolor_sit_amet__co_dc">
+			<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque pretium mauris lectus, ac mattis eros pulvinar a.</span>
+		</div>
+	</div>
+	<div id="Product_dc">
+		<svg class="BG_dc">
+			<rect fill="rgba(67,66,93,1)" id="BG_dc" rx="0" ry="0" x="0" y="0" width="570" height="462">
+			</rect>
+		</svg>
+		<div id="Product_name_dc">
+			<span>Product name</span>
+		</div>
+		<div id="ID4_1_____500_Reviews">
+			<span>4.1  |  500 Reviews</span>
+		</div>
+		<div id="Choose_Colors">
+			<span>Choose Colors</span>
+		</div>
+		<div id="Group_251_dc">
+			<svg class="Path_332_dda" viewBox="-0.021 0 14.78 16">
+				<path fill="rgba(255,101,101,1)" id="Path_332_dda" d="M 14.5006275177002 6.910726070404053 C 14.9924430847168 6.379132270812988 14.74653434753418 5.448842525482178 14.07028579711914 5.315943717956543 L 10.01278781890869 4.651451110839844 C 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 L 8.291424751281738 0.5980437397956848 C 7.922561168670654 -0.1993478387594223 7.00040340423584 -0.1993478387594223 6.631539344787598 0.5980437397956848 L 4.787223339080811 4.651451110839844 C 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 L 0.6682488322257996 5.315943717956543 C -0.008000615984201431 5.448842525482178 -0.2539095282554626 6.379132270812988 0.2379082888364792 6.910726070404053 L 3.188815116882324 10.23319053649902 C 3.188815116882324 10.23319053649902 3.188815116882324 10.23319053649902 3.188815116882324 10.29964160919189 L 2.51256537437439 14.75174331665039 C 2.38961124420166 15.61558532714844 3.188815116882324 16.28007507324219 3.865064859390259 15.88138294219971 L 7.307789325714111 13.75500392913818 C 7.307789325714111 13.75500392913818 7.307789325714111 13.75500392913818 7.369266510009766 13.75500392913818 L 10.81199073791504 15.81493282318115 C 11.48824119567871 16.2136287689209 12.28744506835938 15.54913711547852 12.1644926071167 14.68529415130615 L 11.48824119567871 10.23319053649902 C 11.48824119567871 10.23319053649902 11.48824119567871 10.23319053649902 11.48824119567871 10.1667423248291 L 14.5006275177002 6.910726070404053 Z">
+				</path>
+			</svg>
+			<svg class="Path_333_ddb" viewBox="-0.021 0 14.78 16">
+				<path fill="rgba(255,101,101,1)" id="Path_333_ddb" d="M 14.5006275177002 6.910726070404053 C 14.9924430847168 6.379132270812988 14.74653434753418 5.448842525482178 14.07028579711914 5.315943717956543 L 10.01278781890869 4.651451110839844 C 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 L 8.291424751281738 0.5980437397956848 C 7.922561168670654 -0.1993478387594223 7.00040340423584 -0.1993478387594223 6.631539344787598 0.5980437397956848 L 4.787223339080811 4.651451110839844 C 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 L 0.6682488322257996 5.315943717956543 C -0.008000615984201431 5.448842525482178 -0.2539095282554626 6.379132270812988 0.2379082888364792 6.910726070404053 L 3.188815116882324 10.23319053649902 C 3.188815116882324 10.23319053649902 3.188815116882324 10.23319053649902 3.188815116882324 10.29964160919189 L 2.51256537437439 14.75174331665039 C 2.38961124420166 15.61558532714844 3.188815116882324 16.28007507324219 3.865064859390259 15.88138294219971 L 7.307789325714111 13.75500392913818 C 7.307789325714111 13.75500392913818 7.307789325714111 13.75500392913818 7.369266510009766 13.75500392913818 L 10.81199073791504 15.81493282318115 C 11.48824119567871 16.2136287689209 12.28744506835938 15.54913711547852 12.1644926071167 14.68529415130615 L 11.48824119567871 10.23319053649902 C 11.48824119567871 10.23319053649902 11.48824119567871 10.23319053649902 11.48824119567871 10.1667423248291 L 14.5006275177002 6.910726070404053 Z">
+				</path>
+			</svg>
+			<svg class="Path_334_ddc" viewBox="-0.021 0 14.78 16">
+				<path fill="rgba(255,101,101,1)" id="Path_334_ddc" d="M 14.5006275177002 6.910726070404053 C 14.9924430847168 6.379132270812988 14.74653434753418 5.448842525482178 14.07028579711914 5.315943717956543 L 10.01278781890869 4.651451110839844 C 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 L 8.291424751281738 0.5980437397956848 C 7.922561168670654 -0.1993478387594223 7.00040340423584 -0.1993478387594223 6.631539344787598 0.5980437397956848 L 4.787223339080811 4.651451110839844 C 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 L 0.6682488322257996 5.315943717956543 C -0.008000615984201431 5.448842525482178 -0.2539095282554626 6.379132270812988 0.2379082888364792 6.910726070404053 L 3.188815116882324 10.23319053649902 C 3.188815116882324 10.23319053649902 3.188815116882324 10.23319053649902 3.188815116882324 10.29964160919189 L 2.51256537437439 14.75174331665039 C 2.38961124420166 15.61558532714844 3.188815116882324 16.28007507324219 3.865064859390259 15.88138294219971 L 7.307789325714111 13.75500392913818 C 7.307789325714111 13.75500392913818 7.307789325714111 13.75500392913818 7.369266510009766 13.75500392913818 L 10.81199073791504 15.81493282318115 C 11.48824119567871 16.2136287689209 12.28744506835938 15.54913711547852 12.1644926071167 14.68529415130615 L 11.48824119567871 10.23319053649902 C 11.48824119567871 10.23319053649902 11.48824119567871 10.23319053649902 11.48824119567871 10.1667423248291 L 14.5006275177002 6.910726070404053 Z">
+				</path>
+			</svg>
+			<svg class="Path_335_ddd" viewBox="-0.021 0 14.78 16">
+				<path fill="rgba(255,101,101,1)" id="Path_335_ddd" d="M 14.5006275177002 6.910726070404053 C 14.9924430847168 6.379132270812988 14.74653434753418 5.448842525482178 14.07028579711914 5.315943717956543 L 10.01278781890869 4.651451110839844 C 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 L 8.291424751281738 0.5980437397956848 C 7.922561168670654 -0.1993478387594223 7.00040340423584 -0.1993478387594223 6.631539344787598 0.5980437397956848 L 4.787223339080811 4.651451110839844 C 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 L 0.6682488322257996 5.315943717956543 C -0.008000615984201431 5.448842525482178 -0.2539095282554626 6.379132270812988 0.2379082888364792 6.910726070404053 L 3.188815116882324 10.23319053649902 C 3.188815116882324 10.23319053649902 3.188815116882324 10.23319053649902 3.188815116882324 10.29964160919189 L 2.51256537437439 14.75174331665039 C 2.38961124420166 15.61558532714844 3.188815116882324 16.28007507324219 3.865064859390259 15.88138294219971 L 7.307789325714111 13.75500392913818 C 7.307789325714111 13.75500392913818 7.307789325714111 13.75500392913818 7.369266510009766 13.75500392913818 L 10.81199073791504 15.81493282318115 C 11.48824119567871 16.2136287689209 12.28744506835938 15.54913711547852 12.1644926071167 14.68529415130615 L 11.48824119567871 10.23319053649902 C 11.48824119567871 10.23319053649902 11.48824119567871 10.23319053649902 11.48824119567871 10.1667423248291 L 14.5006275177002 6.910726070404053 Z">
+				</path>
+			</svg>
+			<svg class="Path_336_dde" viewBox="-0.021 0 14.78 16">
+				<path fill="rgba(233,233,240,1)" id="Path_336_dde" d="M 14.5006275177002 6.910726070404053 C 14.9924430847168 6.379132270812988 14.74653434753418 5.448842525482178 14.07028579711914 5.315943717956543 L 10.01278781890869 4.651451110839844 C 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 10.01278781890869 4.651451110839844 L 8.291424751281738 0.5980437397956848 C 7.922561168670654 -0.1993478387594223 7.00040340423584 -0.1993478387594223 6.631539344787598 0.5980437397956848 L 4.787223339080811 4.651451110839844 C 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 4.787223339080811 4.651451110839844 L 0.6682488322257996 5.315943717956543 C -0.008000615984201431 5.448842525482178 -0.2539095282554626 6.379132270812988 0.2379082888364792 6.910726070404053 L 3.188815116882324 10.23319053649902 C 3.188815116882324 10.23319053649902 3.188815116882324 10.23319053649902 3.188815116882324 10.29964160919189 L 2.51256537437439 14.75174331665039 C 2.38961124420166 15.61558532714844 3.188815116882324 16.28007507324219 3.865064859390259 15.88138294219971 L 7.307789325714111 13.75500392913818 C 7.307789325714111 13.75500392913818 7.307789325714111 13.75500392913818 7.369266510009766 13.75500392913818 L 10.81199073791504 15.81493282318115 C 11.48824119567871 16.2136287689209 12.28744506835938 15.54913711547852 12.1644926071167 14.68529415130615 L 11.48824119567871 10.23319053649902 C 11.48824119567871 10.23319053649902 11.48824119567871 10.23319053649902 11.48824119567871 10.1667423248291 L 14.5006275177002 6.910726070404053 Z">
+				</path>
+			</svg>
+		</div>
+		<div id="Group_252">
+			<svg class="Ellipse_40">
+				<ellipse fill="rgba(255,101,101,1)" id="Ellipse_40" rx="12" ry="12" cx="12" cy="12">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_39">
+				<ellipse fill="rgba(255,101,101,1)" id="Ellipse_39" rx="8" ry="8" cx="8" cy="8">
+				</ellipse>
+			</svg>
+			<svg class="Ellipse_41">
+				<ellipse fill="rgba(59,134,255,1)" id="Ellipse_41" rx="8" ry="8" cx="8" cy="8">
+				</ellipse>
+			</svg>
+			<svg class="Path_343" viewBox="0 0 16 16">
+				<path fill="rgba(163,160,251,1)" id="Path_343" d="M 8 0 C 12.41827774047852 0 16 3.581722497940063 16 8 C 16 12.41827774047852 12.41827774047852 16 8 16 C 3.581722497940063 16 0 12.41827774047852 0 8 C 0 3.581722497940063 3.581722497940063 0 8 0 Z">
+				</path>
+			</svg>
+		</div>
+	</div>
+	<div id="Product_ddk">
+		<svg class="BG_ddl">
+			<rect fill="rgba(255,255,255,1)" id="BG_ddl" rx="0" ry="0" x="0" y="0" width="370" height="462">
+			</rect>
+		</svg>
+		<div id="product_detail_ddm">
+			<svg class="Rectangle_740_ddn">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_ddn" rx="0" ry="0" x="0" y="0" width="370" height="124">
+				</rect>
+			</svg>
+			<div id="Product_name_ddo">
+				<span>Product name</span>
+			</div>
+			<div id="_59_95">
+				<span>$59.95</span>
+			</div>
+			<div id="Group_250">
+				<svg class="Path_332_ddr" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_332_ddr" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_333_dds" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_333_dds" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_334_ddt" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_334_ddt" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_335_ddu" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(255,101,101,1)" id="Path_335_ddu" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+				<svg class="Path_336_ddv" viewBox="-0.021 0 14.472 14.495">
+					<path fill="rgba(233,233,240,1)" id="Path_336_ddv" d="M 14.19832992553711 6.260533332824707 C 14.67990875244141 5.77895450592041 14.43911933898926 4.936190128326416 13.77694797515869 4.815795421600342 L 9.803915977478027 4.213820934295654 C 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 9.803915977478027 4.213820934295654 L 8.118387222290039 0.5417770743370056 C 7.757202625274658 -0.180592268705368 6.854241847991943 -0.180592268705368 6.493056297302246 0.5417770743370056 L 4.687134265899658 4.213820934295654 C 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 4.687134265899658 4.213820934295654 L 0.65390545129776 4.815795421600342 C -0.008266392163932323 4.936190128326416 -0.2490561604499817 5.77895450592041 0.2325233817100525 6.260533332824707 L 3.122000455856323 9.270405769348145 C 3.122000455856323 9.270405769348145 3.122000455856323 9.270405769348145 3.122000455856323 9.33060359954834 L 2.459828615188599 13.36383247375488 C 2.339433908462524 14.14639854431152 3.122000455856323 14.74837207794189 3.784172534942627 14.3871898651123 L 7.155228614807129 12.46087074279785 C 7.155228614807129 12.46087074279785 7.155228614807129 12.46087074279785 7.215425968170166 12.46087074279785 L 10.58648300170898 14.32699203491211 C 11.24865531921387 14.68817615509033 12.03122138977051 14.08620262145996 11.91082763671875 13.30363464355469 L 11.24865531921387 9.270405769348145 C 11.24865531921387 9.270405769348145 11.24865531921387 9.270405769348145 11.24865531921387 9.210208892822266 L 14.19832992553711 6.260533332824707 Z">
+					</path>
+				</svg>
+			</div>
+			<div id="btn_buy_ddw">
+				<svg class="Rectangle_166_ddx">
+					<rect fill="rgba(59,134,255,1)" id="Rectangle_166_ddx" rx="4" ry="4" x="0" y="0" width="120" height="35">
+					</rect>
+				</svg>
+				<div id="Add_to_cart">
+					<span>Add to cart</span>
+				</div>
+			</div>
+		</div>
+		<svg class="image_ddz">
+			<rect fill="rgba(67,66,93,1)" id="image_ddz" rx="0" ry="0" x="0" y="0" width="370" height="337">
+			</rect>
+		</svg>
+		<div id="Label_dd">
+			<svg class="Label_BG_dd">
+				<rect fill="rgba(255,101,101,1)" id="Label_BG_dd" rx="12" ry="12" x="0" y="0" width="85" height="24">
+				</rect>
+			</svg>
+			<div id="Label_Content_dd">
+				<span>20% off</span>
+			</div>
+		</div>
+		<svg class="Heart_dd" viewBox="0.025 0.025 24 20">
+			<path fill="rgba(255,255,255,1)" id="Heart_dd" d="M 22.10650634765625 1.836722850799561 C 19.54851150512695 -0.5789077877998352 15.48581314086914 -0.5789077877998352 12.92782211303711 1.836722850799561 L 12.02500152587891 2.689298391342163 L 11.12217998504639 1.836722850799561 C 8.56418514251709 -0.5789077281951904 4.50148868560791 -0.5789077281951904 1.943495154380798 1.836722850799561 C -0.6144985556602478 4.252353668212891 -0.6144985556602478 8.088944435119629 1.943495154380798 10.5045747756958 L 12.02500152587891 20.02499961853027 L 22.10650634765625 10.50457572937012 C 24.66449928283691 8.088944435119629 24.66449928283691 4.252353668212891 22.10650634765625 1.836722850799561">
+			</path>
+		</svg>
+	</div>
+	<div id="Product_dd">
+		<svg class="BG_dd">
+			<rect fill="rgba(255,255,255,1)" id="BG_dd" rx="0" ry="0" x="0" y="0" width="370" height="462">
+			</rect>
+		</svg>
+		<div id="product_detail_dd">
+			<svg class="Rectangle_740_dd">
+				<rect fill="rgba(255,255,255,1)" id="Rectangle_740_dd" rx="0" ry="0" x="0" y="0" width="370" height="112">
+				</rect>
+			</svg>
+			<div id="Product_name_dd">
+				<span>Product name</span>
+			</div>
+			<div id="_678">
+				<span>$678</span>
+			</div>
+			<div id="Group_249">
+				<div id="_754">
+					<span>$754</span>
+				</div>
+				<svg class="Path_331" viewBox="969.072 6755.577 34.647 1">
+					<path fill="transparent" stroke="rgba(255,101,101,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Path_331" d="M 969.0718994140625 6755.57666015625 C 969.0718994140625 6755.57666015625 1003.718505859375 6755.57666015625 1003.718505859375 6755.57666015625">
+					</path>
+				</svg>
+			</div>
+			<div id="size">
+				<svg class="Rectangle_741">
+					<rect fill="rgba(255,255,255,1)" stroke="rgba(233,233,240,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_741" rx="4" ry="4" x="0" y="0" width="30" height="30">
+					</rect>
+				</svg>
+				<div id="S">
+					<span>S</span>
+				</div>
+			</div>
+			<div id="size_deg">
+				<svg class="Rectangle_741_deh">
+					<rect fill="rgba(255,101,101,1)" id="Rectangle_741_deh" rx="4" ry="4" x="0" y="0" width="30" height="30">
+					</rect>
+				</svg>
+				<div id="M">
+					<span>M</span>
+				</div>
+			</div>
+			<div id="size_dej">
+				<svg class="Rectangle_741_dek">
+					<rect fill="rgba(255,255,255,1)" stroke="rgba(233,233,240,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_741_dek" rx="4" ry="4" x="0" y="0" width="30" height="30">
+					</rect>
+				</svg>
+				<div id="L">
+					<span>L</span>
+				</div>
+			</div>
+			<div id="size_dem">
+				<svg class="Rectangle_741_den">
+					<rect fill="rgba(255,255,255,1)" stroke="rgba(233,233,240,1)" stroke-width="1px" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" shape-rendering="auto" id="Rectangle_741_den" rx="4" ry="4" x="0" y="0" width="30" height="30">
+					</rect>
+				</svg>
+				<div id="XL">
+					<span>XL</span>
+				</div>
+			</div>
+		</div>
+		<svg class="image_dep">
+			<rect fill="rgba(67,66,93,1)" id="image_dep" rx="0" ry="0" x="0" y="0" width="370" height="350">
+			</rect>
+		</svg>
+		<div id="new_deq">
+			<svg class="Path_332_der" viewBox="0 0 80 80">
+				<path fill="rgba(255,101,101,1)" id="Path_332_der" d="M 0 0 L 80 0 L 0 80 L 0 0 Z">
+				</path>
+			</svg>
+			<div id="Label_Content_des">
+				<span>New</span>
+			</div>
+		</div>
+	</div>
+	<div id="Product_det">
+		<svg class="BG_deu">
+			<rect fill="rgba(67,66,93,1)" id="BG_deu" rx="0" ry="0" x="0" y="0" width="370" height="540">
+			</rect>
+		</svg>
+		<div id="Product_name_dev">
+			<span>Product name</span>
+		</div>
+		<div id="Product_description_dew">
+			<span>Product description</span>
+		</div>
+		<div id="btn_signup_dex">
+			<svg class="Rectangle_166_dey">
+				<rect fill="rgba(59,134,255,1)" id="Rectangle_166_dey" rx="4" ry="4" x="0" y="0" width="185" height="50">
+				</rect>
+			</svg>
+			<div id="Shop_now_dez">
+				<span>Shop now</span>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
