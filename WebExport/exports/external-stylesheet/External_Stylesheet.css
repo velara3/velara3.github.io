@@ -1,0 +1,152 @@
+.mediaViewInfo {
+	--web-view-name: External Stylesheet;
+	--web-view-id: External_Stylesheet;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: External_Stylesheet;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#External_Stylesheet {
+	position: absolute;
+	width: 857px;
+	height: 371px;
+	background-color: rgba(255,255,255,1);
+	overflow: hidden;
+	--web-view-name: External Stylesheet;
+	--web-view-id: External_Stylesheet;
+	--web-enable-deep-linking: true;
+}
+#Rectangle_1 {
+	fill: rgba(244,244,244,1);
+	stroke: rgba(112,112,112,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Rectangle_1 {
+	position: absolute;
+	overflow: visible;
+	width: 75px;
+	height: 75px;
+	left: 20px;
+	top: 80px;
+}
+#Line_85 {
+	fill: transparent;
+	stroke: rgba(177,177,177,1);
+	stroke-width: 1px;
+	stroke-linejoin: miter;
+	stroke-linecap: butt;
+	stroke-miterlimit: 4;
+	shape-rendering: auto;
+}
+.Line_85 {
+	overflow: visible;
+	position: absolute;
+	width: 806.269px;
+	height: 1px;
+	left: 22.231px;
+	top: 53.74px;
+	transform: matrix(1,0,0,1,0,0);
+}
+#This_page_uses_an_external_sty {
+	left: 644px;
+	top: 32px;
+	position: absolute;
+	overflow: visible;
+	width: 185px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	color: rgba(112,112,112,1);
+}
+#Check_the_source_code_to_see_t {
+	left: 22px;
+	top: 209px;
+	position: absolute;
+	overflow: visible;
+	width: 310px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	color: rgba(112,112,112,1);
+}
+#External_Stylesheet_l {
+	left: 54px;
+	top: 14px;
+	position: absolute;
+	overflow: visible;
+	width: 184px;
+	white-space: nowrap;
+	line-height: 56px;
+	margin-top: -18px;
+	text-align: left;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 20px;
+	color: rgba(93,93,93,1);
+	letter-spacing: -0.03px;
+}
+#httpsdevelopermozillaorgen-USd {
+	left: 22px;
+	top: 341px;
+	position: absolute;
+	overflow: visible;
+	width: 329px;
+	white-space: nowrap;
+	text-align: left;
+	font-family: Helvetica Neue;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 11px;
+	color: rgba(112,112,112,1);
+}
+#Icon {
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	left: 20px;
+	top: 13px;
+	overflow: visible;
+}
+#Rectangle_177_p {
+	fill: url(#Rectangle_177_p);
+}
+.Rectangle_177_p {
+	position: absolute;
+	overflow: visible;
+	width: 24px;
+	height: 24px;
+	left: 0px;
+	top: 0px;
+}
+#W {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 7.5px;
+	position: absolute;
+	overflow: visible;
+	width: 10px;
+	white-space: nowrap;
+	text-align: right;
+	font-family: Helvetica;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 10px;
+	color: rgba(255,255,255,1);
+}

@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pop Ups</title>
+<style id="applicationStylesheet" type="text/css">
+:root {
+	--web-view-ids: Pop_Ups,Menu,Anchored_Right_Menu,Centered_Horizontal,Bottom_Menu,Centered_Vertical,Centered,Menu_Close_Button,Bottom_Centered_Menu;
+	--web-view-name: Pop Ups;
+	--web-view-id: Pop_Ups;
+	--web-scale-to-fit: false;
+	--web-scale-to-fit-type: default;
+	--web-enable-scale-up: false;
+	--web-scale-on-resize: false;
+	--web-show-scale-controls: false;
+	--web-scale-on-double-click: false;
+	--web-center-horizontally: false;
+	--web-center-vertically: false;
+	--web-actual-size-on-double-click: false;
+	--web-navigate-on-keypress: false;
+	--web-refresh-for-changes: true;
+	--web-add-image-compare: false;
+	--web-show-by-media-query: false;
+	--web-application: true;
+	--web-show-navigation-controls: false;
+	--web-enable-deep-linking: true;
+	--web-is-overlay: false;
+	--web-page-font: sans-serif;
+}
+#Pop_Ups,
+#Menu,
+#Anchored_Right_Menu,
+#Centered_Horizontal,
+#Bottom_Menu,
+#Centered_Vertical,
+#Centered,
+#Menu_Close_Button,
+#Bottom_Centered_Menu {
+	display: none;
+}
+@media (min-width: 603px) {
+	.mediaViewInfo {
+		--web-view-name: Pop Ups;
+		--web-view-id: Pop_Ups;
+		--web-refresh-for-changes: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Pop_Ups {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+		font-family: sans-serif;
+		background-color: rgba(242,242,242,1);
+		overflow: hidden;
+		--web-view-name: Pop Ups;
+		--web-view-id: Pop_Ups;
+		--web-refresh-for-changes: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-page-font: sans-serif;
+		cursor: default;
+	}
+	@keyframes slide-left {
+	
+		0% {
+			transform: translateX(100%);
+		}
+	
+	}
+	@keyframes slide-right {
+	
+		0% {
+			transform: translateX(-100%);
+		}
+	
+	}
+	@keyframes slide-bottom {
+	
+		0% {
+			transform: translateY(100%);
+		}
+	
+	}
+	@keyframes slide-top {
+	
+		0% {
+			transform: translateY(-100%);
+		}
+	
+	}
+	@keyframes fadein {
+	
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	
+	}
+	@keyframes slide-left {
+	
+		0% {
+			transform: translateX(100%);
+		}
+	
+	}
+	@keyframes slide-bottom {
+	
+		0% {
+			transform: translateY(100%);
+		}
+	
+	}
+	@keyframes slide-bottom {
+	
+		0% {
+			transform: translateY(100%);
+		}
+	
+	}
+	#Pop_ups {
+		left: 51px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 80px;
+		white-space: nowrap;
+		line-height: 56px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(93,93,93,1);
+		letter-spacing: -0.03px;
+	}
+	#Line_85 {
+		fill: transparent;
+		stroke: rgba(177,177,177,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_85 {
+		overflow: visible;
+		position: absolute;
+		height: 1px;
+		left: 22.231px;
+		right: 21.5px;
+		top: 53.74px;
+		transform: matrix(1,0,0,1,0,0);
+		border:  .5px solid gray;
+	}
+	#Clicking_on_the_links_will_sho {
+		right: 21px;
+		top: 31px;
+		position: absolute;
+		overflow: visible;
+		width: 201px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Slide_to_left {
+		left: 221px;
+		top: 113px;
+		position: absolute;
+		overflow: visible;
+		width: 54px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Pop_ups_support_includes_diffe {
+		left: 20px;
+		top: 68px;
+		position: absolute;
+		overflow: visible;
+		width: 402px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Be_sure_to_export_as_a_single_ {
+		left: 20px;
+		bottom: 37px;
+		position: absolute;
+		overflow: visible;
+		width: 559px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 11px;
+		color: rgba(112,112,112,1);
+	}
+	#Icon {
+		position: absolute;
+		width: 24px;
+		height: 24px;
+		left: 20px;
+		top: 20px;
+		overflow: visible;
+	}
+	#Rectangle_177_ {
+		fill: url(#Rectangle_177_);
+	}
+	.Rectangle_177_ {
+		position: absolute;
+		overflow: visible;
+		width: 24px;
+		height: 24px;
+		left: 0px;
+		top: 0px;
+	}
+	#W {
+		left: 50%;
+		transform: translateX(-50%);
+		top: 7.5px;
+		position: absolute;
+		overflow: visible;
+		width: 10px;
+		white-space: nowrap;
+		text-align: right;
+		font-family: Helvetica, sans-serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 10px;
+		color: rgba(255,255,255,1);
+	}
+	#menu-group {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 222px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-left 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60 {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#Slide_to_right {
+		left: 221px;
+		top: 176px;
+		position: absolute;
+		overflow: visible;
+		width: 61px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Slide_to_top {
+		left: 221px;
+		top: 232px;
+		position: absolute;
+		overflow: visible;
+		width: 55px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#menu-group_ {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 222px;
+		top: 198.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-right 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60_ {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_ba {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 222px;
+		top: 254.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-bottom 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60_ba {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#Slide_to_bottom {
+		left: 221px;
+		top: 288px;
+		position: absolute;
+		overflow: visible;
+		width: 73px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Dissolve {
+		left: 125px;
+		top: 113px;
+		position: absolute;
+		overflow: visible;
+		width: 40px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Centered_bd {
+		left: 341px;
+		top: 113px;
+		position: absolute;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Horizontal_Centered {
+		left: 341px;
+		top: 169px;
+		position: absolute;
+		overflow: visible;
+		width: 95px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Vertical_Centered {
+		left: 341px;
+		top: 225px;
+		position: absolute;
+		overflow: visible;
+		width: 81px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Normal {
+		left: 20px;
+		top: 113px;
+		position: absolute;
+		overflow: visible;
+		width: 35px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#With_Close_Button {
+		left: 20px;
+		top: 173px;
+		position: absolute;
+		overflow: visible;
+		width: 86px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Anchored_right {
+		right: 24px;
+		top: 113px;
+		position: absolute;
+		overflow: visible;
+		width: 70px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Anchored_horizontal_bottom {
+		right: 20px;
+		top: 169px;
+		position: absolute;
+		overflow: visible;
+		width: 132px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#Anchored_bottom {
+		right: 20px;
+		top: 225px;
+		position: absolute;
+		overflow: visible;
+		width: 83px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Helvetica Neue, sans-serif;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 10.5px;
+		color: rgba(112,112,112,1);
+	}
+	#menu-group_bl {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 222px;
+		top: 310.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-top 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60_bm {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bn {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 126.5px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: fadein 0.3s ease-out;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60_bo {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bp {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 343px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: ;
+		--web-action-type: view;
+		--web-action-target: Centered;
+	}
+	#Group_60_bq {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_br {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 343px;
+		top: 191.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: ;
+		--web-action-type: view;
+		--web-action-target: Centered_Horizontal;
+	}
+	#Group_60_bs {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bt {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 343px;
+		top: 247.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: ;
+		--web-action-type: view;
+		--web-action-target: Centered_Vertical;
+	}
+	#Group_60_bu {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bv {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 21px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: ;
+		--web-action-type: view;
+		--web-action-target: Menu;
+	}
+	#Group_60_bw {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bx {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 21px;
+		top: 195.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: ;
+		--web-action-type: view;
+		--web-action-target: Menu_Close_Button;
+	}
+	#Group_60_by {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_bz {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right: 20px;
+		top: 135.5px;
+		overflow: visible;
+		cursor: pointer;
+		--web-animation: slide-left 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Anchored_Right_Menu;
+	}
+	#Group_60_b {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_b {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right:  20px;
+		top: 191.5px;
+		overflow: visible;
+		cursor: default;
+		--web-animation: slide-bottom 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Bottom_Centered_Menu;
+	}
+	#Group_60_ca {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+	#menu-group_ca {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		right:  20px;
+		top: 247.5px;
+		overflow: visible;
+		cursor: default;
+		--web-animation: slide-bottom 0.3s ease-out forwards;
+		--web-action-type: view;
+		--web-action-target: Bottom_Menu;
+	}
+	#Group_60_cb {
+		position: absolute;
+		width: 28px;
+		height: 14.5px;
+		left: 0px;
+		top: 0px;
+		overflow: visible;
+		cursor:  pointer;
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Menu;
+		--web-view-id: Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Menu {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Menu;
+		--web-view-id: Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491 {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2 {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1_ {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2 {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3 {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Anchored Right Menu;
+		--web-view-id: Anchored_Right_Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Anchored_Right_Menu {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Anchored Right Menu;
+		--web-view-id: Anchored_Right_Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+		right:  20px;
+	}
+	#Rectangle_491_ce {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_ce {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_cf {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__cg {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_ch {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_ci {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Centered Horizontal;
+		--web-view-id: Centered_Horizontal;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Centered_Horizontal {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Centered Horizontal;
+		--web-view-id: Centered_Horizontal;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491_cl {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_cl {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_cm {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__cn {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_co {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_cp {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Bottom Menu;
+		--web-view-id: Bottom_Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Bottom_Menu {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Bottom Menu;
+		--web-view-id: Bottom_Menu;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+		bottom:  20px;
+		right:  20px;
+	}
+	#Rectangle_491_cs {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_cs {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_ct {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__cu {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_cv {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_cw {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Centered Vertical;
+		--web-view-id: Centered_Vertical;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Centered_Vertical {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Centered Vertical;
+		--web-view-id: Centered_Vertical;
+		--web-scale-on-resize: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491_cz {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_cz {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_c {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__c {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_c {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_c {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Centered;
+		--web-view-id: Centered;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Centered {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: pointer;
+		--web-view-name: Centered;
+		--web-view-id: Centered;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-center-vertically: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491_c {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_c {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_da {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__da {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_da {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_da {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Menu Close Button;
+		--web-view-id: Menu_Close_Button;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Menu_Close_Button {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		--web-view-name: Menu Close Button;
+		--web-view-id: Menu_Close_Button;
+		--web-scale-on-resize: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	#Rectangle_491_dd {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Rectangle_491_dd {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_de {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__df {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_dg {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_dh {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: left;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Group_61 {
+		position: absolute;
+		width: 19px;
+		height: 19px;
+		left: 73px;
+		top: 8px;
+		overflow: visible;
+		cursor: pointer;
+	}
+	#Ellipse_1 {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Ellipse_1 {
+		position: absolute;
+		overflow: visible;
+		width: 19px;
+		height: 19px;
+		left: 0px;
+		top: 0px;
+	}
+	#Line_88 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_88 {
+		overflow: visible;
+		position: absolute;
+		width: 11.673px;
+		height: 10.74px;
+		left: 4px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+	#Line_89 {
+		fill: transparent;
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+	}
+	.Line_89 {
+		overflow: visible;
+		position: absolute;
+		width: 10.707px;
+		height: 10.707px;
+		left: 4.5px;
+		top: 4.5px;
+		transform: matrix(1,0,0,1,0,0);
+	}
+}
+@media (min-width: 0px) and (max-width: 602px) {
+	.mediaViewInfo {
+		--web-view-name: Bottom Centered Menu;
+		--web-view-id: Bottom_Centered_Menu;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		border: none;
+	}
+	#Bottom_Centered_Menu {
+		position: absolute;
+		display: block;
+		width: 100px;
+		height: 105px;
+		overflow: hidden;
+		cursor: default;
+		--web-view-name: Bottom Centered Menu;
+		--web-view-id: Bottom_Centered_Menu;
+		--web-scale-on-resize: true;
+		--web-center-horizontally: true;
+		--web-application: true;
+		--web-enable-deep-linking: true;
+		--web-is-overlay: true;
+		bottom:  20px;
+	}
+	#Rectangle_491_do {
+		fill: rgba(255,255,255,1);
+		stroke: rgba(112,112,112,1);
+		stroke-width: 1px;
+		stroke-linejoin: miter;
+		stroke-linecap: butt;
+		stroke-miterlimit: 4;
+		shape-rendering: auto;
+		cursor: default;
+	}
+	.Rectangle_491_do {
+		position: absolute;
+		overflow: visible;
+		width: 100px;
+		height: 105px;
+		left: 0px;
+		top: 0px;
+	}
+	#Component_5__2_dp {
+		position: absolute;
+		width: 77px;
+		height: 58px;
+		left: 12px;
+		top: 10px;
+		overflow: visible;
+	}
+	#Item_1__dq {
+		left: 0px;
+		top: 0px;
+		position: absolute;
+		overflow: visible;
+		width: 77px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_2_dr {
+		left: 0px;
+		top: 21px;
+		position: absolute;
+		overflow: visible;
+		width: 76px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+	#Item_3_ds {
+		left: 0px;
+		top: 42px;
+		position: absolute;
+		overflow: visible;
+		width: 78px;
+		height: 16px;
+		line-height: 50px;
+		margin-top: -18px;
+		text-align: right;
+		font-family: Arial;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 14px;
+		color: rgba(95,95,95,1);
+	}
+}
+
+</style>
+<script id="applicationScript" type="text/javascript" src="Pop_Ups.js"></script>
+</head>
+<body>
+<div id="Pop_Ups">
+	<div id="Pop_ups">
+		<span>Pop ups</span>
+	</div>
+	<hr class="Line_85" viewBox="0 0 559.269 1">
+		<path id="Line_85" d="M 0 0 L 559.2686767578125 0">
+		</path>
+	</hr>
+	<div id="Clicking_on_the_links_will_sho">
+		<span>Clicking on the links will show pop up view</span>
+	</div>
+	<div id="Slide_to_left">
+		<span>Slide to left</span>
+	</div>
+	<div id="Pop_ups_support_includes_diffe">
+		<span>Pop ups support includes different effects including sliding in from a specific direction</span>
+	</div>
+	<div id="Be_sure_to_export_as_a_single_">
+		<span>Be sure to export as a single page application and include the pop up in the artboards to export (select artboards)</span>
+	</div>
+	<div id="Icon">
+		<svg class="Rectangle_177_">
+			<linearGradient id="Rectangle_177_" spreadMethod="pad" x1="0.021" x2="0.973" y1="0.019" y2="0.978">
+				<stop offset="0" stop-color="#707070" stop-opacity="1"></stop>
+				<stop offset="1" stop-color="#3e3e3e" stop-opacity="1"></stop>
+			</linearGradient>
+			<rect id="Rectangle_177_" rx="3" ry="3" x="0" y="0" width="24" height="24">
+			</rect>
+		</svg>
+		<div id="W">
+			<span>W</span>
+		</div>
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',223,152)" id="menu-group" class="menu_group">
+		<img id="Group_60" src="images/Group_60.png" srcset="images/Group_60.png 1x, images/Group_60@2x.png 2x">
+			
+	</div>
+	<div id="Slide_to_right">
+		<span>Slide to right</span>
+	</div>
+	<div id="Slide_to_top">
+		<span>Slide to top</span>
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',224,214)" id="menu-group_" class="menu_group">
+		<img id="Group_60_" src="images/Group_60_.png" srcset="images/Group_60_.png 1x, images/Group_60_@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',222,271)" id="menu-group_ba" class="menu_group">
+		<img id="Group_60_ba" src="images/Group_60_ba.png" srcset="images/Group_60_ba.png 1x, images/Group_60_ba@2x.png 2x">
+			
+	</div>
+	<div id="Slide_to_bottom">
+		<span>Slide to bottom</span>
+	</div>
+	<div id="Dissolve">
+		<span>Dissolve</span>
+	</div>
+	<div id="Centered_bd">
+		<span>Centered</span>
+	</div>
+	<div id="Horizontal_Centered">
+		<span>Horizontal Centered</span>
+	</div>
+	<div id="Vertical_Centered">
+		<span>Vertical Centered</span>
+	</div>
+	<div id="Normal">
+		<span>Normal</span>
+	</div>
+	<div id="With_Close_Button">
+		<span>With Close Button</span>
+	</div>
+	<div id="Anchored_right">
+		<span>Anchored right</span>
+	</div>
+	<div id="Anchored_horizontal_bottom">
+		<span>Anchored horizontal bottom</span>
+	</div>
+	<div id="Anchored_bottom">
+		<span>Anchored bottom</span>
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',220,327)" id="menu-group_bl" class="menu_group">
+		<img id="Group_60_bm" src="images/Group_60_bm.png" srcset="images/Group_60_bm.png 1x, images/Group_60_bm@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',123,152)" id="menu-group_bn" class="menu_group">
+		<img id="Group_60_bo" src="images/Group_60_bo.png" srcset="images/Group_60_bo.png 1x, images/Group_60_bo@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Centered',487,61)" id="menu-group_bp" class="menu_group">
+		<img id="Group_60_bq" src="images/Group_60_bq.png" srcset="images/Group_60_bq.png 1x, images/Group_60_bq@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Centered_Horizontal',494,55)" id="menu-group_br" class="menu_group">
+		<img id="Group_60_bs" src="images/Group_60_bs.png" srcset="images/Group_60_bs.png 1x, images/Group_60_bs@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Centered_Vertical',483,57)" id="menu-group_bt" class="menu_group">
+		<img id="Group_60_bu" src="images/Group_60_bu.png" srcset="images/Group_60_bu.png 1x, images/Group_60_bu@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Menu',19,154)" id="menu-group_bv" class="menu_group">
+		<img id="Group_60_bw" src="images/Group_60_bw.png" srcset="images/Group_60_bw.png 1x, images/Group_60_bw@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Menu_Close_Button',18,212)" id="menu-group_bx" class="menu_group">
+		<img id="Group_60_by" src="images/Group_60_by.png" srcset="images/Group_60_by.png 1x, images/Group_60_by@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Anchored_Right_Menu',477,153)" id="menu-group_bz" class="menu_group">
+		<img id="Group_60_b" src="images/Group_60_b.png" srcset="images/Group_60_b.png 1x, images/Group_60_b@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Bottom_Centered_Menu',0,395)" id="menu-group_b" class="menu_group">
+		<img id="Group_60_ca" src="images/Group_60_ca.png" srcset="images/Group_60_ca.png 1x, images/Group_60_ca@2x.png 2x">
+			
+	</div>
+	<div onclick="application.showOverlay(event,'Bottom_Menu',492,381)" id="menu-group_ca" class="menu_group">
+		<img id="Group_60_cb" src="images/Group_60_cb.png" srcset="images/Group_60_cb.png 1x, images/Group_60_cb@2x.png 2x">
+			
+	</div>
+</div>
+<div id="Menu" onclick="application.goBack()">
+	<svg class="Rectangle_491">
+		<rect id="Rectangle_491" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1_">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Anchored_Right_Menu" onclick="application.goBack()">
+	<svg class="Rectangle_491_ce">
+		<rect id="Rectangle_491_ce" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_cf" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__cg">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_ch">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_ci">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Centered_Horizontal" onclick="application.goBack()">
+	<svg class="Rectangle_491_cl">
+		<rect id="Rectangle_491_cl" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_cm" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__cn">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_co">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_cp">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Bottom_Menu" onclick="application.goBack()">
+	<svg class="Rectangle_491_cs">
+		<rect id="Rectangle_491_cs" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_ct" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__cu">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_cv">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_cw">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Centered_Vertical" onclick="application.goBack()">
+	<svg class="Rectangle_491_cz">
+		<rect id="Rectangle_491_cz" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_c" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__c">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_c">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_c">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Centered" onclick="application.goBack()">
+	<svg class="Rectangle_491_c">
+		<rect id="Rectangle_491_c" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_da" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__da">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_da">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_da">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+<div id="Menu_Close_Button">
+	<svg class="Rectangle_491_dd">
+		<rect id="Rectangle_491_dd" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_de" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__df">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_dg">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_dh">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+	<div onclick="application.goBack()" id="Group_61">
+		<svg class="Ellipse_1">
+			<ellipse id="Ellipse_1" rx="9.5" ry="9.5" cx="9.5" cy="9.5">
+			</ellipse>
+		</svg>
+		<svg class="Line_88" viewBox="0 0 11 10">
+			<path id="Line_88" d="M 0 0 L 11 10">
+			</path>
+		</svg>
+		<svg class="Line_89" viewBox="0 0 10 10">
+			<path id="Line_89" d="M 10 0 L 0 10">
+			</path>
+		</svg>
+	</div>
+</div>
+<div id="Bottom_Centered_Menu" onclick="application.goBack()">
+	<svg class="Rectangle_491_do">
+		<rect id="Rectangle_491_do" rx="0" ry="0" x="0" y="0" width="100" height="105">
+		</rect>
+	</svg>
+	<div id="Component_5__2_dp" class="Component_5___2">
+		<a href="#home">
+		<div id="Item_1__dq">
+			<span>Item 1 </span>
+		</div>
+		</a>
+		<a href="#about">
+		<div id="Item_2_dr">
+			<span>Item 2</span>
+		</div>
+		</a>
+		<a href="#contact">
+		<div id="Item_3_ds">
+			<span>Item 3</span>
+		</div>
+		</a>
+	</div>
+</div>
+
+</body>
+</html>
